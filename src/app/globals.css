@@ -1,26 +1,883 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   PYLON ENERGY — DESIGN SYSTEM
+   Logo: Navy (#002B5C) + Electric Cyan (#29ABE2) | CTA Accent: Orange (#29ABE2)
+   ============================================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Pylon Energy Brand Colours (matched to logo) ── */
+  --color-pe-navy: #002B5C;
+  --color-pe-navy-dark: #001A3A;
+  --color-pe-navy-mid: #0D3572;
+  /* Electric cyan — exact colour of "ENERGY" wordmark in logo */
+  --color-pe-cyan: #29ABE2;
+  --color-pe-cyan-dark: #1A8CBD;
+  --color-pe-cyan-light: #E8F7FD;
+  --color-pe-cyan-50: #EFF9FE;
+  /* Legacy blue kept for backward compat */
+  --color-pe-blue: #0D5DB5;
+  --color-pe-blue-light: #E8F4FD;
+  --color-pe-blue-50: #EFF6FF;
+  /* CTA orange is now matched to electric cyan from the logo */
+  --color-pe-orange: #29ABE2;
+  --color-pe-orange-dark: #1A8CBD;
+  --color-pe-orange-light: #E8F7FD;
+  --color-pe-white: #FFFFFF;
+  --color-pe-green: #16A34A;
+  --color-pe-green-light: #DCFCE7;
+
+  /* ── Neutrals ── */
+  --color-pe-gray-50: #F8FAFC;
+  --color-pe-gray-100: #F1F5F9;
+  --color-pe-gray-200: #E2E8F0;
+  --color-pe-gray-300: #CBD5E1;
+  --color-pe-gray-400: #94A3B8;
+  --color-pe-gray-500: #64748B;
+  --color-pe-gray-600: #475569;
+  --color-pe-gray-700: #334155;
+  --color-pe-gray-800: #1E293B;
+  --color-pe-gray-900: #0F172A;
+
+  /* ── Semantic Surface Tokens ── */
+  --color-background: #FFFFFF;
+  --color-foreground: #0F172A;
+  --color-surface: #F8FAFC;
+  --color-surface-alt: #F1F5F9;
+  --color-border: #E2E8F0;
+
+  /* ── Typography (Outfit — geometric, matches logo character) ── */
+  --font-sans: var(--font-sans, 'Outfit'), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 43, 92, 0.07), 0 10px 20px -2px rgba(0, 43, 92, 0.04);
+  --shadow-card: 0 4px 25px -5px rgba(0, 43, 92, 0.1), 0 10px 30px -5px rgba(0, 43, 92, 0.06);
+  --shadow-elevated: 0 20px 60px rgba(0, 43, 92, 0.12);
+  --shadow-nav: 0 4px 30px rgba(0, 43, 92, 0.08);
+
+  /* ── Animations ── */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+/* ============================================================
+   COMPONENT LAYER — Reusable Patterns
+   ============================================================ */
+
+/* ── Primary CTA Button ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-pe-orange) !important;
+  color: white !important;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--color-pe-orange-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 112, 41, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── Secondary Button — cyan bordered ── */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-pe-cyan);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-pe-cyan);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: var(--color-pe-cyan);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(41, 171, 226, 0.3);
+}
+
+/* ── Cyan Accent Button ── */
+.btn-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-pe-cyan);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-cyan:hover {
+  background: var(--color-pe-cyan-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(41, 171, 226, 0.35);
+}
+
+/* ── Navy Button ── */
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-pe-navy);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  text-decoration: none;
+}
+
+.btn-navy:hover {
+  background: var(--color-pe-navy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 43, 92, 0.3);
+}
+
+/* ── Section Spacing ── */
+.section-padding {
+  padding: 5rem 0;
+}
+
+/* ── Section Label / Eyebrow ── */
+/* Uses cyan (#29ABE2) — the 'ENERGY' colour from the Pylon logo */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-pe-cyan);
+  margin-bottom: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-pe-cyan);
+  flex-shrink: 0;
+}
+
+/* ── Section Title ── */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  color: var(--color-pe-gray-900);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 400;
+  /* Cyan — the ENERGY colour from the logo */
+  color: var(--color-pe-cyan);
+}
+
+.section-title span {
+  color: var(--color-pe-cyan);
+}
+
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--color-pe-gray-500);
+  line-height: 1.7;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Container & Width Utilities Expanded for Widescreen ── */
+.container {
+  width: 100%;
+  max-width: 90rem !important; /* Expanded to 1440px from 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.max-w-7xl {
+  max-width: 90rem !important; /* Expanded to 1440px from 1280px */
+}
+
+.max-w-6xl {
+  max-width: 80rem !important; /* Expanded to 1280px from 1152px */
+}
+
+/* ============================================================
+   CARD PATTERN
+   ============================================================ */
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid var(--color-pe-gray-200);
+  transition: all 0.3s var(--ease-smooth);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: transparent;
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   MEGA MENU STYLES
+   ============================================================ */
+
+.mega-menu-trigger {
+  position: relative;
+}
+
+.mega-menu-trigger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 30px;
+}
+
+.mega-menu-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: white;
+  border: 1px solid var(--color-pe-gray-200);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-elevated);
+  padding: 1.75rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.mega-menu-trigger:hover .mega-menu-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-panel::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-left: 1px solid var(--color-pe-gray-200);
+  border-top: 1px solid var(--color-pe-gray-200);
+}
+
+/* ============================================================
+   FAQ ACCORDION — Premium Style
+   ============================================================ */
+
+.faq-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s var(--ease-smooth);
+  background: white;
+  border: 1.5px solid var(--color-pe-navy);
+}
+
+.faq-card:hover {
+  background: var(--color-pe-navy);
+  border-color: var(--color-pe-navy);
+}
+
+.faq-card:hover .faq-question {
+  color: white;
+}
+
+.faq-card.active {
+  background: var(--color-pe-navy);
+  border-color: var(--color-pe-navy);
+}
+
+.faq-card.active .faq-question {
+  color: white;
+}
+
+.faq-card.active .faq-index {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.faq-card.active .faq-icon {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+}
+
+.faq-card.active .faq-icon span {
+  background: white;
+}
+
+.faq-answer-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.44s var(--ease-smooth);
+}
+
+.faq-card.active .faq-answer-panel {
+  max-height: 300px;
+}
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+
+.stats-bar {
+  background: var(--color-pe-navy);
+  border-radius: 1rem 1rem 0 0;
+  padding: 2.25rem 3rem;
+  display: flex;
+  align-items: center;
+  max-width: 74rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  flex: 1;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.stat-item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5px;
+  height: 3.25rem;
+  background: linear-gradient(to bottom, transparent, rgba(200, 216, 236, 0.3), transparent);
+}
+
+.stat-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: var(--color-pe-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(255, 112, 41, 0.4);
+}
+
+/* ============================================================
+   PACKAGE TABS
+   ============================================================ */
+
+.package-tab {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--color-pe-gray-200);
+  background: white;
+  color: var(--color-pe-gray-600);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.package-tab:hover {
+  border-color: var(--color-pe-cyan);
+  color: var(--color-pe-cyan);
+}
+
+.package-tab.active {
+  background: var(--color-pe-navy);
+  border-color: var(--color-pe-navy);
+  color: white;
+}
+
+/* ============================================================
+   FORM INPUTS
+   ============================================================ */
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--color-pe-gray-200);
+  background: white;
+  font-size: 0.9375rem;
+  color: var(--color-pe-gray-900);
+  transition: all 0.2s var(--ease-smooth);
+  outline: none;
+  font-family: var(--font-sans);
+}
+
+.form-input:focus {
+  border-color: var(--color-pe-cyan);
+  box-shadow: 0 0 0 3px rgba(41, 171, 226, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--color-pe-gray-400);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s var(--ease-smooth) both;
+}
+
+.animate-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+/* ── Stagger delays ── */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 0;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    padding: 1.75rem 1.5rem;
+    gap: 0;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .stat-item {
+    padding: 1.25rem 0;
+    width: 100%;
+  }
+
+  .stat-item:not(:first-child)::before {
+    display: none;
+  }
+
+  .stat-item:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* ============================================================
+   REBATE CHECKER WIDGET STYLES
+   ============================================================ */
+.rebate-checker {
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.rebate-card {
+  background: #ffffff !important;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 40px rgba(0, 43, 92, 0.10);
+  border: 1.5px solid #e5e7eb;
+}
+
+.rebate-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #29ABE2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.rebate-progress-bar {
+  height: 6px;
+  background: #f0f0f0;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.rebate-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #29ABE2, #6DD5FA);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.rebate-step-label {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 24px;
+}
+
+.rebate-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rebate-icon {
+  background: #E8F7FD;
+  color: #29ABE2;
+  padding: 16px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  display: flex;
+}
+
+.rebate-question h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #002B5C !important;
+  margin: 0;
+}
+
+.rebate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.rebate-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  background: #fafafa;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333 !important;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.rebate-option:hover {
+  border-color: #29ABE2;
+  background: #E8F7FD;
+  color: #1A8CBD !important;
+}
+
+.rebate-option.selected {
+  border-color: #29ABE2;
+  background: #E8F7FD;
+  color: #1A8CBD !important;
+}
+
+.rebate-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.rebate-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  font-weight: 600;
+  color: #666 !important;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.rebate-next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #29ABE2, #E5601E);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rebate-next:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.rebate-next:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 112, 41, 0.3);
+}
+
+/* Result states */
+.rebate-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.rebate-result h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.rebate-result.eligible h3 {
+  color: #166534 !important;
+}
+
+.rebate-result.ineligible h3 {
+  color: #991b1b !important;
+}
+
+.rebate-info-box {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rebate-scheme-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #166534 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rebate-amount {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #15803d !important;
+}
+
+.rebate-detail {
+  font-size: 0.88rem;
+  color: #4b5563 !important;
+  margin: 0;
+}
+
+.rebate-note {
+  font-size: 0.88rem;
+  color: #555 !important;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.rebate-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #002B5C, #0047a0);
+  color: #fff !important;
+  padding: 15px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.rebate-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 43, 92, 0.25);
+}
+
+.rebate-cta.secondary {
+  background: linear-gradient(135deg, #6b7280, #374151);
+}
+
+.rebate-restart {
+  background: none;
+  border: none;
+  color: #999 !important;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
