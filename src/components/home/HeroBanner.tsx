@@ -125,9 +125,9 @@ export default function HeroBanner() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full pt-10 pb-16">
+      <div className="relative w-full">
         {/* Slider Frame */}
-        <div className="relative overflow-hidden rounded-3xl bg-[#001D3D]/95 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)] flex flex-col">
+        <div className="relative overflow-hidden bg-[#001D3D]/95 border-b border-white/10 flex flex-col w-full">
           {/* Slider Track */}
           <div
             className="flex transition-transform duration-500 ease-in-out flex-1"
@@ -136,7 +136,7 @@ export default function HeroBanner() {
             {slides.map((slide, index) => (
               <div key={index} className="w-full flex-shrink-0 grid lg:grid-cols-12 items-stretch">
                 {/* Left side content */}
-                <div className="lg:col-span-7 p-6 md:p-12 lg:p-14 space-y-5 text-left flex flex-col justify-center">
+                <div className="lg:col-span-7 px-4 sm:px-8 lg:pl-12 lg:pr-12 xl:pl-16 xl:pr-16 py-8 md:py-12 lg:py-16 space-y-5 text-left flex flex-col justify-center">
                   {/* Badge */}
                   <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#29ABE2] bg-[#29ABE2]/10 border border-[#29ABE2]/20 self-start">
                     <Zap size={10} />
@@ -238,8 +238,8 @@ export default function HeroBanner() {
           </div>
 
           {/* Postcode Checker Strip at the bottom of the Slider Frame */}
-          <div className="bg-[#002244] border-t border-white/10 px-6 py-5 md:px-10 md:py-6 text-white w-full">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
+          <div className="bg-[#002244] border-t border-white/10 px-4 sm:px-8 lg:px-12 xl:px-16 py-5 md:py-6 text-white w-full">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
               {/* Left section: Header */}
               <div className="text-center lg:text-left flex-shrink-0">
                 <h4 className="font-black text-white text-base lg:text-lg uppercase tracking-wider leading-none">
