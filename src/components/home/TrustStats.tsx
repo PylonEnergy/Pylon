@@ -99,11 +99,19 @@ export default function TrustStats() {
           boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
         }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 divide-x divide-white/10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center px-5 py-8 group hover:bg-white/5 transition-colors"
+              className={`flex flex-col items-center text-center px-5 py-8 group hover:bg-white/5 transition-colors border-white/10
+                ${i % 2 === 0 ? "border-r" : ""} 
+                ${i < 4 ? "border-b" : ""}
+                md:border-b-0 md:border-r-[0px]
+                ${i % 3 !== 2 ? "md:border-r" : ""}
+                ${i < 3 ? "md:border-b" : ""}
+                lg:border-b-0 lg:border-r-[0px]
+                ${i < 4 ? "lg:border-r" : ""}
+              `}
             >
               {/* Icon ring */}
               <div

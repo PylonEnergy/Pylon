@@ -81,7 +81,7 @@ export default function SolarCalculator() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           {/* Controls - Left side (7 cols) */}
-          <div className="lg:col-span-7 bg-pe-gray-50 border border-pe-gray-200 rounded-3xl p-8 flex flex-col justify-between shadow-sm">
+          <div className="lg:col-span-7 bg-pe-gray-50 border border-pe-gray-200 rounded-3xl p-5 sm:p-8 flex flex-col justify-between shadow-sm">
             <div className="space-y-8">
               {/* Bill Slider */}
               <div>
@@ -115,7 +115,7 @@ export default function SolarCalculator() {
                 <label className="block text-sm font-bold text-pe-navy uppercase tracking-wider mb-3">
                   Roof Facing Direction
                 </label>
-                <div className="grid grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {(["North", "East", "West", "South"] as const).map((dir) => (
                     <button
                       key={dir}
@@ -179,7 +179,7 @@ export default function SolarCalculator() {
           </div>
 
           {/* Results Display - Right side (5 cols) */}
-          <div className="lg:col-span-5 bg-pe-navy text-white rounded-3xl p-8 flex flex-col justify-between shadow-md relative overflow-hidden">
+          <div className="lg:col-span-5 bg-pe-navy text-white rounded-3xl p-5 sm:p-8 flex flex-col justify-between shadow-md relative overflow-hidden">
             {/* Background grid pattern */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
               <div className="absolute inset-0" style={{

@@ -16,7 +16,7 @@ export default function EVChargingSection() {
           {/* LEFT: Illustration */}
           <div className="relative">
             <div
-              className="rounded-3xl overflow-hidden flex items-center justify-center min-h-[400px]"
+              className="rounded-3xl overflow-hidden flex items-center justify-center min-h-[250px] sm:min-h-[350px] lg:min-h-[400px]"
               style={{ background: "linear-gradient(135deg, #001A3A 0%, #002B5C 50%, #29ABE2 100%)" }}
             >
               {/* Decorative diagonal clip */}
@@ -26,8 +26,9 @@ export default function EVChargingSection() {
                   backgroundSize: "20px 20px",
                 }} />
               <div className="relative z-10 text-center p-10">
-                <div className="w-32 h-32 rounded-3xl bg-white/10 border-2 border-white/20 flex items-center justify-center mx-auto mb-6">
-                  <PlugZap size={64} className="text-[#29ABE2]" />
+                <div className="w-20 h-20 sm:w-32 sm:h-32 rounded-3xl bg-white/10 border-2 border-white/20 flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <PlugZap size={40} className="text-[#29ABE2] sm:hidden" />
+                  <PlugZap size={64} className="text-[#29ABE2] hidden sm:block" />
                 </div>
                 <div className="bg-white/10 rounded-2xl p-5 border border-white/20">
                   <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Charging Status</p>
@@ -48,7 +49,7 @@ export default function EVChargingSection() {
               As electric vehicles become mainstream in Australia, charging at home using your own solar power is the smartest way to reduce both transport and energy costs. Pylon Energy installs Level 2 home and workplace EV chargers with full compliance and activation support.
             </p>
 
-            <div className="grid grid-cols-2 gap-5 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
               {checkpoints.map((point, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-md bg-[#16A34A] flex items-center justify-center flex-shrink-0 mt-0.5">

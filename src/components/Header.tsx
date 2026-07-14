@@ -146,12 +146,6 @@ export default function Header() {
                 Home
               </Link>
 
-              <Link
-                href="/about"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
-              >
-                About Us
-              </Link>
 
               {/* SOLAR PACKAGES MEGA */}
               <div className="mega-menu-trigger">
@@ -299,12 +293,6 @@ export default function Header() {
                 Products
               </Link>
 
-              <Link
-                href="/portfolio"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
-              >
-                Portfolio
-              </Link>
 
               <Link
                 href="/rebate-checker"
@@ -313,12 +301,6 @@ export default function Header() {
                 Rebate Checker
               </Link>
 
-              <Link
-                href="/contact"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
-              >
-                Contact Us
-              </Link>
 
               <Link
                 href="/special-offers"

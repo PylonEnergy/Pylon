@@ -11,7 +11,7 @@ const perks = [
 
 export default function CTASection() {
   return (
-    <section id="cta" className="relative overflow-hidden py-24">
+    <section id="cta" className="relative overflow-hidden py-16 md:py-24">
       {/* Background */}
       <div
         className="absolute inset-0"
@@ -117,7 +117,7 @@ export default function CTASection() {
                 backdropFilter: "blur(12px)",
               }}
             >
-              <div className="p-8">
+              <div className="p-5 sm:p-8">
                 <h3 className="text-white text-xl font-black mb-1">Get Your Free Quote</h3>
                 <p className="text-white/50 text-sm mb-6">No spam. No pressure. Just savings.</p>
 
@@ -175,7 +175,7 @@ export default function CTASection() {
                   </Link>
                 </form>
 
-                <div className="flex items-center justify-center gap-5 mt-5 pt-5 border-t border-white/10">
+                <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-5 pt-5 border-t border-white/10">
                   {["✓ 100% Free", "✓ No Obligation", "✓ Reply in 2hrs"].map((t) => (
                     <span key={t} className="text-white/40 text-xs font-medium">{t}</span>
                   ))}

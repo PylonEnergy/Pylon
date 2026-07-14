@@ -43,10 +43,10 @@ export default function Footer() {
                 { label: "Solar Packages", href: "/solar-packages" },
                 { label: "Solar Batteries", href: "/services/solar-batteries" },
                 { label: "Our Products", href: "/products" },
+                { label: "Portfolio", href: "/portfolio" },
                 { label: "Get A Quote", href: "/get-quote" },
                 { label: "Contact Us", href: "/contact" },
                 { label: "Blog", href: "/blog" },
-                { label: "Support", href: "/contact" },
               ].map((item, idx) => (
                 <li key={`${item.href}-${idx}`}>
                   <Link

@@ -101,7 +101,7 @@ export default function LeadPopup() {
         </button>
 
         {/* Promo Header banner */}
-        <div className="bg-pe-navy text-white px-8 py-7 relative overflow-hidden">
+        <div className="bg-pe-navy text-white px-5 py-6 sm:px-8 sm:py-7 relative overflow-hidden">
           <div className="absolute top-[-50px] right-[-50px] w-36 h-36 bg-[#29ABE2] opacity-25 rounded-full blur-2xl pointer-events-none" />
           <div className="inline-flex items-center gap-2 bg-[#29ABE2]/20 border border-[#29ABE2]/30 px-3 py-1 rounded-full text-xs font-bold text-[#29ABE2] uppercase tracking-wider mb-2">
             <Gift size={12} /> Special Offer
@@ -115,7 +115,7 @@ export default function LeadPopup() {
         </div>
 
         {/* Form area */}
-        <div className="p-8">
+        <div className="p-5 sm:p-8">
           {status === "sent" ? (
             <div className="text-center py-6 space-y-4 animate-fade-in-up">
               <div className="w-16 h-16 bg-pe-green-light border border-pe-green/20 rounded-2xl flex items-center justify-center mx-auto shadow-sm">
@@ -148,7 +148,7 @@ export default function LeadPopup() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-pe-gray-600 mb-1.5 uppercase tracking-wide">Mobile Number</label>
                   <input

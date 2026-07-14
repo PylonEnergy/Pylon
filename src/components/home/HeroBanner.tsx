@@ -128,7 +128,7 @@ export default function HeroBanner() {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {slides.map((slide, index) => (
-              <div key={index} className="w-full flex-shrink-0 p-8 md:p-14 lg:p-16 grid lg:grid-cols-12 gap-8 items-center">
+              <div key={index} className="w-full flex-shrink-0 p-5 sm:p-8 md:p-14 lg:p-16 grid lg:grid-cols-12 gap-8 items-center">
                 {/* Left side content */}
                 <div className="lg:col-span-7 space-y-5 text-left">
                   {/* Badge */}
@@ -138,7 +138,7 @@ export default function HeroBanner() {
                   </span>
 
                   {/* Title */}
-                  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight whitespace-pre-line">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight whitespace-pre-line">
                     {slide.title}
                   </h1>
 

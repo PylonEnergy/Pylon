@@ -114,7 +114,7 @@ export default function FAQSection() {
                 <div
                   className="transition-all duration-300 ease-in-out overflow-hidden"
                   style={{
-                    maxHeight: isOpen ? "200px" : "0px",
+                    maxHeight: isOpen ? "500px" : "0px",
                     opacity: isOpen ? 1 : 0,
                   }}
                 >

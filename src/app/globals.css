@@ -881,3 +881,17 @@ h6 {
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media (max-width: 640px) {
+  .rebate-card {
+    padding: 20px 16px !important;
+  }
+  .rebate-option {
+    padding: 10px 14px !important;
+    font-size: 0.85rem !important;
+  }
+  .rebate-nav {
+    flex-direction: row;
+    gap: 8px !important;
+  }
+}

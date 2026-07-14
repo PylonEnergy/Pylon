@@ -137,7 +137,7 @@ export default function SolarPackages() {
               key={i}
               className={`relative rounded-2xl border-2 p-7 transition-all ${
                 pkg.popular
-                  ? "border-pe-cyan shadow-[0_8px_40px_rgba(41,171,226,0.22)] scale-105"
+                  ? "border-pe-cyan shadow-[0_8px_40px_rgba(41,171,226,0.22)] md:scale-105 z-10"
                   : "border-pe-gray-200 hover:border-pe-cyan hover:shadow-[0_8px_30px_rgba(0,43,92,0.1)]"
               }`}
             >
