@@ -134,11 +134,11 @@ export default function HeroBanner() {
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {slides.map((slide, index) => (
-              <div key={index} className="w-full flex-shrink-0 p-6 md:p-12 lg:p-14 pb-8 grid lg:grid-cols-12 gap-8 items-center">
+              <div key={index} className="w-full flex-shrink-0 grid lg:grid-cols-12 items-stretch">
                 {/* Left side content */}
-                <div className="lg:col-span-7 space-y-5 text-left">
+                <div className="lg:col-span-7 p-6 md:p-12 lg:p-14 space-y-5 text-left flex flex-col justify-center">
                   {/* Badge */}
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#29ABE2] bg-[#29ABE2]/10 border border-[#29ABE2]/20">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#29ABE2] bg-[#29ABE2]/10 border border-[#29ABE2]/20 self-start">
                     <Zap size={10} />
                     {slide.badge}
                   </span>
@@ -198,9 +198,9 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side illustration */}
-                <div className="lg:col-span-5 relative flex items-center justify-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#001124] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
+                {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
+                <div className="lg:col-span-5 relative hidden lg:block">
+                  <div className="absolute inset-0">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
@@ -210,6 +210,24 @@ export default function HeroBanner() {
 
                     {/* Visual Promo Badge */}
                     <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 animate-pulse">
+                      <Award size={12} />
+                      {slide.promoBadge}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side illustration - standard card style on mobile/tablet */}
+                <div className="lg:hidden p-6 pt-0 relative flex items-center justify-center">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#001124] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
+                    <img
+                      src={slide.image}
+                      alt={slide.promoBadge}
+                      className="w-full h-full object-cover opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
+                    {/* Visual Promo Badge */}
+                    <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20">
                       <Award size={12} />
                       {slide.promoBadge}
                     </div>

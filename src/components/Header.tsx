@@ -148,11 +148,11 @@ export default function Header() {
 
 
               {/* SOLAR PACKAGES MEGA */}
-              <div className="mega-menu-trigger">
+              <div className="mega-menu-trigger" style={{ position: "static" }}>
                 <button className="flex items-center gap-1 px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
                   Solar Packages <ChevronDown size={14} />
                 </button>
-                <div className="mega-menu-panel">
+                <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%" }}>
                   <div className="grid grid-cols-3 gap-12">
                     {/* Residential */}
                     <div>
@@ -243,11 +243,11 @@ export default function Header() {
               </div>
 
               {/* SOLAR BATTERIES MEGA */}
-              <div className="mega-menu-trigger">
+              <div className="mega-menu-trigger" style={{ position: "static" }}>
                 <button className="flex items-center gap-1 px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
                   Solar Batteries <ChevronDown size={14} />
                 </button>
-                <div className="mega-menu-panel">
+                <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%" }}>
                   <div className="grid grid-cols-2 gap-12">
                     <div>
                       <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#29ABE2] mb-4.5 flex items-center gap-2">
