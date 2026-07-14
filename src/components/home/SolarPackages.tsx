@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Check, TrendingUp } from "lucide-react";
 
@@ -91,18 +91,72 @@ const packages = {
 
 export default function SolarPackages() {
   const [activeTab, setActiveTab] = useState<Tab>("solarSystem");
+  const [packagesList, setPackagesList] = useState<any>(packages);
 
   // Read URL hash on load/navigation to match clicked category tabs
-  useState(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const hash = window.location.hash;
       if (hash === "#battery" || hash === "#solarBattery" || hash === "#solarSystem") {
         setActiveTab(hash.substring(1) as Tab);
       }
     }
-  });
+  }, []);
 
-  const currentPackages = packages[activeTab];
+  useEffect(() => {
+    async function fetchPackages() {
+      try {
+        const res = await fetch("http://localhost:4000/api/packages");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.packages && data.packages.length > 0) {
+            const grouped = {
+              battery: [] as any[],
+              solarBattery: [] as any[],
+              solarSystem: [] as any[],
+            };
+            
+            const sortedPkgs = [...data.packages].sort((a, b) => (a.order || 0) - (b.order || 0));
+
+            sortedPkgs.forEach((pkg: any) => {
+              const cat = pkg.category;
+              if (grouped[cat as keyof typeof grouped]) {
+                grouped[cat as keyof typeof grouped].push({
+                  name: pkg.name,
+                  specs: pkg.specs?.detail || "",
+                  savings: pkg.annualSavings,
+                  daily: pkg.dailyOutput ? `${pkg.dailyOutput} kWh/day` : "",
+                  warranty: pkg.warranty,
+                  suited: pkg.suitedFor,
+                  popular: !!pkg.popular,
+                  features: pkg.features || (cat === "battery" 
+                    ? ["Premium lithium cells", "Smart monitoring app", "Blackout protection", "Expandable capacity"]
+                    : cat === "solarBattery"
+                    ? ["Premium Tier-1 panels", "Hybrid inverter", "Battery storage", "Smart monitoring"]
+                    : ["Premium Tier-1 panels", "Wi-Fi inverter", "Fully installed", "25-yr panel warranty"]),
+                });
+              }
+            });
+
+            // Fallback for empty categories
+            Object.keys(grouped).forEach((key) => {
+              const catKey = key as keyof typeof grouped;
+              if (grouped[catKey].length === 0) {
+                grouped[catKey] = packages[catKey];
+              }
+            });
+
+            setPackagesList(grouped);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load CMS packages:", err);
+      }
+    }
+    fetchPackages();
+  }, []);
+
+  const currentPackages = packagesList[activeTab];
 
   return (
     <section id="packages" className="section-padding bg-white">
@@ -132,7 +186,7 @@ export default function SolarPackages() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
-          {currentPackages.map((pkg, i) => (
+          {currentPackages.map((pkg: any, i: number) => (
             <div
               key={i}
               className={`relative rounded-2xl border-2 p-7 transition-all ${
@@ -164,7 +218,7 @@ export default function SolarPackages() {
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
-                {pkg.features.map((f, j) => (
+                {pkg.features.map((f: string, j: number) => (
                   <li key={j} className="flex items-center gap-2 text-sm text-pe-gray-600">
                     <Check size={15} className="text-pe-green flex-shrink-0" />
                     {f}

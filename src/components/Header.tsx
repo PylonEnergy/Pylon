@@ -50,31 +50,52 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePackagesOpen, setMobilePackagesOpen] = useState(false);
   const [mobileBatteriesOpen, setMobileBatteriesOpen] = useState(false);
-  const [announcementVisible, setAnnouncementVisible] = useState(true);
+  const [announcementVisible, setAnnouncementVisible] = useState(false);
+  const [announcementMessage, setAnnouncementMessage] = useState("");
+  const [announcementLink, setAnnouncementLink] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
+
+    async function fetchBannerSettings() {
+      try {
+        const res = await fetch("http://localhost:4000/api/settings");
+        if (res.ok) {
+          const data = await res.json();
+          const s = data.settings;
+          if (s && s.bannerVisible && s.bannerMessage) {
+            setAnnouncementVisible(true);
+            setAnnouncementMessage(s.bannerMessage);
+            setAnnouncementLink(s.bannerLink || "");
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load header promo settings:", err);
+      }
+    }
+    fetchBannerSettings();
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
       {/* ANNOUNCEMENT BAR */}
-      {announcementVisible && (
+      {announcementVisible && announcementMessage && (
         <div
-          className="relative text-white text-sm py-2.5 px-4 text-center font-semibold"
+          className="relative text-white text-sm py-2.5 px-4 text-center font-semibold animate-fade-in"
           style={{ background: "linear-gradient(90deg, #002B5C 0%, #0D5DB5 50%, #002B5C 100%)" }}
         >
           <span className="inline-flex items-center gap-2">
             <Zap size={14} className="text-[#29ABE2] flex-shrink-0" />
             <span>
-              🎉 NSW 2026 Solar Rebates Now Active — Save up to{" "}
-              <span className="text-[#29ABE2] font-extrabold">$3,500</span>
-              {" "}on your solar system.{" "}
-              <Link href="/get-quote" className="underline underline-offset-2 hover:text-[#29ABE2] transition-colors">
-                Claim Now →
-              </Link>
+              {announcementMessage}{" "}
+              {announcementLink && (
+                <Link href={announcementLink} className="underline underline-offset-2 hover:text-[#29ABE2] transition-colors">
+                  Claim Now →
+                </Link>
+              )}
             </span>
           </span>
           <button
