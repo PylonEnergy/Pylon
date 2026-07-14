@@ -13,6 +13,8 @@ const slides = [
     highlights: ["Limited-Time Offer", "Energy Security when you need it", "10-Year Warranty"],
     image: "/hero-battery.png",
     promoBadge: "FREE UPGRADE 10kW INVERTER",
+    ctaText: "Apply For Zero % Interest →",
+    ctaLink: "/get-quote?interest=battery",
   },
   {
     badge: "2026 GOVERNMENT SUB-SCHEME",
@@ -22,6 +24,8 @@ const slides = [
     highlights: ["CEC Approved Retailer", "25-Year Panel Warranty", "Zero Down Interest-Free Finance"],
     image: "/hero-panels.png",
     promoBadge: "NSW SUB-SCHEME ACTIVE",
+    ctaText: "Check Rebate Eligibility →",
+    ctaLink: "/get-quote?interest=residential",
   },
   {
     badge: "COMMERCIAL SOLAR DEALS",
@@ -31,6 +35,8 @@ const slides = [
     highlights: ["Instant ROI Forecast", "Free Engineering Site Study", "No Cap Custom Commercial Rebates"],
     image: "/hero-commercial.png",
     promoBadge: "FREE COMMERCIAL FEASIBILITY",
+    ctaText: "Get Free Feasibility Study →",
+    ctaLink: "/get-quote?interest=commercial",
   },
 ];
 
@@ -119,79 +125,93 @@ export default function HeroBanner() {
         }}
       />
 
-      <div className="w-full relative">
-        {/* Slider Track */}
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full pt-10 pb-16">
+        {/* Slider Frame */}
+        <div className="relative overflow-hidden rounded-3xl bg-[#001D3D]/95 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)] flex flex-col">
+          {/* Slider Track */}
+          <div
+            className="flex transition-transform duration-500 ease-in-out flex-1"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          >
             {slides.map((slide, index) => (
-              <div key={index} className="w-full flex-shrink-0 pt-16 pb-28 md:pt-20 md:pb-36 lg:pt-24 lg:pb-40 px-4 sm:px-10 lg:px-16">
-                <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                  {/* Left side content */}
-                  <div className="lg:col-span-7 space-y-5 text-left">
-                    {/* Badge */}
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#29ABE2] bg-[#29ABE2]/10 border border-[#29ABE2]/20">
-                      <Zap size={10} />
-                      {slide.badge}
-                    </span>
+              <div key={index} className="w-full flex-shrink-0 p-6 md:p-12 lg:p-14 pb-8 grid lg:grid-cols-12 gap-8 items-center">
+                {/* Left side content */}
+                <div className="lg:col-span-7 space-y-5 text-left">
+                  {/* Badge */}
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest text-[#29ABE2] bg-[#29ABE2]/10 border border-[#29ABE2]/20">
+                    <Zap size={10} />
+                    {slide.badge}
+                  </span>
 
-                    {/* Title */}
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight whitespace-pre-line">
-                      {slide.title}
-                    </h1>
+                  {/* Title */}
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight whitespace-pre-line">
+                    {slide.title}
+                  </h1>
 
-                    {/* Subtitle */}
-                    <p className="text-[#29ABE2] text-sm md:text-base font-extrabold tracking-wider uppercase">
-                      {slide.subtitle}
-                    </p>
+                  {/* Subtitle */}
+                  <p className="text-[#29ABE2] text-sm md:text-base font-extrabold tracking-wider uppercase">
+                    {slide.subtitle}
+                  </p>
 
-                    {/* Description */}
-                    <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-2xl">
-                      {slide.description}
-                    </p>
+                  {/* Description */}
+                  <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-2xl">
+                    {slide.description}
+                  </p>
 
-                    {/* Highlights list */}
-                    <div className="flex flex-wrap gap-4 text-xs font-bold text-white/80">
-                      {slide.highlights.map((h, i) => (
-                        <span key={i} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#29ABE2]" />
-                          {h}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Slider Control pill inside info block */}
-                    <div className="pt-4 flex items-center gap-3">
-                      <div className="inline-flex items-center gap-4 bg-white/10 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-white select-none">
-                        <button onClick={handlePrev} className="text-white/60 hover:text-white transition-colors" aria-label="Previous slide">
-                          <ChevronLeft size={16} />
-                        </button>
-                        <span>
-                          {currentSlide + 1} / {slides.length}
-                        </span>
-                        <button onClick={handleNext} className="text-white/60 hover:text-white transition-colors" aria-label="Next slide">
-                          <ChevronRight size={16} />
-                        </button>
-                      </div>
-                    </div>
+                  {/* Highlights list */}
+                  <div className="flex flex-wrap gap-4 text-xs font-bold text-white/80">
+                    {slide.highlights.map((h, i) => (
+                      <span key={i} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#29ABE2]" />
+                        {h}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Right side illustration */}
-                  <div className="lg:col-span-5 relative flex items-center justify-center">
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#001124] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
-                      <img
-                        src={slide.image}
-                        alt={slide.promoBadge}
-                        className="w-full h-full object-cover opacity-90"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  {/* Slide CTA Button */}
+                  <div className="pt-2 flex flex-wrap items-center gap-4">
+                    <Link
+                      href={slide.ctaLink}
+                      className="inline-flex items-center justify-center font-black tracking-wider text-xs uppercase py-3.5 px-7 rounded-full shadow-lg transition-transform hover:scale-[1.02] text-white"
+                      style={{
+                        background: "linear-gradient(135deg, #FF7029, #E5601E)",
+                        boxShadow: "0 8px 24px rgba(255, 112, 41, 0.35)",
+                      }}
+                    >
+                      {slide.ctaText}
+                    </Link>
+                  </div>
 
-                      {/* Visual Promo Badge */}
-                      <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 animate-pulse">
-                        <Award size={12} />
-                        {slide.promoBadge}
-                      </div>
+                  {/* Slider Control pill inside info block */}
+                  <div className="pt-2 flex items-center gap-3">
+                    <div className="inline-flex items-center gap-4 bg-white/10 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-white select-none">
+                      <button onClick={handlePrev} className="text-white/60 hover:text-white transition-colors" aria-label="Previous slide">
+                        <ChevronLeft size={16} />
+                      </button>
+                      <span>
+                        {currentSlide + 1} / {slides.length}
+                      </span>
+                      <button onClick={handleNext} className="text-white/60 hover:text-white transition-colors" aria-label="Next slide">
+                        <ChevronRight size={16} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side illustration */}
+                <div className="lg:col-span-5 relative flex items-center justify-center">
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#001124] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
+                    <img
+                      src={slide.image}
+                      alt={slide.promoBadge}
+                      className="w-full h-full object-cover opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+
+                    {/* Visual Promo Badge */}
+                    <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 animate-pulse">
+                      <Award size={12} />
+                      {slide.promoBadge}
                     </div>
                   </div>
                 </div>
@@ -199,40 +219,49 @@ export default function HeroBanner() {
             ))}
           </div>
 
-        {/* Postcode Checker Overlay centered at the bottom of the Hero Frame */}
-        <div className="absolute bottom-[-32px] left-1/2 -translate-x-1/2 w-[92%] max-w-3xl z-30 shadow-[0_15px_40px_rgba(0,43,92,0.35)] rounded-2xl md:rounded-3xl bg-gradient-to-r from-[#29ABE2] to-[#0D5DB5] p-5 md:p-6 text-white border border-[#29ABE2]/20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-5">
-            {/* Left section: Header */}
-            <div className="text-center md:text-left flex-shrink-0">
-              <h4 className="font-black text-white text-base md:text-lg uppercase tracking-wider leading-none">
-                Check For Battery Offers
-              </h4>
-              <p className="text-white/80 text-[11px] md:text-xs mt-1.5 font-semibold">
-                See local subsidies &amp; energy rebate offers in your postcode
-              </p>
-            </div>
-
-            {/* Right section: Input list */}
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <span className="text-yellow-300 font-extrabold text-xs uppercase tracking-widest text-center sm:text-left">
-                Enter Your Postcode!
-              </span>
-              <div className="flex gap-2">
-                {[0, 1, 2, 3].map((idx) => (
-                  <input
-                    key={idx}
-                    ref={(el) => { inputsRef.current[idx] = el; }}
-                    type="text"
-                    inputMode="numeric"
-                    maxLength={1}
-                    placeholder="0"
-                    onChange={(e) => handlePostcodeInput(idx, e)}
-                    onKeyDown={(e) => handlePostcodeKeyDown(idx, e)}
-                    onPaste={handlePostcodePaste}
-                    className="w-11 h-11 md:w-12 md:h-12 text-center text-lg md:text-xl font-black text-pe-navy border border-white/10 rounded-xl focus:ring-2 focus:ring-[#29ABE2] focus:outline-none transition-all bg-white"
-                  />
-                ))}
+          {/* Postcode Checker Strip at the bottom of the Slider Frame */}
+          <div className="bg-[#002244] border-t border-white/10 px-6 py-5 md:px-10 md:py-6 text-white w-full">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
+              {/* Left section: Header */}
+              <div className="text-center lg:text-left flex-shrink-0">
+                <h4 className="font-black text-white text-base lg:text-lg uppercase tracking-wider leading-none">
+                  Check For Battery Offers
+                </h4>
+                <p className="text-white/80 text-[11px] lg:text-xs mt-1.5 font-semibold">
+                  See local subsidies &amp; energy rebate offers in your postcode
+                </p>
               </div>
+
+              {/* Center section: Input list */}
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <span className="text-[#29ABE2] font-extrabold text-xs uppercase tracking-widest text-center sm:text-left">
+                  Enter Your Postcode!
+                </span>
+                <div className="flex gap-2">
+                  {[0, 1, 2, 3].map((idx) => (
+                    <input
+                      key={idx}
+                      ref={(el) => { inputsRef.current[idx] = el; }}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      placeholder="0"
+                      onChange={(e) => handlePostcodeInput(idx, e)}
+                      onKeyDown={(e) => handlePostcodeKeyDown(idx, e)}
+                      onPaste={handlePostcodePaste}
+                      className="w-11 h-11 md:w-12 md:h-12 text-center text-lg md:text-xl font-black text-pe-navy border border-white/10 rounded-xl focus:ring-2 focus:ring-[#29ABE2] focus:outline-none transition-all bg-white"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Right section: Submit button */}
+              <button
+                onClick={handleSubmitPostcode}
+                className="px-6 py-3.5 bg-white text-pe-navy font-bold rounded-xl hover:bg-white/90 transition-all text-xs uppercase tracking-widest whitespace-nowrap shadow-md"
+              >
+                Enter Postcode for Special Offer!
+              </button>
             </div>
           </div>
         </div>
