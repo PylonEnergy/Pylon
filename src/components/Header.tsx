@@ -127,17 +127,18 @@ export default function Header() {
           >
             <Link href="/" className="flex items-center group">
               <svg viewBox="0 0 285 60" className="h-11 sm:h-13 md:h-15 xl:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* PE Monogram - Solar Sunburst & Upward Growth Arrow */}
+                {/* PE Monogram - Solar Sunburst & Upward Growth Arrow (Exact Image Spec) */}
                 {/* PE Monogram Base (Navy) */}
-                <path d="M14 42 V14 h10 c4.4 0 8 3.6 8 8 s-3.6 8-8 8 H14" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M14 30 h10" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M14 42 h11" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M14 14 h10 c4.5 0 8 3.5 8 8 s-3.5 8-8 8 H14" stroke="#002B5C" strokeWidth="5.5" strokeLinejoin="miter" strokeLinecap="butt" fill="none" />
+                <path d="M14 14 v28" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
+                <path d="M14 30 h10" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
+                <path d="M14 42 h20" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
                 
                 {/* Zig-Zag Growth Arrow (Orange) */}
-                <path d="M10 42 L20 32 H16 L32 16 M26 15 L36 12 L33 22" stroke="#FF7029" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 42 L20 32 H16 L32 16 M26 15 L36 12 L33 22" stroke="#FF7029" strokeWidth="5.5" strokeLinejoin="miter" strokeLinecap="butt" />
                 
                 {/* Solar Sunburst Flares (Orange) */}
-                <path d="M28 8 L25 4 M36 9 L36 5 M43 14 L46 11 M46 22 L50 22 M44 30 L48 32" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="round" />
+                <path d="M28 8 L25 4 M36 9 L36 5 M43 14 L46 11 M46 22 L50 22 M44 30 L48 32" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="butt" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="64" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
@@ -409,17 +410,18 @@ export default function Header() {
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-pe-gray-200">
               <svg viewBox="0 0 285 60" className="h-11 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* PE Monogram - Solar Sunburst & Upward Growth Arrow */}
+                {/* PE Monogram - Solar Sunburst & Upward Growth Arrow (Exact Image Spec) */}
                 {/* PE Monogram Base (Navy) */}
-                <path d="M14 42 V14 h10 c4.4 0 8 3.6 8 8 s-3.6 8-8 8 H14" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <path d="M14 30 h10" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M14 42 h11" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M14 14 h10 c4.5 0 8 3.5 8 8 s-3.5 8-8 8 H14" stroke="#002B5C" strokeWidth="5.5" strokeLinejoin="miter" strokeLinecap="butt" fill="none" />
+                <path d="M14 14 v28" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
+                <path d="M14 30 h10" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
+                <path d="M14 42 h20" stroke="#002B5C" strokeWidth="5.5" strokeLinecap="butt" />
                 
                 {/* Zig-Zag Growth Arrow (Orange) */}
-                <path d="M10 42 L20 32 H16 L32 16 M26 15 L36 12 L33 22" stroke="#FF7029" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M10 42 L20 32 H16 L32 16 M26 15 L36 12 L33 22" stroke="#FF7029" strokeWidth="5.5" strokeLinejoin="miter" strokeLinecap="butt" />
                 
                 {/* Solar Sunburst Flares (Orange) */}
-                <path d="M28 8 L25 4 M36 9 L36 5 M43 14 L46 11 M46 22 L50 22 M44 30 L48 32" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="round" />
+                <path d="M28 8 L25 4 M36 9 L36 5 M43 14 L46 11 M46 22 L50 22 M44 30 L48 32" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="butt" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="64" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
