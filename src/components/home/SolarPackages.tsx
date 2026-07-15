@@ -89,17 +89,59 @@ const packages = {
   ],
 };
 
+function getCardAnchorId(name: string) {
+  const n = name.toLowerCase();
+  if (n.includes("6.6kw +")) return "6-6kw-battery";
+  if (n.includes("10.5kw +")) return "10-kw-battery";
+  if (n.includes("13.2kw +")) return "13-kw-battery";
+  if (n.includes("6.6kw")) return "6-6kw";
+  if (n.includes("10.45kw")) return "10kw";
+  if (n.includes("13.2kw")) return "13kw";
+  if (n.includes("14kwh")) return "14kwh";
+  if (n.includes("28kwh")) return "28kwh";
+  if (n.includes("42kwh")) return "42kwh";
+  return undefined;
+}
+
 export default function SolarPackages() {
   const [activeTab, setActiveTab] = useState<Tab>("solarSystem");
   const [packagesList, setPackagesList] = useState<any>(packages);
+  const [highlightedCard, setHighlightedCard] = useState<string | null>(null);
 
   // Read URL hash on load/navigation to match clicked category tabs
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const hash = window.location.hash;
-      if (hash === "#battery" || hash === "#solarBattery" || hash === "#solarSystem") {
-        setActiveTab(hash.substring(1) as Tab);
-      }
+      const handleHashChange = () => {
+        const hash = window.location.hash;
+        if (!hash) return;
+        
+        // Map hashes to tabs
+        if (["#5kw", "#6-6kw", "#8kw", "#10kw", "#13kw"].includes(hash)) {
+          setActiveTab("solarSystem");
+          if (hash === "#5kw" || hash === "#6-6kw") setHighlightedCard("6.6kW Solar");
+          if (hash === "#8kw" || hash === "#10kw") setHighlightedCard("10.45kW Solar");
+          if (hash === "#13kw") setHighlightedCard("13.2kW Solar");
+        } else if (["#6-6kw-battery", "#8kw-battery", "#10kw-battery", "#13kw-battery"].includes(hash)) {
+          setActiveTab("solarBattery");
+          if (hash === "#6-6kw-battery") setHighlightedCard("6.6kW + 28kWh");
+          if (hash === "#8kw-battery" || hash === "#10kw-battery") setHighlightedCard("10.5kW + 28kWh");
+          if (hash === "#13kw-battery") setHighlightedCard("13.2kW + 28kWh");
+        } else if (["#14kwh", "#28kwh", "#42kwh", "#5kwh", "#10kwh", "#15kwh", "#20kwh"].includes(hash)) {
+          setActiveTab("battery");
+          if (hash === "#5kwh" || hash === "#10kwh" || hash === "#14kwh") setHighlightedCard("14kWh Battery");
+          if (hash === "#15kwh" || hash === "#20kwh" || hash === "#28kwh") setHighlightedCard("28kWh Battery");
+          if (hash === "#42kwh") setHighlightedCard("42kWh Battery");
+        } else if (hash === "#battery" || hash === "#solarBattery" || hash === "#solarSystem") {
+          setActiveTab(hash.substring(1) as Tab);
+        }
+      };
+
+      // Run on initial mount
+      handleHashChange();
+
+      // Listen for hash changes
+      window.addEventListener("hashchange", handleHashChange);
+      return () => window.removeEventListener("hashchange", handleHashChange);
     }
   }, []);
 
@@ -176,7 +218,10 @@ export default function SolarPackages() {
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                setActiveTab(tab.id);
+                setHighlightedCard(null); // Reset highlight on manual tab click
+              }}
               className={`package-tab ${activeTab === tab.id ? "active" : ""}`}
             >
               {tab.label}
@@ -189,17 +234,24 @@ export default function SolarPackages() {
           {currentPackages.map((pkg: any, i: number) => (
             <div
               key={i}
+              id={getCardAnchorId(pkg.name)}
               className={`relative rounded-2xl bg-white p-7 transition-all duration-300 ${
-                pkg.popular
+                highlightedCard === pkg.name
+                  ? "border-2 border-pe-orange shadow-[0_15px_40px_rgba(255,112,41,0.18)] scale-105 z-10"
+                  : pkg.popular
                   ? "border-2 border-[#29ABE2] shadow-[0_15px_40px_rgba(41,171,226,0.12)] md:scale-105 z-10"
                   : "border border-slate-100 hover:border-[#29ABE2]/50 hover:shadow-[0_15px_35px_rgba(0,43,92,0.06)]"
               }`}
             >
-              {pkg.popular && (
+              {highlightedCard === pkg.name ? (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-pe-orange text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
+                  Selected Package
+                </div>
+              ) : pkg.popular ? (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-pe-cyan text-white text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
                   Most Popular
                 </div>
-              )}
+              ) : null}
 
               <h3 className="text-2xl font-black text-pe-navy font-mono mb-1">{pkg.name}</h3>
               {"specs" in pkg && <p className="text-pe-gray-400 text-sm mb-4">{pkg.specs}</p>}

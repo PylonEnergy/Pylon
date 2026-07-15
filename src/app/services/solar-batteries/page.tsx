@@ -9,9 +9,12 @@ export const metadata: Metadata = {
 };
 
 const brands = [
-  { name: "Tesla Powerwall 3", capacity: "13.5 kWh", type: "Liquid-cooled LFP", warranty: "10 Years", desc: "The gold standard in home storage. Excellent monitoring, integrated gateway, and full blackout backup support." },
-  { name: "Sungrow SBR", capacity: "9.6 – 25.6 kWh", type: "High-Voltage LFP", warranty: "10 Years", desc: "Modular stackable battery system. Expandable over time, perfect pairing for Sungrow hybrid inverters." },
-  { name: "Alpha ESS Smile", capacity: "10.1 – 20.2 kWh", type: "LFP Chemistry", warranty: "10 Years", desc: "All-in-one residential energy storage. Robust design, competitive pricing, built for outdoor installations." },
+  { id: "tesla", name: "Tesla Powerwall 3", capacity: "13.5 kWh", type: "Liquid-cooled LFP", warranty: "10 Years", desc: "The gold standard in home storage. Excellent monitoring, integrated gateway, and full blackout backup support." },
+  { id: "sungrow", name: "Sungrow SBR", capacity: "9.6 – 25.6 kWh", type: "High-Voltage LFP", warranty: "10 Years", desc: "Modular stackable battery system. Expandable over time, perfect pairing for Sungrow hybrid inverters." },
+  { id: "alpha-ess", name: "Alpha ESS Smile", capacity: "10.1 – 20.2 kWh", type: "LFP Chemistry", warranty: "10 Years", desc: "All-in-one residential energy storage. Robust design, competitive pricing, built for outdoor installations." },
+  { id: "growatt", name: "Growatt HOPE", capacity: "5.0 – 20.0 kWh", type: "Lithium Iron Phosphate", warranty: "10 Years", desc: "Highly economical modular energy storage system. Flexible capacity expansion and seamless integration with Growatt inverters." },
+  { id: "enphase", name: "Enphase IQ Battery 5P", capacity: "5.0 kWh", type: "LFP Chemistry", warranty: "15 Years", desc: "The most reliable all-in-one AC-coupled storage battery. Longest warranty in the industry with microinverter redundancy." },
+  { id: "goodwe", name: "GoodWe Lynx Home U", capacity: "5.4 – 32.4 kWh", type: "Low-Voltage LFP", warranty: "10 Years", desc: "Safe and modular low-voltage battery system. Smart diagnostic tools, excellent for GoodWe hybrid systems." },
 ];
 
 export default function SolarBatteries() {
@@ -79,9 +82,13 @@ export default function SolarBatteries() {
             <p className="section-subtitle mx-auto">We only install batteries certified by the Solar Accreditation Australia for maximum safety and performance.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {brands.map((b, i) => (
-              <div key={i} className="card p-8 flex flex-col justify-between">
+              <div
+                key={i}
+                id={b.id}
+                className="card p-8 flex flex-col justify-between scroll-mt-24 border border-slate-100 hover:border-[#29ABE2]/50 hover:shadow-lg transition-all duration-300"
+              >
                 <div>
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-xl font-bold text-pe-navy">{b.name}</h3>
