@@ -11,23 +11,22 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5 hover:opacity-90 transition-opacity">
               <svg viewBox="0 0 285 60" className="h-14 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* PE Monogram - Solar P & Energy E */}
-                {/* P Loop (Orange Sunburst) */}
-                <circle cx="20" cy="22" r="6.5" stroke="#FF7029" strokeWidth="3.5" />
-                <path d="M20 12v-2M27 15l2-2M30 22h2M27 29l2 2" stroke="#FF7029" strokeWidth="1.8" strokeLinecap="round" />
-                {/* P Stem (Cyan Lightning Bolt) */}
-                <path d="M14 16 L8 28 h7 L9 40" stroke="#29ABE2" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                {/* PE Monogram - Solar Growth P & Energy E (Adjusted Spacing) */}
+                {/* P (Solar Sunburst + Upward Growth Arrow Stem) */}
+                <path d="M10 40 h6 V20 H20 L13 10 L6 20 H10 Z" fill="#FF7029" />
+                <circle cx="22.5" cy="23" r="6.5" stroke="#FF7029" strokeWidth="3.5" fill="none" />
+                <path d="M22.5 12v-2M29.5 16l2-2M33.5 23h2M29.5 30l2 2" stroke="#FF7029" strokeWidth="1.8" strokeLinecap="round" />
                 
-                {/* E Monogram (White stem, Cyan bars) */}
-                <rect x="34" y="16" width="3.5" height="24" fill="#FFFFFF" rx="1" />
-                <rect x="37.5" y="16" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
-                <rect x="37.5" y="26.25" width="7" height="3.5" fill="#29ABE2" rx="0.8" />
-                <rect x="37.5" y="36.5" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
+                {/* E Monogram (White stem, Cyan bars - shifted right for clean spacing) */}
+                <rect x="40" y="16" width="3.5" height="24" fill="#FFFFFF" rx="1" />
+                <rect x="43.5" y="16" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="43.5" y="26.25" width="7" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="43.5" y="36.5" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
                 
-                {/* PYLON Text (white, using site brand font variable) */}
-                <text x="56" y="42" fill="#FFFFFF" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
+                {/* PYLON Text (white, shifted right for margin) */}
+                <text x="68" y="42" fill="#FFFFFF" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
                 {/* ENERGY Text (cyan) */}
-                <text x="166" y="42" fill="#29ABE2" fontSize="30" fontWeight="500" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">ENERGY</text>
+                <text x="178" y="42" fill="#29ABE2" fontSize="30" fontWeight="500" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">ENERGY</text>
               </svg>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
