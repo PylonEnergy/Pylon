@@ -240,11 +240,12 @@ export default function HeroBanner() {
           {/* Postcode Checker Strip at the bottom of the Slider Frame */}
           <div 
             style={{ 
-              background: "linear-gradient(90deg, #001224 0%, #002244 50%, #001224 100%)",
+              background: "linear-gradient(90deg, #001e3d 0%, #00529c 50%, #001e3d 100%)",
               borderTop: "3.5px solid #29ABE2",
-              boxShadow: "0 -8px 30px rgba(41, 171, 226, 0.15)"
+              borderBottom: "2px solid #29ABE2",
+              boxShadow: "0 0 30px rgba(41, 171, 226, 0.3)"
             }}
-            className="px-4 sm:px-8 lg:px-12 xl:px-16 py-6 text-white w-full"
+            className="px-4 sm:px-8 lg:px-12 xl:px-16 py-6.5 text-white w-full"
           >
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
               {/* Left section: Header */}
