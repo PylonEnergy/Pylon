@@ -147,7 +147,7 @@ export default function HeroBanner() {
                   </span>
 
                   {/* Title */}
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-pe-navy leading-[1.08] tracking-tight whitespace-pre-line">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-pe-navy leading-[1.1] tracking-tight whitespace-pre-line">
                     {slide.title.split("\n")[0]}
                     {slide.title.split("\n")[1] && (
                       <span className={`block mt-1.5 bg-gradient-to-r ${slide.gradient} bg-clip-text text-transparent`}>

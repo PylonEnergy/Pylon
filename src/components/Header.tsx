@@ -117,16 +117,15 @@ export default function Header() {
         }`}
       >
         <div className="relative w-full border-b border-pe-gray-100">
-          
-          {/* DIAGONAL-CUT LOGO CONTAINER — spans both top bar and main header */}
+                   {/* DIAGONAL-CUT LOGO CONTAINER — spans both top bar and main header */}
           <div 
             style={{ 
               clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 44px, 100% 100%, 0 100%)" 
             }}
-            className="absolute left-0 top-0 bottom-0 w-[240px] sm:w-[320px] md:w-[370px] lg:w-[420px] xl:w-[490px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
+            className="absolute left-0 top-0 bottom-0 w-[220px] sm:w-[280px] md:w-[330px] lg:w-[360px] xl:w-[390px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
           >
             <Link href="/" className="flex items-center group">
-              <svg viewBox="0 0 360 60" className="h-9 sm:h-12 md:h-14 lg:h-16 xl:h-[76px] w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 360 60" className="h-9 sm:h-12 md:h-13 lg:h-14 xl:h-[68px] w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <mask id="arrow-mask-header">
                     <rect width="360" height="60" fill="white" />
@@ -163,7 +162,7 @@ export default function Header() {
             style={{ 
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%)"
             }}
-            className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-sm z-10 ml-[140px] sm:ml-[280px] md:ml-[330px] lg:ml-[380px] xl:ml-[450px] transition-all duration-300"
+            className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-sm z-10 ml-[120px] sm:ml-[240px] md:ml-[290px] lg:ml-[320px] xl:ml-[350px] transition-all duration-300"
           >
             <style>{`
               @keyframes pulse-orange {
@@ -202,13 +201,13 @@ export default function Header() {
 
           {/* MAIN HEADER (bottom bar, white bg) */}
           <div className="h-20 bg-white">
-            <div className="h-full pl-[240px] sm:pl-[320px] md:pl-[370px] lg:pl-[420px] xl:pl-[490px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
+            <div className="h-full pl-[220px] sm:pl-[280px] md:pl-[330px] lg:pl-[360px] xl:pl-[390px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
               
               {/* DESKTOP NAV */}
               <nav className="hidden lg:flex items-center justify-between flex-grow mx-4 xl:mx-8" style={{ position: "static" }}>
                 <Link
                   href="/"
-                  className="relative px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Home
                   <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
@@ -216,7 +215,7 @@ export default function Header() {
 
                 {/* SOLAR PACKAGES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
+                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
                     Solar Packages <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
                     <span className="absolute bottom-0.5 left-3 xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
@@ -312,7 +311,7 @@ export default function Header() {
 
                 {/* SOLAR BATTERIES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
+                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
                     Solar Batteries <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
                     <span className="absolute bottom-0.5 left-3 xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
@@ -358,7 +357,7 @@ export default function Header() {
 
                 <Link
                   href="/products"
-                  className="relative px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Products
                   <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
@@ -366,7 +365,7 @@ export default function Header() {
 
                 <Link
                   href="/rebate-checker"
-                  className="relative px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Rebate Checker
                   <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
@@ -374,7 +373,7 @@ export default function Header() {
 
                 <Link
                   href="/special-offers"
-                  className="relative px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-cyan transition-all flex items-center gap-1 whitespace-nowrap group"
+                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-cyan transition-all flex items-center gap-1 whitespace-nowrap group"
                 >
                   Special Offers
                   <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-pe-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
