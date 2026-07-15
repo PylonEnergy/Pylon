@@ -144,19 +144,35 @@ export default function Header() {
             }}
             className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-sm z-10 ml-[180px] sm:ml-[230px] md:ml-[270px] xl:ml-[320px] transition-all duration-300"
           >
+            <style>{`
+              @keyframes pulse-orange {
+                0% {
+                  box-shadow: 0 0 0 0 rgba(255, 112, 41, 0.6);
+                }
+                70% {
+                  box-shadow: 0 0 0 8px rgba(255, 112, 41, 0);
+                }
+                100% {
+                  box-shadow: 0 0 0 0 rgba(255, 112, 41, 0);
+                }
+              }
+              .glow-pulse {
+                animation: pulse-orange 2s infinite;
+              }
+            `}</style>
             <div className="flex items-center gap-6 font-semibold">
               <Link href="/get-quote" className="hover:underline flex items-center gap-1.5">
                 Make A Payment <ArrowRight size={13} className="text-[#29ABE2]" />
               </Link>
               <a href="mailto:info@pylonenergy.com.au" className="hover:underline flex items-center gap-2 hidden sm:flex">
-                <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                  <Mail size={13} className="text-[#29ABE2]" />
+                <span className="w-7 h-7 rounded-full bg-[#FFE8D6] glow-pulse flex items-center justify-center flex-shrink-0">
+                  <Mail size={13} className="text-[#002B5C]" />
                 </span>
                 info@pylonenergy.com.au
               </a>
               <a href="tel:1300000000" className="hover:underline flex items-center gap-2 font-black text-[16px] xl:text-[17px] text-white">
-                <span className="w-7 h-7 rounded-full bg-[#29ABE2]/20 flex items-center justify-center flex-shrink-0">
-                  <Phone size={13} className="text-[#29ABE2]" />
+                <span className="w-7 h-7 rounded-full bg-[#FFE8D6] glow-pulse flex items-center justify-center flex-shrink-0">
+                  <Phone size={13} className="text-[#002B5C]" />
                 </span>
                 1300 000 000
               </a>
@@ -171,15 +187,15 @@ export default function Header() {
               <nav className="hidden lg:flex items-center justify-between flex-grow mx-4 xl:mx-8" style={{ position: "static" }}>
                 <Link
                   href="/"
-                  className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                  className="px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
                 >
                   Home
                 </Link>
 
                 {/* SOLAR PACKAGES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
-                    Solar Packages <ChevronDown size={16} />
+                  <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
+                    Solar Packages <ChevronDown size={17} />
                   </button>
                   <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                     <div className="grid grid-cols-3 gap-12">
@@ -273,8 +289,8 @@ export default function Header() {
 
                 {/* SOLAR BATTERIES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
-                    Solar Batteries <ChevronDown size={16} />
+                  <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
+                    Solar Batteries <ChevronDown size={17} />
                   </button>
                   <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                     <div className="grid grid-cols-2 gap-12">
@@ -318,21 +334,21 @@ export default function Header() {
 
                 <Link
                   href="/products"
-                  className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                  className="px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
                 >
                   Products
                 </Link>
 
                 <Link
                   href="/rebate-checker"
-                  className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                  className="px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
                 >
                   Rebate Checker
                 </Link>
 
                 <Link
                   href="/special-offers"
-                  className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-cyan hover:text-white hover:bg-pe-cyan rounded-lg transition-all flex items-center gap-1 whitespace-nowrap"
+                  className="px-3 xl:px-4 py-2 text-[17px] xl:text-[19px] font-bold text-pe-cyan hover:text-white hover:bg-pe-cyan rounded-lg transition-all flex items-center gap-1 whitespace-nowrap"
                 >
                   Special Offers
                 </Link>
@@ -340,9 +356,15 @@ export default function Header() {
 
               {/* CTA + MOBILE TOGGLE */}
               <div className="flex items-center gap-3">
+                <a 
+                  href="tel:1300000000" 
+                  className="hidden xl:flex items-center gap-1.5 border border-[#002B5C] text-[#002B5C] hover:bg-[#002B5C] hover:text-white font-bold py-2 px-3.5 rounded-lg transition-all text-sm whitespace-nowrap"
+                >
+                  <Phone size={13} /> Call 1300 000 000
+                </a>
                 <Link 
                   href="/get-quote" 
-                  className="bg-[#002B5C] hover:bg-[#001F42] text-white font-bold py-2.5 px-6 rounded-lg shadow-sm hover:shadow transition-all text-sm flex items-center gap-2 whitespace-nowrap hidden sm:flex"
+                  className="bg-gradient-to-r from-[#FF7029] to-[#E5601E] hover:from-[#E5601E] hover:to-[#C84E12] text-white font-bold py-2.5 px-5.5 rounded-lg shadow-[0_4px_12px_rgba(255,112,41,0.25)] hover:shadow-[0_6px_18px_rgba(255,112,41,0.4)] transition-all text-sm flex items-center gap-2 whitespace-nowrap hidden sm:flex hover:-translate-y-0.5"
                 >
                   Get A Quote →
                 </Link>
