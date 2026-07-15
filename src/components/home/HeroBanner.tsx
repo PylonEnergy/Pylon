@@ -110,24 +110,24 @@ export default function HeroBanner() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col justify-center overflow-hidden bg-pe-navy"
+      className="relative flex flex-col justify-center overflow-hidden bg-white"
       style={{
-        background: "linear-gradient(135deg, #001229 0%, #002B5C 40%, #0D3572 70%, #001229 100%)",
+        background: "linear-gradient(135deg, #FFFFFF 0%, #F5F9FD 60%, #E8F4FC 100%)",
       }}
     >
       {/* Grid overlay background */}
       <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(41,171,226,1) 1px, transparent 1px), linear-gradient(90deg, rgba(41,171,226,1) 1px, transparent 1px)",
+            "linear-gradient(rgba(0,43,92,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,43,92,0.1) 1px, transparent 1px)",
           backgroundSize: "55px 55px",
         }}
       />
 
       <div className="relative w-full">
         {/* Slider Frame */}
-        <div className="relative overflow-hidden bg-[#001D3D]/95 border-b border-white/10 flex flex-col w-full">
+        <div className="relative overflow-hidden bg-transparent border-b border-slate-100 flex flex-col w-full">
           {/* Slider Track */}
           <div
             className="flex transition-transform duration-500 ease-in-out flex-1"
@@ -144,7 +144,7 @@ export default function HeroBanner() {
                   </span>
 
                   {/* Title */}
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.08] tracking-tight whitespace-pre-line">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-pe-navy leading-[1.08] tracking-tight whitespace-pre-line">
                     {slide.title}
                   </h1>
 
@@ -154,14 +154,14 @@ export default function HeroBanner() {
                   </p>
 
                   {/* Description */}
-                  <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-2xl">
+                  <p className="text-pe-gray-600 text-sm md:text-base leading-relaxed max-w-2xl">
                     {slide.description}
                   </p>
 
                   {/* Highlights list */}
-                  <div className="flex flex-wrap gap-4 text-xs font-bold text-white/80">
+                  <div className="flex flex-wrap gap-4 text-xs font-bold text-pe-navy/80">
                     {slide.highlights.map((h, i) => (
-                      <span key={i} className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
+                      <span key={i} className="flex items-center gap-1.5 bg-slate-50 border border-slate-200/80 rounded-full px-3 py-1.5">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#29ABE2]" />
                         {h}
                       </span>
@@ -184,14 +184,14 @@ export default function HeroBanner() {
 
                   {/* Slider Control pill inside info block */}
                   <div className="pt-2 flex items-center gap-3">
-                    <div className="inline-flex items-center gap-4 bg-white/10 border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-white select-none">
-                      <button onClick={handlePrev} className="text-white/60 hover:text-white transition-colors" aria-label="Previous slide">
+                    <div className="inline-flex items-center gap-4 bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-xs font-bold text-pe-navy select-none">
+                      <button onClick={handlePrev} className="text-pe-navy/60 hover:text-pe-navy transition-colors" aria-label="Previous slide">
                         <ChevronLeft size={16} />
                       </button>
                       <span>
                         {currentSlide + 1} / {slides.length}
                       </span>
-                      <button onClick={handleNext} className="text-white/60 hover:text-white transition-colors" aria-label="Next slide">
+                      <button onClick={handleNext} className="text-pe-navy/60 hover:text-pe-navy transition-colors" aria-label="Next slide">
                         <ChevronRight size={16} />
                       </button>
                     </div>
@@ -204,9 +204,9 @@ export default function HeroBanner() {
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-cover opacity-90"
+                      className="w-full h-full object-cover opacity-95"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
 
                     {/* Visual Promo Badge */}
                     <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 animate-pulse">
@@ -218,13 +218,13 @@ export default function HeroBanner() {
 
                 {/* Right side illustration - standard card style on mobile/tablet */}
                 <div className="lg:hidden p-6 pt-0">
-                  <div className="relative mx-auto rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#001124] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
+                  <div className="relative mx-auto rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-[#F8FAFC] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-cover opacity-90"
+                      className="w-full h-full object-cover opacity-95"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
 
                     {/* Visual Promo Badge */}
                     <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20">
@@ -240,17 +240,17 @@ export default function HeroBanner() {
           {/* Postcode Checker Strip at the bottom of the Slider Frame */}
           <div 
             style={{ 
-              background: "linear-gradient(90deg, #001e3d 0%, #00529c 50%, #001e3d 100%)",
+              background: "linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)",
               borderTop: "3.5px solid #29ABE2",
-              borderBottom: "2px solid #29ABE2",
-              boxShadow: "0 0 30px rgba(41, 171, 226, 0.3)"
+              borderBottom: "1px solid #E2E8F0",
+              boxShadow: "0 10px 40px rgba(0, 43, 92, 0.06)"
             }}
-            className="px-4 sm:px-8 lg:px-12 xl:px-16 py-6.5 text-white w-full"
+            className="px-4 sm:px-8 lg:px-12 xl:px-16 py-6.5 text-pe-navy w-full"
           >
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
               {/* Left section: Header */}
               <div className="text-center lg:text-left flex-shrink-0">
-                <h4 className="font-black text-white text-base lg:text-lg uppercase tracking-wider leading-none">
+                <h4 className="font-black text-pe-navy text-base lg:text-lg uppercase tracking-wider leading-none">
                   Check For Battery Offers
                 </h4>
                 <p className="text-[#29ABE2] text-[11px] lg:text-xs mt-1.5 font-bold uppercase tracking-wider">
@@ -260,7 +260,7 @@ export default function HeroBanner() {
 
               {/* Center section: Input list */}
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <span className="text-[#29ABE2] font-black text-xs sm:text-sm uppercase tracking-widest text-center sm:text-left">
+                <span className="text-pe-navy font-black text-xs sm:text-sm uppercase tracking-widest text-center sm:text-left">
                   Enter Your Postcode!
                 </span>
                 <div className="flex gap-2">
@@ -276,10 +276,9 @@ export default function HeroBanner() {
                       onKeyDown={(e) => handlePostcodeKeyDown(idx, e)}
                       onPaste={handlePostcodePaste}
                       style={{
-                        border: "2.5px solid #29ABE2",
-                        boxShadow: "0 0 10px rgba(41, 171, 226, 0.25)"
+                        border: "2px solid #CBD5E1",
                       }}
-                      className="w-12 h-12 md:w-13 md:h-13 text-center text-xl md:text-2xl font-black text-pe-navy rounded-xl focus:ring-4 focus:ring-[#29ABE2]/30 focus:border-[#29ABE2] focus:shadow-[0_0_20px_rgba(41, 171, 226, 0.5)] focus:outline-none transition-all bg-white"
+                      className="w-12 h-12 md:w-13 md:h-13 text-center text-xl md:text-2xl font-black text-pe-navy rounded-xl focus:ring-4 focus:ring-[#29ABE2]/30 focus:border-[#29ABE2] focus:shadow-[0_0_20px_rgba(41, 171, 226, 0.3)] focus:outline-none transition-all bg-white"
                     />
                   ))}
                 </div>
