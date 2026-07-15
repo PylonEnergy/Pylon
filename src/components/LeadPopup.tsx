@@ -27,6 +27,10 @@ export default function LeadPopup() {
   };
 
   useEffect(() => {
+    // Check if the user has already submitted the lead form successfully
+    const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
+    if (hasSubmitted) return;
+
     // 1. Initial timer schedule
     startTimer();
 
@@ -47,7 +51,8 @@ export default function LeadPopup() {
   const closePopup = () => {
     setIsOpen(false);
     // Restart timer to pop up again in 10-15 seconds if not successfully submitted yet
-    if (status !== "sent") {
+    const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
+    if (status !== "sent" && !hasSubmitted) {
       startTimer();
     }
   };
@@ -75,6 +80,7 @@ export default function LeadPopup() {
       });
       if (res.ok) {
         setStatus("sent");
+        localStorage.setItem("pylon_submitted_lead_popup", "true");
       } else {
         setStatus("error");
       }
