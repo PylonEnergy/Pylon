@@ -13,7 +13,7 @@ import { Phone, Mail, Sparkles } from "lucide-react";
 
 // Set to true to show the "Launching Tomorrow" landing page.
 // Set to false to go live with the main website.
-const IS_UNDER_CONSTRUCTION = true;
+const IS_UNDER_CONSTRUCTION = false;
 
 const outfit = Outfit({
   variable: "--font-sans",
