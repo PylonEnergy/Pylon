@@ -12,33 +12,65 @@ const perks = [
 export default function CTASection() {
   return (
     <section id="cta" className="relative overflow-hidden py-16 md:py-24">
-      {/* Background */}
+      {/* Premium Deep Background Gradient */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, #001229 0%, #002B5C 40%, #0D3572 70%, #001229 100%)",
+            "linear-gradient(135deg, #000B18 0%, #001733 30%, #00224D 70%, #000B18 100%)",
         }}
       />
 
-      {/* Grid overlay */}
+      {/* Subtle Micro-Dot Matrix Texture */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(41,171,226,1) 1px, transparent 1px), linear-gradient(90deg, rgba(41,171,226,1) 1px, transparent 1px)",
-          backgroundSize: "55px 55px",
+          backgroundImage: "radial-gradient(rgba(255,255,255,1) 1.5px, transparent 1.5px)",
+          backgroundSize: "32px 32px",
         }}
       />
 
-      {/* Glow orbs */}
+      {/* Abstract Topographic contour wave lines */}
+      <svg 
+        className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.16]" 
+        viewBox="0 0 1440 800" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ maskImage: "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)" }}
+      >
+        <defs>
+          <linearGradient id="contourWave" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#29ABE2" stopOpacity="0.4" />
+            <stop offset="40%" stopColor="#0D5DB5" stopOpacity="0.2" />
+            <stop offset="80%" stopColor="#FF7029" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#29ABE2" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+        <path d="M -100,150 Q 250,50 600,200 T 1300,100 T 1700,200" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,210 Q 250,110 600,260 T 1300,160 T 1700,260" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,270 Q 250,170 600,320 T 1300,220 T 1700,320" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,330 Q 250,230 600,380 T 1300,280 T 1700,380" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,390 Q 250,290 600,440 T 1300,340 T 1700,440" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,450 Q 250,390 600,500 T 1300,400 T 1700,500" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,510 Q 250,450 600,560 T 1300,460 T 1700,560" stroke="url(#contourWave)" strokeWidth="1.5" />
+        <path d="M -100,570 Q 250,510 600,620 T 1300,520 T 1700,620" stroke="url(#contourWave)" strokeWidth="1.5" />
+      </svg>
+
+      {/* Glowing Solar Flare Orbs */}
+      {/* Cyan energy flare (left) */}
       <div
-        className="absolute top-[-80px] right-[-80px] w-[400px] h-[400px] rounded-full opacity-[0.08] pointer-events-none"
-        style={{ background: "radial-gradient(circle, #29ABE2, transparent 70%)" }}
+        className="absolute top-[-100px] left-[-100px] w-[500px] h-[500px] rounded-full opacity-[0.15] pointer-events-none blur-[80px]"
+        style={{ background: "radial-gradient(circle, #29ABE2 0%, transparent 70%)" }}
       />
+      {/* Solar orange flare (right behind form) */}
       <div
-        className="absolute bottom-[-80px] left-[-60px] w-[350px] h-[350px] rounded-full opacity-[0.08] pointer-events-none"
-        style={{ background: "radial-gradient(circle, #29ABE2, transparent 70%)" }}
+        className="absolute bottom-[-100px] right-[-50px] w-[600px] h-[600px] rounded-full opacity-[0.14] pointer-events-none blur-[90px]"
+        style={{ background: "radial-gradient(circle, #FF7029 0%, transparent 70%)" }}
+      />
+      {/* Royal blue ambient flare (center) */}
+      <div
+        className="absolute top-[20%] left-[40%] w-[450px] h-[450px] rounded-full opacity-[0.12] pointer-events-none blur-[80px]"
+        style={{ background: "radial-gradient(circle, #0D5DB5 0%, transparent 75%)" }}
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
