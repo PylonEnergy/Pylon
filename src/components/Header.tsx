@@ -204,20 +204,20 @@ export default function Header() {
             <div className="h-full pl-[240px] sm:pl-[320px] md:pl-[350px] lg:pl-[380px] xl:pl-[450px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
               
               {/* DESKTOP NAV */}
-              <nav className="hidden lg:flex items-center justify-between flex-grow mx-4 xl:mx-8" style={{ position: "static" }}>
+              <nav className="hidden xl:flex items-center justify-between flex-grow mx-2 2xl:mx-8" style={{ position: "static" }}>
                 <Link
                   href="/"
-                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Home
-                  <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                  <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-2 xl:right-3 2xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                 </Link>
 
                 {/* SOLAR PACKAGES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
+                  <button className="relative flex items-center gap-1 px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
                     Solar Packages <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
-                    <span className="absolute bottom-0.5 left-3 xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                    <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
                   <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                     <div className="grid grid-cols-3 gap-12">
@@ -311,9 +311,9 @@ export default function Header() {
 
                 {/* SOLAR BATTERIES MEGA */}
                 <div className="mega-menu-trigger" style={{ position: "static" }}>
-                  <button className="relative flex items-center gap-1 px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
+                  <button className="relative flex items-center gap-1 px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group">
                     Solar Batteries <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
-                    <span className="absolute bottom-0.5 left-3 xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                    <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
                   <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                     <div className="grid grid-cols-2 gap-12">
@@ -357,26 +357,26 @@ export default function Header() {
 
                 <Link
                   href="/products"
-                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Products
-                  <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                  <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-2 xl:right-3 2xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                 </Link>
 
                 <Link
                   href="/rebate-checker"
-                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
+                  className="relative px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-gray-700 hover:text-pe-navy transition-all whitespace-nowrap group"
                 >
                   Rebate Checker
-                  <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                  <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-2 xl:right-3 2xl:right-4 h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                 </Link>
 
                 <Link
                   href="/special-offers"
-                  className="relative px-3 xl:px-4 py-2 text-[15px] xl:text-[16px] font-bold text-pe-cyan transition-all flex items-center gap-1 whitespace-nowrap group"
+                  className="relative px-2 xl:px-3 2xl:px-4 py-2 text-[13px] xl:text-[14px] 2xl:text-[16px] font-bold text-pe-cyan transition-all flex items-center gap-1 whitespace-nowrap group"
                 >
                   Special Offers
-                  <span className="absolute bottom-0.5 left-3 xl:left-4 right-3 xl:right-4 h-[2.5px] bg-pe-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+                  <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-2 xl:right-3 2xl:right-4 h-[2.5px] bg-pe-cyan transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                 </Link>
               </nav>
 
@@ -396,7 +396,7 @@ export default function Header() {
                 </Link>
                 <button
                   onClick={() => setMobileOpen(true)}
-                  className="lg:hidden p-2 rounded-lg text-pe-gray-700 hover:bg-pe-gray-100 transition-colors"
+                  className="xl:hidden p-2 rounded-lg text-pe-gray-700 hover:bg-pe-gray-100 transition-colors"
                   aria-label="Open menu"
                 >
                   <Menu size={22} />
@@ -411,7 +411,7 @@ export default function Header() {
 
       {/* MOBILE DRAWER */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[100] lg:hidden">
+        <div className="fixed inset-0 z-[100] xl:hidden">
           <div
             className="absolute inset-0 bg-black/50"
             onClick={() => setMobileOpen(false)}
