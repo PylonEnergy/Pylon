@@ -6,7 +6,7 @@ import { ShieldCheck, Leaf, HeartHandshake, ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About Us | Pylon Energy",
   description:
-    "Learn about Pylon Energy Pty Ltd — an Australian-owned solar company delivering premium solar panels, battery storage, and EV charging solutions across NSW. SAA Accredited Retailer.",
+    "Learn about Pylon Energy Pty Ltd — an Australian-owned solar company delivering premium solar panels, battery storage, and EV charging solutions across NSW.",
 };
 
 const values = [
@@ -18,7 +18,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: "Trust",
-    desc: "SAA Accredited Retailer. All our work meets Australian Standards and is carried out by fully licensed, accredited installers.",
+    desc: "Licensed Installers. All our work meets Australian Standards and is carried out by fully licensed, accredited installers.",
   },
   {
     icon: HeartHandshake,
@@ -29,9 +29,9 @@ const values = [
 
 const stats = [
   { number: "25+", label: "Year Warranties" },
-  { number: "50,000+", label: "Panels Installed" },
-  { number: "4.9/5", label: "Customer Rating" },
-  { number: "1,000+", label: "Homes Powered" },
+  { number: "100%", label: "Australian Owned" },
+  { number: "5/5", label: "Customer Rating" },
+  { number: "NSW", label: "Wide Service" },
 ];
 
 export default function AboutPage() {
@@ -54,7 +54,7 @@ export default function AboutPage() {
                 Pylon Energy Pty Ltd is an Australian-owned solar company delivering high-performance solar panel systems, battery storage, and EV charging solutions to homes and businesses across NSW and beyond. Founded with a mission to make clean, affordable energy accessible to every Australian household.
               </p>
               <p className="text-pe-gray-500 leading-relaxed mb-6">
-                We believe every Australian home deserves access to quality solar energy. That&apos;s why we offer flexible finance options, handle all rebate paperwork, and ensure every installation is completed to the highest standard by our SAA-accredited team.
+                We believe every Australian home deserves access to quality solar energy. That&apos;s why we offer flexible finance options, handle all rebate paperwork, and ensure every installation is completed to the highest standard by our accredited team.
               </p>
               <Link href="/get-quote" className="btn-primary">
                 Get Your Free Quote <ArrowRight size={16} />
@@ -98,9 +98,9 @@ export default function AboutPage() {
       <section className="section-padding bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="section-label mx-auto justify-center">OUR TEAM</p>
-          <h2 className="section-title">CEC-Accredited Experts</h2>
+          <h2 className="section-title">Licensed Installation Experts</h2>
           <p className="text-pe-gray-500 text-lg leading-relaxed">
-            Our team of SAA-accredited installers brings decades of combined experience in solar energy system design and installation. From initial consultation through to commissioning and ongoing support, you&apos;re in safe hands every step of the way.
+            Our team of fully licensed installers brings decades of combined experience in solar energy system design and installation. From initial consultation through to commissioning and ongoing support, you&apos;re in safe hands every step of the way.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section className="section-padding bg-pe-navy">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-black text-white mb-4">Ready to Go Solar?</h2>
-          <p className="text-white/60 mb-8">Join over 1,000 Australian homes powered by Pylon Energy.</p>
+          <p className="text-white/60 mb-8">Start saving with premium solar from Pylon Energy.</p>
           <Link href="/get-quote" className="btn-primary">
             Get Your Free Quote →
           </Link>

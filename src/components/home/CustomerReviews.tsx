@@ -72,11 +72,11 @@ export default function CustomerReviews() {
                   <Star key={i} size={18} className="text-yellow-400 fill-yellow-400" />
                 ))}
               </div>
-              <p className="text-white/60 text-xs">1,000+ Verified Reviews</p>
+              <p className="text-white/60 text-xs">Verified Reviews</p>
             </div>
             <div className="w-px h-10 bg-white/15 hidden sm:block" />
             <div className="text-center sm:text-left">
-              <p className="text-4xl font-black text-white leading-none">4.9</p>
+              <p className="text-4xl font-black text-white leading-none">5.0</p>
               <p className="text-[#29ABE2] text-xs font-semibold mt-0.5">Google Rating</p>
             </div>
             <div className="w-px h-10 bg-white/15 hidden sm:block" />

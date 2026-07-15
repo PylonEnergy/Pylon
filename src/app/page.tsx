@@ -14,7 +14,7 @@ import CTASection from "@/components/home/CTASection";
 export const metadata: Metadata = {
   title: "Pylon Energy — Solar Panels & Battery Storage | NSW Australia",
   description:
-    "Pylon Energy Pty Ltd — Premium solar panels, battery storage & EV charger installation across NSW. SAA Accredited. 25-Year Warranties. Save up to $3,500 with 2026 government rebates. Get a free quote today.",
+    "Pylon Energy Pty Ltd — Premium solar panels, battery storage & EV charger installation across NSW. 25-Year Warranties. Save up to $3,500 with 2026 government rebates. Get a free quote today.",
   alternates: {
     canonical: "https://pylonenergy.com.au",
   },

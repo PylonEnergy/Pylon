@@ -41,7 +41,7 @@ export default function Footer() {
               </svg>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
-              Australian-owned solar company delivering premium solar panels, battery storage &amp; EV charging solutions across NSW and beyond. SAA Accredited Retailer.
+              Australian-owned solar company delivering premium solar panels, battery storage &amp; EV charging solutions across NSW and beyond.
             </p>
             <div className="flex items-center gap-3">
               <a
@@ -92,20 +92,7 @@ export default function Footer() {
               </a>
             </div>
             
-            {/* Accreditation Badges */}
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <div className="relative h-11 px-3 bg-white rounded-lg border border-white/20 flex items-center justify-center shadow-sm">
-                <img
-                  src="/netcc-approved.png"
-                  alt="NETCC Approved Seller"
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-              <div className="h-11 px-3 bg-white/5 border border-white/10 rounded-lg flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-white leading-none">SAA Accredited</span>
-              </div>
-            </div>
+
           </div>
 
           {/* Col 2: Quick Links */}
@@ -209,7 +196,12 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/40 text-sm">
-          <p>© 2026 Pylon Energy Pty Ltd. All rights reserved.</p>
+          <div className="flex flex-col gap-1 text-center sm:text-left">
+            <p>© 2026 Pylon Energy Pty Ltd. All rights reserved.</p>
+            <p className="text-xs text-white/30">
+              PYLON ENERGY PTY LTD | ACN: 700 068 702 | ABN: 32 700 068 702
+            </p>
+          </div>
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy

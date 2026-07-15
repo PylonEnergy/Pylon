@@ -162,7 +162,7 @@ export default function PortfolioPage() {
             <span className="section-badge">Case Studies</span>
             <h2 className="section-title">Trusted by Homeowners & Businesses Across Australia</h2>
             <p className="section-subtitle">
-              Every installation is backed by our 10-year workmanship warranty and performed by SAA-accredited electricians.
+              Every installation is backed by our 10-year workmanship warranty and performed by fully licensed electricians.
             </p>
           </div>
 
@@ -239,7 +239,7 @@ export default function PortfolioPage() {
             <div className="portfolio-cta-card">
               <Sun size={40} color="#29ABE2" />
               <h3>Ready to Join Our Success Stories?</h3>
-              <p>Get a free, no-obligation quote tailored to your home or business. Our SAA-accredited team will design the perfect system for your needs.</p>
+              <p>Get a free, no-obligation quote tailored to your home or business. Our expert team will design the perfect system for your needs.</p>
               <Link href="/get-quote" className="btn btn-primary btn-lg">
                 Get My Free Quote <ArrowRight size={18} />
               </Link>

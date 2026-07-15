@@ -14,7 +14,7 @@ const services = [
     title: "Residential Solar",
     desc: "Reduce your household energy bills by up to 80% with our high-efficiency solar systems designed for Australian homes.",
     href: "/services/residential-solar",
-    benefits: ["Tier-1 solar panels", "SAA accredited installations", "Gov rebate calculations included", "Flexible $0-down payment plans"]
+    benefits: ["Tier-1 solar panels", "Licensed installations", "Gov rebate calculations included", "Flexible $0-down payment plans"]
   },
   {
     icon: Battery,

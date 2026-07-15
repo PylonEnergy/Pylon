@@ -36,7 +36,7 @@ export default function TermsConditions() {
 
           <h2 className="text-xl font-bold text-pe-navy mt-6 mb-3">4. Installation and Grid Connection</h2>
           <p className="text-pe-gray-600 text-sm leading-relaxed mb-6">
-            Installations are completed by SAA-accredited electricians. The customer is responsible for obtaining any necessary landlord approvals, though we manage all connection approval paperwork with your Distributed Network Service Provider (DNSP).
+            Installations are completed by fully licensed electricians. The customer is responsible for obtaining any necessary landlord approvals, though we manage all connection approval paperwork with your Distributed Network Service Provider (DNSP).
           </p>
         </div>
       </section>

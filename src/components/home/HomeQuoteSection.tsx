@@ -59,8 +59,8 @@ export default function HomeQuoteSection() {
                   <Award size={20} />
                 </div>
                 <div>
-                  <p className="text-xs font-black text-pe-navy leading-none uppercase tracking-wide">SAA Accredited</p>
-                  <p className="text-[10px] text-pe-gray-400 mt-0.5">Approved Solar Retailer</p>
+                  <p className="text-xs font-black text-pe-navy leading-none uppercase tracking-wide">Licensed Installers</p>
+                  <p className="text-[10px] text-pe-gray-400 mt-0.5">Local NSW Experts</p>
                 </div>
               </div>
               

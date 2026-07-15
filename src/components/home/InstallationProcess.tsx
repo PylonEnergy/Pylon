@@ -20,7 +20,7 @@ const steps = [
     number: "03",
     icon: Wrench,
     title: "Professional Installation",
-    desc: "SAA-accredited installers handle everything in as little as 1 day, including all paperwork.",
+    desc: "Fully licensed installers handle everything in as little as 1 day, including all paperwork.",
     color: "#0D5DB5",
   },
   {

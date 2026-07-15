@@ -47,11 +47,11 @@ const deals = [
     title: "Save Up to $3,500 on Residential Solar",
     subtitle: "2026 Federal STC Rebate — limited time",
     description:
-      "The Small-scale Technology Certificate (STC) rebate is active now. Get up to $3,500 off a new residential solar system when installed by a SAA Accredited Retailer like Pylon Energy.",
+      "The Small-scale Technology Certificate (STC) rebate is active now. Get up to $3,500 off a new residential solar system when installed by a licensed retailer like Pylon Energy.",
     highlights: [
       "Available on 6.6kW to 13.2kW systems",
       "Applied directly as discount at point of sale",
-      "Must be SAA Accredited installer (we are ✓)",
+      "Must be a licensed installer (we are ✓)",
       "NSW, VIC, QLD, SA & WA eligible",
       "No forms — we handle it all for you",
     ],

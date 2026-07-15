@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Pylon Energy",
   },
   description:
-    "Pylon Energy Pty Ltd — Premium solar panels, battery storage & EV charger installation across NSW and Australia. SAA Accredited. 25-Year Warranties. Save up to $3,500 with 2026 government rebates.",
+    "Pylon Energy Pty Ltd — Premium solar panels, battery storage & EV charger installation across NSW and Australia. 25-Year Warranties. Save up to $3,500 with 2026 government rebates.",
   keywords: [
     "solar panels NSW",
     "solar installation Australia",
@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     "Pylon Energy",
     "solar panels Sydney",
     "solar rebates 2026",
-    "SAA accredited solar",
   ],
   authors: [{ name: "Pylon Energy Pty Ltd" }],
   creator: "Pylon Energy Pty Ltd",
@@ -57,13 +56,13 @@ export const metadata: Metadata = {
     siteName: "Pylon Energy",
     title: "Pylon Energy — Solar Panels & Battery Storage | NSW Australia",
     description:
-      "Premium solar panels, battery storage & EV charger installation. SAA Accredited. Save up to $3,500 with 2026 rebates.",
+      "Premium solar panels, battery storage & EV charger installation. Save up to $3,500 with 2026 rebates.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Pylon Energy — Solar Panels & Battery Storage",
     description:
-      "Premium solar panels & battery storage across NSW. SAA Accredited. 25-Year Warranties.",
+      "Premium solar panels & battery storage across NSW. 25-Year Warranties.",
   },
   robots: {
     index: true,

@@ -5,8 +5,8 @@ export default function Accreditations() {
   const items = [
     {
       icon: Award,
-      title: "SAA Accredited Installer",
-      desc: "Solar Accreditation Australia Accredited Standards",
+      title: "Licensed Solar Installers",
+      desc: "Qualified Local NSW Professionals",
     },
     {
       icon: ShieldCheck,
