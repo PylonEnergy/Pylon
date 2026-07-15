@@ -29,7 +29,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(1); // Default to item 2 open to match screenshot
 
   return (
-    <section id="faq" className="section-padding bg-white relative overflow-hidden py-24">
+    <section id="faq" className="section-padding bg-[#F8FAFC] relative overflow-hidden py-24 border-t border-slate-100">
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -64,7 +64,7 @@ export default function FAQSection() {
                 className={`group rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 border ${
                   isOpen
                     ? "bg-[#002B5C] border-[#002B5C] shadow-[0_15px_35px_rgba(0,43,92,0.15)]"
-                    : "bg-white border-[#002B5C] hover:border-[#29ABE2] hover:shadow-[0_10px_25px_rgba(0,43,92,0.06)]"
+                    : "bg-white border-slate-100 hover:border-[#29ABE2] hover:shadow-[0_10px_25px_rgba(0,43,92,0.06)]"
                 }`}
               >
                 {/* Header Row */}

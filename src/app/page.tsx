@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import HeroBanner from "@/components/home/HeroBanner";
-import HorizontalLeadForm from "@/components/home/HorizontalLeadForm";
 import TrustStats from "@/components/home/TrustStats";
-import Accreditations from "@/components/home/Accreditations";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
 import BrandsCarousel from "@/components/home/BrandsCarousel";
@@ -10,7 +8,6 @@ import CustomerReviews from "@/components/home/CustomerReviews";
 import InstallationProcess from "@/components/home/InstallationProcess";
 import SolarPackages from "@/components/home/SolarPackages";
 import SolarCalculator from "@/components/SolarCalculator";
-import EVChargingSection from "@/components/home/EVChargingSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/home/CTASection";
 
@@ -27,9 +24,7 @@ export default function HomePage() {
   return (
     <>
       <HeroBanner />
-      <HorizontalLeadForm />
       <TrustStats />
-      <Accreditations />
       <WhyChooseUs />
       <ServicesSection />
       <BrandsCarousel />
@@ -37,7 +32,6 @@ export default function HomePage() {
       <InstallationProcess />
       <SolarPackages />
       <SolarCalculator />
-      <EVChargingSection />
       <FAQSection />
       <CTASection />
     </>

@@ -81,7 +81,7 @@ export default function SolarCalculator() {
 
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
           {/* Controls - Left side (7 cols) */}
-          <div className="lg:col-span-7 bg-pe-gray-50 border border-pe-gray-200 rounded-3xl p-5 sm:p-8 flex flex-col justify-between shadow-sm">
+          <div className="lg:col-span-7 bg-slate-50/50 border border-slate-100 rounded-3xl p-5 sm:p-8 flex flex-col justify-between shadow-sm">
             <div className="space-y-8">
               {/* Bill Slider */}
               <div>

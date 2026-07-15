@@ -43,8 +43,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-us"
-      className="section-padding relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%)" }}
+      className="section-padding relative overflow-hidden bg-white border-b border-slate-100"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
@@ -80,14 +79,8 @@ export default function WhyChooseUs() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="group relative bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,43,92,0.12)] overflow-hidden"
+              className="group relative bg-white rounded-2xl p-7 border border-slate-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_15px_35px_rgba(0,43,92,0.06)] hover:border-slate-200/50 overflow-hidden"
             >
-              {/* Gradient top border */}
-              <div
-                className="absolute top-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: `linear-gradient(90deg, ${f.accent}, transparent)` }}
-              />
-
               {/* Icon */}
               <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"

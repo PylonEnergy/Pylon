@@ -41,7 +41,7 @@ const reviews = [
 
 export default function CustomerReviews() {
   return (
-    <section id="reviews" className="section-padding bg-white overflow-hidden">
+    <section id="reviews" className="section-padding bg-[#F8FAFC] overflow-hidden border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
@@ -95,8 +95,8 @@ export default function CustomerReviews() {
               className="flex-none w-[300px] sm:w-[340px] rounded-2xl p-6 snap-center group transition-all duration-300 hover:-translate-y-2"
               style={{
                 background: "white",
-                border: "1.5px solid #E2E8F0",
-                boxShadow: "0 4px 20px rgba(0,43,92,0.06)",
+                border: "1px solid rgba(226, 232, 240, 0.8)",
+                boxShadow: "0 10px 30px rgba(0, 43, 92, 0.04)",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLDivElement).style.borderColor = "#29ABE2";

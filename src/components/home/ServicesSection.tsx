@@ -38,7 +38,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section-padding bg-pe-gray-50">
+    <section id="services" className="section-padding bg-[#F8FAFC] border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <p className="section-label mx-auto justify-center">OUR SERVICES</p>
@@ -51,18 +51,24 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <div
               key={i}
-              className={`group card overflow-hidden ${i % 2 === 1 ? "lg:mt-8" : ""}`}
+              className="group bg-white rounded-2xl p-7 border border-slate-100/80 shadow-sm hover:shadow-md hover:border-slate-200/50 transition-all duration-300 overflow-hidden flex flex-col justify-between"
             >
-              {/* Icon area */}
-              <div className={`${s.color} p-8 flex items-center justify-center`}>
-                <div className="w-16 h-16 rounded-2xl bg-white/80 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm">
-                  <s.icon size={32} className={s.iconColor} />
+              <div>
+                {/* Icon */}
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
+                  style={{
+                    background: "#29ABE215",
+                    border: "1.5px solid #29ABE230",
+                  }}
+                >
+                  <s.icon size={26} className="text-[#29ABE2]" />
                 </div>
-              </div>
-              {/* Content */}
-              <div className="p-6">
+                {/* Content */}
                 <h3 className="text-lg font-bold text-pe-gray-900 mb-2">{s.title}</h3>
                 <p className="text-pe-gray-500 text-sm leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: s.desc }} />
+              </div>
+              <div className="pt-2">
                 <Link
                   href={s.href}
                   className="inline-flex items-center gap-1.5 text-[#29ABE2] font-semibold text-sm hover:gap-3 transition-all"

@@ -36,33 +36,21 @@ export default function InstallationProcess() {
   return (
     <section
       id="process"
-      className="section-padding relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #001A3A 0%, #002B5C 100%)" }}
+      className="section-padding relative overflow-hidden bg-white border-b border-slate-100"
     >
-      {/* Background grid */}
-      <div
-        className="absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(41,171,226,1) 1px, transparent 1px), linear-gradient(90deg, rgba(41,171,226,1) 1px, transparent 1px)",
-          backgroundSize: "50px 50px",
-        }}
-      />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#29ABE2]"
-            style={{ background: "rgba(41,171,226,0.12)", border: "1px solid rgba(41,171,226,0.25)" }}
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-[0.2em] text-[#1A8CBD]"
+            style={{ background: "#E8F7FD", border: "1px solid rgba(41,171,226,0.25)" }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#29ABE2]" />
             How It Works
           </div>
-          <h2 className="text-white section-title" style={{ color: "white" }}>
-            Your Solar Journey,{" "}
-            <span style={{ color: "#29ABE2" }}>Simplified</span>
+          <h2 className="section-title">
+            Your Solar Journey, <span style={{ color: "#29ABE2" }}>Simplified</span>
           </h2>
-          <p className="text-white/60 text-base max-w-xl mx-auto">
+          <p className="text-pe-gray-500 text-base max-w-xl mx-auto">
             From consultation to energy savings in as little as 2 weeks.
           </p>
         </div>
@@ -74,7 +62,7 @@ export default function InstallationProcess() {
             className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px"
             style={{
               background:
-                "linear-gradient(90deg, transparent, rgba(41,171,226,0.4), rgba(41,171,226,0.4), transparent)",
+                "linear-gradient(90deg, transparent, rgba(41,171,226,0.25), rgba(41,171,226,0.25), transparent)",
             }}
           />
 
@@ -100,10 +88,10 @@ export default function InstallationProcess() {
                   </span>
                 </div>
 
-                <h3 className="text-white text-lg font-bold mb-2 group-hover:text-[#29ABE2] transition-colors">
+                <h3 className="text-pe-navy text-lg font-bold mb-2 group-hover:text-[#29ABE2] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-white/55 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-pe-gray-500 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -113,10 +101,10 @@ export default function InstallationProcess() {
         <div className="text-center mt-14">
           <Link
             href="/get-quote"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all hover:-translate-y-1"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all hover:-translate-y-0.5"
             style={{
-              background: "linear-gradient(135deg, #29ABE2, #1A8CBD)",
-              boxShadow: "0 8px 30px rgba(41,171,226,0.35)",
+              background: "linear-gradient(135deg, #FF7029, #E5601E)",
+              boxShadow: "0 8px 24px rgba(255, 112, 41, 0.35)",
             }}
           >
             Start Your Solar Journey <ArrowRight size={18} />

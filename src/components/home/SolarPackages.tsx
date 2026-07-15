@@ -159,7 +159,7 @@ export default function SolarPackages() {
   const currentPackages = packagesList[activeTab];
 
   return (
-    <section id="packages" className="section-padding bg-white">
+    <section id="packages" className="section-padding bg-[#F8FAFC] border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="section-label mx-auto justify-center">OUR PACKAGES</p>
@@ -189,10 +189,10 @@ export default function SolarPackages() {
           {currentPackages.map((pkg: any, i: number) => (
             <div
               key={i}
-              className={`relative rounded-2xl border-2 p-7 transition-all ${
+              className={`relative rounded-2xl bg-white p-7 transition-all duration-300 ${
                 pkg.popular
-                  ? "border-pe-cyan shadow-[0_8px_40px_rgba(41,171,226,0.22)] md:scale-105 z-10"
-                  : "border-pe-gray-200 hover:border-pe-cyan hover:shadow-[0_8px_30px_rgba(0,43,92,0.1)]"
+                  ? "border-2 border-[#29ABE2] shadow-[0_15px_40px_rgba(41,171,226,0.12)] md:scale-105 z-10"
+                  : "border border-slate-100 hover:border-[#29ABE2]/50 hover:shadow-[0_15px_35px_rgba(0,43,92,0.06)]"
               }`}
             >
               {pkg.popular && (
