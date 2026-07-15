@@ -127,13 +127,18 @@ export default function Header() {
           >
             <Link href="/" className="flex items-center group">
               <svg viewBox="0 0 285 60" className="h-11 sm:h-13 md:h-15 xl:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Option 2: Modern & Bold (Solid Vectors) */}
-                {/* P - Stylized Orange Arrow Letter */}
-                <path d="M11 42 h5 V20 H20 L13.5 12 L7 20 H11 Z" fill="#FF7029" />
-                <path d="M16 16 h7 c4.4 0 8 3.6 8 8 s-3.6 8-8 8 H16 Z" fill="#FF7029" />
+                {/* PE Monogram - Solar P & Energy E */}
+                {/* P Loop (Orange Sunburst) */}
+                <circle cx="20" cy="22" r="6.5" stroke="#FF7029" strokeWidth="3.5" />
+                <path d="M20 12v-2M27 15l2-2M30 22h2M27 29l2 2" stroke="#FF7029" strokeWidth="1.8" strokeLinecap="round" />
+                {/* P Stem (Cyan Lightning Bolt) */}
+                <path d="M14 16 L8 28 h7 L9 40" stroke="#29ABE2" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
                 
-                {/* E - Interlocking Cyan Letter */}
-                <path d="M27 16 h14 v4 H31.5 v7 H39 v4 H31.5 v7 H41 v4 H27 Z" fill="#29ABE2" />
+                {/* E Monogram (Navy stem, Cyan bars) */}
+                <rect x="34" y="16" width="3.5" height="24" fill="#002B5C" rx="1" />
+                <rect x="37.5" y="16" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="37.5" y="26.25" width="7" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="37.5" y="36.5" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="56" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
@@ -405,13 +410,18 @@ export default function Header() {
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-pe-gray-200">
               <svg viewBox="0 0 285 60" className="h-11 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Option 2: Modern & Bold (Solid Vectors) */}
-                {/* P - Stylized Orange Arrow Letter */}
-                <path d="M11 42 h5 V20 H20 L13.5 12 L7 20 H11 Z" fill="#FF7029" />
-                <path d="M16 16 h7 c4.4 0 8 3.6 8 8 s-3.6 8-8 8 H16 Z" fill="#FF7029" />
+                {/* PE Monogram - Solar P & Energy E */}
+                {/* P Loop (Orange Sunburst) */}
+                <circle cx="20" cy="22" r="6.5" stroke="#FF7029" strokeWidth="3.5" />
+                <path d="M20 12v-2M27 15l2-2M30 22h2M27 29l2 2" stroke="#FF7029" strokeWidth="1.8" strokeLinecap="round" />
+                {/* P Stem (Cyan Lightning Bolt) */}
+                <path d="M14 16 L8 28 h7 L9 40" stroke="#29ABE2" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
                 
-                {/* E - Interlocking Cyan Letter */}
-                <path d="M27 16 h14 v4 H31.5 v7 H39 v4 H31.5 v7 H41 v4 H27 Z" fill="#29ABE2" />
+                {/* E Monogram (Navy stem, Cyan bars) */}
+                <rect x="34" y="16" width="3.5" height="24" fill="#002B5C" rx="1" />
+                <rect x="37.5" y="16" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="37.5" y="26.25" width="7" height="3.5" fill="#29ABE2" rx="0.8" />
+                <rect x="37.5" y="36.5" width="10" height="3.5" fill="#29ABE2" rx="0.8" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="56" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
