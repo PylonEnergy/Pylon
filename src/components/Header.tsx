@@ -127,7 +127,7 @@ export default function Header() {
                 width={230}
                 height={75}
                 priority
-                className="h-8 sm:h-10 md:h-12 xl:h-14 w-auto object-contain transition-opacity group-hover:opacity-90"
+                className="h-11 sm:h-13 md:h-15 xl:h-18 w-auto object-contain rounded-xl transition-opacity group-hover:opacity-90"
               />
             </Link>
           </div>
