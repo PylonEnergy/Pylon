@@ -1,41 +1,61 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+name: Build and Deploy Next.js to Azure App Service
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+on:
+  push:
+    branches:
+      - main # Change this to your default branch name if it is 'master' or 'prod'
+  workflow_dispatch:
 
-# testing
-/coverage
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-# next.js
-/.next/
-/out/
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-# production
-/build
+      - name: Set up Node.js runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # Matches your Azure Node v22 LTS stack
+          cache: 'npm'
 
-# misc
-.DS_Store
-*.pem
+      - name: Install dependencies
+        run: npm ci
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+      - name: Compile Next.js Production Build
+        run: npm run build
 
-# env files (can opt-in for committing if needed)
-.env*
+      - name: Package deployment artifact
+        # We explicitly include the hidden .next folder and exclude node_modules to keep it light
+        run: |
+          zip -r release.zip . -x "node_modules/*" ".git/*" ".github/*"
 
-# vercel
-.vercel
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-app
+          path: release.zip
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-app
+
+      - name: Unzip artifact for deployment
+        run: unzip release.zip && rm release.zip
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'pylon-energy-app' # Matches your exact Azure App Service name
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
