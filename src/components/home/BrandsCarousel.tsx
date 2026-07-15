@@ -15,78 +15,88 @@ function renderBrandLogo(brand: string) {
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" fill="#F37321" />
-          <path d="M7 12a5 5 0 0 1 5-5h1v2h-1a3 3 0 0 0-3 3 3 3 0 0 0 3 3h3v2h-3a5 5 0 0 1-5-5z" fill="#FFFFFF" />
-          <rect x="11" y="10" width="6" height="2" rx="1" fill="#FFFFFF" />
+          <path d="M12 6a6 6 0 0 0-6 6c0 3.31 2.69 6 6 6h4v-2.5h-4a3.5 3.5 0 0 1-3.5-3.5c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5v1h-5v2h7v-3a6 6 0 0 0-6-6z" fill="#FFFFFF" />
         </svg>
       );
     case "Sungrow":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#FF6B00" />
-          <path d="M12 7v10M9 9h6M9 13h6" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="10" fill="#FF7029" />
+          <path d="M12 4a8 8 0 0 0-8 8h16a8 8 0 0 0-8-8z" fill="#FFFFFF" opacity="0.25" />
+          <path d="M12 4v16M4 12h16" stroke="#FFFFFF" strokeWidth="2" />
+          <circle cx="12" cy="12" r="4" fill="#FF7029" />
+          <circle cx="12" cy="12" r="2.5" fill="#FFFFFF" />
         </svg>
       );
     case "Jinko Solar":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#FF8C00" />
-          <path d="M12 7v10M9 9h6M9 13h6" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+          <path d="M11 3C6.58 3 3 6.58 3 11c0 3.18 1.86 5.92 4.56 7.22l1.24-2.15C6.98 15.22 6 13.23 6 11c0-2.76 2.24-5 5-5V3z" fill="#4CAF50" />
+          <path d="M9 3v3c-1.66 0-3 1.34-3 3H3c0-3.31 2.69-6 6-6z" fill="#4CAF50" />
+          <path d="M13 3v3c2.76 0 5 2.24 5 5c0 2.23-.98 4.22-2.8 6.07l1.24 2.15C19.14 16.92 21 14.18 21 11c0-4.42-3.58-8-8-8z" fill="#FF7029" />
+          <path d="M15 3c3.31 0 6 2.69 6 6h-3c0-1.66-1.34-3-3-3V3z" fill="#FF7029" />
         </svg>
       );
     case "Trina Solar":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" stroke="#005A9C" strokeWidth="2" />
-          <circle cx="12" cy="12" r="6" fill="#29ABE2" />
+          <path d="M5 12c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#29ABE2" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4" fill="#005A9C" />
+          <path d="M12 12c0 2.21-1.79 4-4 4s-4-1.79-4-4" fill="#29ABE2" />
         </svg>
       );
     case "Growatt":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" fill="#00B050" />
-          <path d="M8 12l3 3 5-5" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 18h18" stroke="#00B050" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M12 18V9c0-3.5 2.5-6 6-6-2.5 1.5-3.5 4-3.5 7v8" stroke="#00B050" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M12 14c-2.5-1.5-3.5-4-3.5-7C8.5 3.5 11 2 11 2v12" stroke="#00B050" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
     case "Fronius":
       return (
-        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="5" fill="#E30613" />
-          <path d="M7 6h10v3H10v3h6v3H10v4H7V6z" fill="#FFFFFF" />
+        <svg viewBox="0 0 34 12" className="w-9 h-3.5" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="10" fill="#E30613" fontSize="9.5" fontWeight="900" fontFamily="system-ui, sans-serif" letterSpacing="0.03em">FRONIUS</text>
         </svg>
       );
     case "GoodWe":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L4 5v6c0 5.25 3.42 10.16 8 11 4.58-.84 8-5.75 8-11V5l-8-3z" fill="#E2001A" />
-          <path d="M9 11l2 2 4-4" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <circle cx="12" cy="12" r="10" fill="#E2001A" />
+          <path d="M12 6a6 6 0 1 0 6 6h-2a4 4 0 1 1-4-4V6z" fill="#FFFFFF" />
+          <circle cx="12" cy="12" r="2" fill="#FFFFFF" />
         </svg>
       );
     case "Alpha ESS":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2z" fill="#0D5DB5" />
-          <path d="M12 6v12M8 9h8" stroke="#FFFFFF" strokeWidth="1.5" />
+          <path d="M9 14.5l3-6 3 6M10.5 12h3" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       );
     case "Sigenergy":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" fill="#00A896" />
-          <path d="M12 6c-3 0-4 2-4 4s1 4 4 4 4-2 4-4-1-4-4-4zm0 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" fill="#FFFFFF" />
+          <path d="M8.5 14.5c0-1.5 2-2 3.5-2.5s3.5-1 3.5-2.5c0-1.5-1.5-2-3.5-2S8.5 8.5 8.5 10" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="15.5" cy="14.5" r="1.5" fill="#FFFFFF" />
         </svg>
       );
     case "Solax":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="5" fill="#64748B" />
-          <path d="M6 6l12 12M18 6L6 18" stroke="#E30613" strokeWidth="3" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="10" fill="#E30613" />
+          <path d="M8 8l8 8M16 8L8 16" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M4 12c0-4.42 3.58-8 8-8" stroke="#FFFFFF" strokeWidth="1.5" opacity="0.6" />
         </svg>
       );
     case "Solis":
       return (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="6" fill="#FF8C00" />
-          <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#FF8C00" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="12" cy="12" r="5" fill="#FF8C00" />
+          <path d="M12 2l1.5 3h-3zM12 22l1.5-3h-3zM2 12l3 1.5v-3zM22 12l-3 1.5v-3z" fill="#FF8C00" />
+          <path d="M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2 2" stroke="#FF8C00" strokeWidth="2" strokeLinecap="round" />
         </svg>
       );
     default:

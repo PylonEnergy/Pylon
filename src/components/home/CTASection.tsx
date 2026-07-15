@@ -11,7 +11,7 @@ const perks = [
 
 export default function CTASection() {
   return (
-    <section id="cta" className="relative overflow-hidden py-16 md:py-24">
+    <section id="cta" className="relative overflow-hidden py-10 md:py-14">
       {/* Premium Deep Background Gradient */}
       <div
         className="absolute inset-0"

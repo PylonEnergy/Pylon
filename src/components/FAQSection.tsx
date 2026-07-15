@@ -29,7 +29,7 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(1); // Default to item 2 open to match screenshot
 
   return (
-    <section id="faq" className="section-padding bg-[#F8FAFC] relative overflow-hidden py-24 border-t border-slate-100">
+    <section id="faq" className="section-padding bg-[#F8FAFC] relative overflow-hidden border-t border-slate-100">
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

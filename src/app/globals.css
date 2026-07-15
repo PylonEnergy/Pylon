@@ -205,7 +205,12 @@ h6 {
 
 /* ── Section Spacing ── */
 .section-padding {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
+}
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
 }
 
 /* ── Section Label / Eyebrow ── */
