@@ -126,14 +126,16 @@ export default function Header() {
             className="absolute left-0 top-0 bottom-0 w-[220px] sm:w-[270px] md:w-[310px] xl:w-[360px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
           >
             <Link href="/" className="flex items-center group">
-              <Image
-                src="/pylon-logo.png"
-                alt="Pylon Energy"
-                width={230}
-                height={75}
-                priority
-                className="h-11 sm:h-13 md:h-15 xl:h-18 w-auto object-contain rounded-xl transition-opacity group-hover:opacity-90"
-              />
+              <svg viewBox="0 0 260 60" className="h-11 sm:h-13 md:h-15 xl:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Solar Bolt Emblem */}
+                <path d="M22 6L4 32h14l-4 22 18-26H18l4-22z" fill="#FF7029" />
+                <path d="M12 20L4 32h14l-4 22" stroke="#29ABE2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                
+                {/* PYLON Text (navy) */}
+                <text x="50" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">PYLON</text>
+                {/* ENERGY Text (cyan) */}
+                <text x="165" y="42" fill="#29ABE2" fontSize="30" fontWeight="500" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">ENERGY</text>
+              </svg>
             </Link>
           </div>
 
@@ -398,13 +400,16 @@ export default function Header() {
           />
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-pe-gray-200">
-              <Image
-                src="/pylon-logo.png"
-                alt="Pylon Energy"
-                width={160}
-                height={52}
-                className="h-12 w-auto object-contain"
-              />
+              <svg viewBox="0 0 260 60" className="h-11 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Solar Bolt Emblem */}
+                <path d="M22 6L4 32h14l-4 22 18-26H18l4-22z" fill="#FF7029" />
+                <path d="M12 20L4 32h14l-4 22" stroke="#29ABE2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                
+                {/* PYLON Text (navy) */}
+                <text x="50" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">PYLON</text>
+                {/* ENERGY Text (cyan) */}
+                <text x="165" y="42" fill="#29ABE2" fontSize="30" fontWeight="500" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">ENERGY</text>
+              </svg>
               <button
                 onClick={() => setMobileOpen(false)}
                 className="p-1.5 rounded-lg text-pe-gray-500 hover:bg-pe-gray-100"

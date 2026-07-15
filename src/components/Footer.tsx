@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -10,14 +9,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Col 1: Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-5 rounded-xl overflow-hidden bg-white p-2 hover:opacity-90 transition-opacity">
-              <Image
-                src="/pylon-logo.png"
-                alt="Pylon Energy — Solar Panels & Battery Storage"
-                width={190}
-                height={60}
-                className="h-14 w-auto object-contain"
-              />
+            <Link href="/" className="inline-block mb-5 hover:opacity-90 transition-opacity">
+              <svg viewBox="0 0 260 60" className="h-14 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Solar Bolt Emblem */}
+                <path d="M22 6L4 32h14l-4 22 18-26H18l4-22z" fill="#FF7029" />
+                <path d="M12 20L4 32h14l-4 22" stroke="#29ABE2" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                
+                {/* PYLON Text (white) */}
+                <text x="50" y="42" fill="#FFFFFF" fontSize="30" fontWeight="900" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">PYLON</text>
+                {/* ENERGY Text (cyan) */}
+                <text x="165" y="42" fill="#29ABE2" fontSize="30" fontWeight="500" fontFamily="system-ui, sans-serif" letterSpacing="0.02em">ENERGY</text>
+              </svg>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Australian-owned solar company delivering premium solar panels, battery storage &amp; EV charging solutions across NSW and beyond. SAA Accredited Retailer.
