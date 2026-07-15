@@ -127,18 +127,23 @@ export default function Header() {
           >
             <Link href="/" className="flex items-center group">
               <svg viewBox="0 0 285 60" className="h-11 sm:h-13 md:h-15 xl:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Solar Roof (Orange) */}
-                <path d="M6 24 L22 10 L38 24" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                {/* Solar grid markings on the roof */}
-                <path d="M14 17l2 2M22 10v4M30 17l-2 2" stroke="#FF7029" strokeWidth="2" strokeLinecap="round" />
+                {/* 3D Isometric Solar-Battery-Pylon Cube */}
+                {/* Top Face - Solar Panel Grid (Orange) */}
+                <path d="M24 12 L38 20 L24 29 L10 20 Z" fill="#FF7029" />
+                <line x1="24" y1="12" x2="24" y2="29" stroke="#FFFFFF" strokeWidth="1.5" />
+                <line x1="10" y1="20" x2="38" y2="20" stroke="#FFFFFF" strokeWidth="1.5" />
                 
-                {/* House Base Walls (Navy) */}
-                <path d="M10 24 v20 h24 V24" stroke="#002B5C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                {/* Left Face - Lithium Battery Cells (Cyan) */}
+                <path d="M10 20 L24 29 L24 46 L10 38 Z" fill="#29ABE2" />
+                <line x1="13" y1="24.5" x2="21" y2="29.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                <line x1="13" y1="30.5" x2="21" y2="35.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                <line x1="13" y1="36.5" x2="21" y2="41.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
                 
-                {/* Battery Storage Unit Inside the House (Cyan) */}
-                <rect x="18" y="28" width="8" height="12" rx="1.5" stroke="#29ABE2" strokeWidth="2" />
-                <path d="M21 28h2v-1.5h-2v1.5z" fill="#29ABE2" />
-                <path d="M20 32h4M20 36h4" stroke="#29ABE2" strokeWidth="1.5" strokeLinecap="round" />
+                {/* Right Face - Power Pylon Tower Grid (Navy) */}
+                <path d="M24 29 L38 20 L38 38 L24 46 Z" fill="#002B5C" />
+                <line x1="31" y1="24.5" x2="31" y2="42" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="24" y1="29" x2="38" y2="38" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="24" y1="46" x2="38" y2="20" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="60" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
@@ -410,18 +415,23 @@ export default function Header() {
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-pe-gray-200">
               <svg viewBox="0 0 285 60" className="h-11 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Solar Roof (Orange) */}
-                <path d="M6 24 L22 10 L38 24" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
-                {/* Solar grid markings on the roof */}
-                <path d="M14 17l2 2M22 10v4M30 17l-2 2" stroke="#FF7029" strokeWidth="2" strokeLinecap="round" />
+                {/* 3D Isometric Solar-Battery-Pylon Cube */}
+                {/* Top Face - Solar Panel Grid (Orange) */}
+                <path d="M24 12 L38 20 L24 29 L10 20 Z" fill="#FF7029" />
+                <line x1="24" y1="12" x2="24" y2="29" stroke="#FFFFFF" strokeWidth="1.5" />
+                <line x1="10" y1="20" x2="38" y2="20" stroke="#FFFFFF" strokeWidth="1.5" />
                 
-                {/* House Base Walls (Navy) */}
-                <path d="M10 24 v20 h24 V24" stroke="#002B5C" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                {/* Left Face - Lithium Battery Cells (Cyan) */}
+                <path d="M10 20 L24 29 L24 46 L10 38 Z" fill="#29ABE2" />
+                <line x1="13" y1="24.5" x2="21" y2="29.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                <line x1="13" y1="30.5" x2="21" y2="35.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+                <line x1="13" y1="36.5" x2="21" y2="41.5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
                 
-                {/* Battery Storage Unit Inside the House (Cyan) */}
-                <rect x="18" y="28" width="8" height="12" rx="1.5" stroke="#29ABE2" strokeWidth="2" />
-                <path d="M21 28h2v-1.5h-2v1.5z" fill="#29ABE2" />
-                <path d="M20 32h4M20 36h4" stroke="#29ABE2" strokeWidth="1.5" strokeLinecap="round" />
+                {/* Right Face - Power Pylon Tower Grid (Navy) */}
+                <path d="M24 29 L38 20 L38 38 L24 46 Z" fill="#002B5C" />
+                <line x1="31" y1="24.5" x2="31" y2="42" stroke="#FFFFFF" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="24" y1="29" x2="38" y2="38" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
+                <line x1="24" y1="46" x2="38" y2="20" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
                 
                 {/* PYLON Text (navy, using site brand font variable) */}
                 <text x="60" y="42" fill="#002B5C" fontSize="30" fontWeight="900" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.03em">PYLON</text>
