@@ -121,7 +121,7 @@ export default function Header() {
           {/* DIAGONAL-CUT LOGO CONTAINER — spans both top bar and main header */}
           <div 
             style={{ 
-              clipPath: "polygon(0 0, 100% 0, calc(100% - 40px) 44px, calc(100% - 40px) 100%, 0 100%)" 
+              clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 44px, 100% 100%, 0 100%)" 
             }}
             className="absolute left-0 top-0 bottom-0 w-[220px] sm:w-[270px] md:w-[310px] xl:w-[360px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
           >
@@ -140,7 +140,7 @@ export default function Header() {
           {/* TOP BAR (navy bg) - slants on the left side */}
           <div 
             style={{ 
-              clipPath: "polygon(40px 0, 100% 0, 100% 100%, 0 100%)"
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%)"
             }}
             className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-xs z-10 ml-[180px] sm:ml-[230px] md:ml-[270px] xl:ml-[320px] transition-all duration-300"
           >
@@ -165,7 +165,7 @@ export default function Header() {
 
           {/* MAIN HEADER (bottom bar, white bg) */}
           <div className="h-20 bg-white">
-            <div className="h-full pl-[190px] sm:pl-[240px] md:pl-[280px] xl:pl-[330px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
+            <div className="h-full pl-[220px] sm:pl-[270px] md:pl-[310px] xl:pl-[360px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
               
               {/* DESKTOP NAV */}
               <nav className="hidden lg:flex items-center justify-between flex-grow mx-4 xl:mx-8" style={{ position: "static" }}>
