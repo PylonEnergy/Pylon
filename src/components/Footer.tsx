@@ -11,15 +11,19 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5 hover:opacity-90 transition-opacity">
               <svg viewBox="0 0 285 60" className="h-14 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Monogram P (White stem, Orange loop) */}
+                {/* Monogram P (White stem, Solar Sunburst loop) */}
                 <rect x="8" y="16" width="4.5" height="28" fill="#FFFFFF" rx="1.5" />
-                <path d="M12.5 16h5.5c3.03 0 5.5 2.47 5.5 5.5S21.03 27 18 27h-5.5v-11z" fill="#FF7029" />
+                <circle cx="18" cy="22" r="6" stroke="#FF7029" strokeWidth="3" fill="none" />
+                <path d="M23 17l2-2 M24 22h3 M23 27l2 2" stroke="#FF7029" strokeWidth="2" strokeLinecap="round" />
                 
-                {/* Monogram E (Cyan) */}
+                {/* Monogram E (Cyan Battery Cell) */}
                 <rect x="24" y="16" width="4.5" height="28" fill="#29ABE2" rx="1.5" />
                 <rect x="28.5" y="16" width="11" height="4" fill="#29ABE2" rx="1" />
                 <rect x="28.5" y="28" width="8" height="4" fill="#29ABE2" rx="1" />
                 <rect x="28.5" y="40" width="11" height="4" fill="#29ABE2" rx="1" />
+                {/* Battery outer bracket & terminal tip */}
+                <path d="M35 16h4v28h-4" stroke="#29ABE2" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                <rect x="39" y="26" width="2.5" height="8" rx="1" fill="#29ABE2" />
                 
                 {/* Rising Increment Trend Line Arrow Slicing Through Monogram */}
                 <path d="M10 38 L19 29 L25 33 L38 18" stroke="#FF7029" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
