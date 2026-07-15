@@ -489,20 +489,21 @@ h6 {
 
 .form-input {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 0.875rem 1.125rem;
   border-radius: 0.75rem;
-  border: 1.5px solid var(--color-pe-gray-200);
-  background: white;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  background: rgba(248, 250, 252, 0.5);
   font-size: 0.9375rem;
   color: var(--color-pe-gray-900);
-  transition: all 0.2s var(--ease-smooth);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
   font-family: var(--font-sans);
 }
 
 .form-input:focus {
   border-color: var(--color-pe-cyan);
-  box-shadow: 0 0 0 3px rgba(41, 171, 226, 0.15);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(41, 171, 226, 0.08);
 }
 
 .form-input::placeholder {
