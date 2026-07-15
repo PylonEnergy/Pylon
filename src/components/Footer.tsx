@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Col 1: Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-5 hover:opacity-90 transition-opacity">
-              <svg viewBox="0 0 360 60" className="h-12 sm:h-14 lg:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 380 60" className="h-12 sm:h-14 lg:h-16 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <mask id="arrow-mask-footer">
                     <rect width="360" height="60" fill="white" />

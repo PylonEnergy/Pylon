@@ -125,7 +125,7 @@ export default function Header() {
             className="absolute left-0 top-0 bottom-0 w-[220px] sm:w-[280px] md:w-[330px] lg:w-[360px] xl:w-[390px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
           >
             <Link href="/" className="flex items-center group">
-              <svg viewBox="0 0 360 60" className="h-9 sm:h-12 md:h-13 lg:h-14 xl:h-[68px] w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 380 60" className="h-9 sm:h-12 md:h-13 lg:h-14 xl:h-[68px] w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <mask id="arrow-mask-header">
                     <rect width="360" height="60" fill="white" />
@@ -418,7 +418,7 @@ export default function Header() {
           />
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto">
             <div className="flex items-center justify-between p-4 border-b border-pe-gray-200">
-              <svg viewBox="0 0 360 60" className="h-10 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg viewBox="0 0 380 60" className="h-10 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <mask id="arrow-mask-mobile">
                     <rect width="360" height="60" fill="white" />
