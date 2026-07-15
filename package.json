@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:azure": "node_modules/.bin/next start -p 8080",
+    "start:azure": "node node_modules/next/dist/bin/next start -p 8080",
     "lint": "eslint"
   },
   "dependencies": {
