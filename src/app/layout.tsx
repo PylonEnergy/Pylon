@@ -114,9 +114,9 @@ export default async function RootLayout({
               --color-pe-navy-custom: ${settings.primaryNavy || "#002B5C"};
               --color-pe-navy-dark-custom: ${settings.primaryNavy ? settings.primaryNavy + "d9" : "#001A3A"};
               --color-pe-navy-mid-custom: ${settings.primaryNavy ? settings.primaryNavy + "b3" : "#0D3572"};
-              --color-pe-orange-custom: ${settings.accentOrange || "#29ABE2"};
-              --color-pe-orange-dark-custom: ${settings.accentOrange ? settings.accentOrange + "d9" : "#1A8CBD"};
-              --color-pe-orange-light-custom: ${settings.accentOrange ? settings.accentOrange + "1a" : "#E8F7FD"};
+              --color-pe-orange-custom: ${settings.accentOrange === "#29ABE2" ? "#FF7029" : (settings.accentOrange || "#FF7029")};
+              --color-pe-orange-dark-custom: ${settings.accentOrange === "#29ABE2" ? "#E5601E" : (settings.accentOrange ? settings.accentOrange + "d9" : "#E5601E")};
+              --color-pe-orange-light-custom: ${settings.accentOrange === "#29ABE2" ? "#FFF0E5" : (settings.accentOrange ? settings.accentOrange + "1a" : "#FFF0E5")};
             }
           `
         }} />

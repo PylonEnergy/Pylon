@@ -15,6 +15,7 @@ const slides = [
     promoBadge: "FREE UPGRADE 10kW INVERTER",
     ctaText: "Apply For Zero % Interest →",
     ctaLink: "/get-quote?interest=battery",
+    gradient: "from-[#29ABE2] to-[#0D5DB5]",
   },
   {
     badge: "2026 GOVERNMENT SUB-SCHEME",
@@ -26,6 +27,7 @@ const slides = [
     promoBadge: "NSW SUB-SCHEME ACTIVE",
     ctaText: "Check Rebate Eligibility →",
     ctaLink: "/get-quote?interest=residential",
+    gradient: "from-[#29ABE2] to-[#1A8CBD]",
   },
   {
     badge: "COMMERCIAL SOLAR DEALS",
@@ -37,6 +39,7 @@ const slides = [
     promoBadge: "FREE COMMERCIAL FEASIBILITY",
     ctaText: "Get Free Feasibility Study →",
     ctaLink: "/get-quote?interest=commercial",
+    gradient: "from-[#FF7029] to-[#E5601E]",
   },
 ];
 
@@ -145,7 +148,12 @@ export default function HeroBanner() {
 
                   {/* Title */}
                   <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-pe-navy leading-[1.08] tracking-tight whitespace-pre-line">
-                    {slide.title}
+                    {slide.title.split("\n")[0]}
+                    {slide.title.split("\n")[1] && (
+                      <span className={`block mt-1.5 bg-gradient-to-r ${slide.gradient} bg-clip-text text-transparent`}>
+                        {slide.title.split("\n")[1]}
+                      </span>
+                    )}
                   </h1>
 
                   {/* Subtitle */}
@@ -250,6 +258,10 @@ export default function HeroBanner() {
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-5">
               {/* Left section: Header */}
               <div className="text-center lg:text-left flex-shrink-0">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-[#FF7029] bg-[#FFF0E5] border border-[#FF7029]/20 mb-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF7029] animate-ping" />
+                  Live Update
+                </div>
                 <h4 className="font-black text-pe-navy text-base lg:text-lg uppercase tracking-wider leading-none">
                   Check For Battery Offers
                 </h4>

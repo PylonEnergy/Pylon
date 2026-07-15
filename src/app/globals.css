@@ -233,23 +233,27 @@ h6 {
 
 /* ── Section Title ── */
 .section-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-weight: 800;
-  color: var(--color-pe-gray-900);
-  line-height: 1.1;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--color-pe-navy);
+  line-height: 1.08;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
 }
 
 .section-title em {
-  font-style: italic;
-  font-weight: 400;
-  /* Cyan — the ENERGY colour from the logo */
-  color: var(--color-pe-cyan);
+  font-style: normal;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FF7029 0%, #FF9F43 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-title span {
-  color: var(--color-pe-cyan);
+  font-weight: 900;
+  background: linear-gradient(135deg, #29ABE2 0%, #0D5DB5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-subtitle {
