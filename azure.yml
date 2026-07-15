@@ -24,13 +24,12 @@ jobs:
         run: npm ci
 
       - name: Build Next.js application
-        run: |
-          npm run build
-          ls -la .next
+        run: npm run build
 
-      # Zip all critical production components including the hidden .next folder
+      # Crucial Update: We now explicitly include node_modules in the deployment bundle
       - name: Zip artifact for deployment
-        run: zip release.zip -r .next public package.json package-lock.json next.config.mjs next.config.js 2>/dev/null || zip release.zip -r .next public package.json package-lock.json
+        run: |
+          zip -r release.zip .next public package.json package-lock.json node_modules next.config.js next.config.mjs 2>/dev/null || zip -r release.zip .next public package.json package-lock.json node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
