@@ -122,7 +122,7 @@ export default function Header() {
             style={{ 
               clipPath: "polygon(0 0, calc(100% - 40px) 0, 100% 44px, 100% 100%, 0 100%)" 
             }}
-            className="absolute left-0 top-0 bottom-0 w-[220px] sm:w-[280px] md:w-[330px] lg:w-[360px] xl:w-[390px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
+            className="absolute left-0 top-0 bottom-0 w-[240px] sm:w-[320px] md:w-[350px] lg:w-[380px] xl:w-[450px] bg-white flex items-center pl-3 sm:pl-6 lg:pl-8 z-20"
           >
             <Link href="/" className="flex items-center group">
               <svg viewBox="0 0 380 60" className="h-9 sm:h-12 md:h-13 lg:h-14 xl:h-[68px] w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +162,7 @@ export default function Header() {
             style={{ 
               clipPath: "polygon(0 0, 100% 0, 100% 100%, 40px 100%)"
             }}
-            className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-sm z-10 ml-[120px] sm:ml-[240px] md:ml-[290px] lg:ml-[320px] xl:ml-[350px] transition-all duration-300"
+            className="bg-[#002B5C] h-11 flex items-center justify-end px-4 sm:px-8 lg:px-12 xl:px-16 text-white text-sm z-10 ml-[140px] sm:ml-[280px] md:ml-[310px] lg:ml-[340px] xl:ml-[410px] transition-all duration-300"
           >
             <style>{`
               @keyframes pulse-orange {
@@ -201,7 +201,7 @@ export default function Header() {
 
           {/* MAIN HEADER (bottom bar, white bg) */}
           <div className="h-20 bg-white">
-            <div className="h-full pl-[220px] sm:pl-[280px] md:pl-[330px] lg:pl-[360px] xl:pl-[390px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
+            <div className="h-full pl-[240px] sm:pl-[320px] md:pl-[350px] lg:pl-[380px] xl:pl-[450px] pr-4 sm:pr-8 lg:pr-12 xl:pr-16 flex items-center justify-between relative" style={{ position: "static" }}>
               
               {/* DESKTOP NAV */}
               <nav className="hidden lg:flex items-center justify-between flex-grow mx-4 xl:mx-8" style={{ position: "static" }}>
