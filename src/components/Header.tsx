@@ -162,7 +162,7 @@ export default function Header() {
             <nav className="hidden lg:flex items-center justify-between flex-1 mx-6 xl:mx-12" style={{ position: "static" }}>
               <Link
                 href="/"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
               >
                 Home
               </Link>
@@ -170,8 +170,8 @@ export default function Header() {
 
               {/* SOLAR PACKAGES MEGA */}
               <div className="mega-menu-trigger" style={{ position: "static" }}>
-                <button className="flex items-center gap-1 px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
-                  Solar Packages <ChevronDown size={14} />
+                <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
+                  Solar Packages <ChevronDown size={16} />
                 </button>
                 <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                   <div className="grid grid-cols-3 gap-12">
@@ -265,8 +265,8 @@ export default function Header() {
 
               {/* SOLAR BATTERIES MEGA */}
               <div className="mega-menu-trigger" style={{ position: "static" }}>
-                <button className="flex items-center gap-1 px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
-                  Solar Batteries <ChevronDown size={14} />
+                <button className="flex items-center gap-1 px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap">
+                  Solar Batteries <ChevronDown size={16} />
                 </button>
                 <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
                   <div className="grid grid-cols-2 gap-12">
@@ -310,7 +310,7 @@ export default function Header() {
 
               <Link
                 href="/products"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
               >
                 Products
               </Link>
@@ -318,7 +318,7 @@ export default function Header() {
 
               <Link
                 href="/rebate-checker"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
+                className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-gray-700 hover:text-pe-navy rounded-lg hover:bg-pe-gray-50 transition-all whitespace-nowrap"
               >
                 Rebate Checker
               </Link>
@@ -326,7 +326,7 @@ export default function Header() {
 
               <Link
                 href="/special-offers"
-                className="px-3 xl:px-4.5 py-2 text-sm xl:text-[15.5px] font-bold text-pe-cyan hover:text-white hover:bg-pe-cyan rounded-lg transition-all flex items-center gap-1 whitespace-nowrap"
+                className="px-3 xl:px-4 py-2 text-[16px] xl:text-[18px] font-bold text-pe-cyan hover:text-white hover:bg-pe-cyan rounded-lg transition-all flex items-center gap-1 whitespace-nowrap"
               >
                   Special Offers
               </Link>
