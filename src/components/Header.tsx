@@ -170,7 +170,7 @@ export default function Header() {
                 </span>
                 info@pylonenergy.com.au
               </a>
-              <a href="tel:1300000000" className="hover:underline flex items-center gap-2 font-black text-[16px] xl:text-[17px] text-white">
+              <a href="tel:1300000000" className="hover:underline flex xl:hidden items-center gap-2 font-black text-[16px] text-white">
                 <span className="w-7 h-7 rounded-full bg-[#FFE8D6] glow-pulse flex items-center justify-center flex-shrink-0">
                   <Phone size={13} className="text-[#002B5C]" />
                 </span>

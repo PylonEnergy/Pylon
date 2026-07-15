@@ -91,7 +91,7 @@ function AnimatedNumber({ target, suffix, isDecimal, isZero }: {
 
 export default function TrustStats() {
   return (
-    <section className="px-4 sm:px-6 lg:px-8 relative z-20 -mt-10 mb-8">
+    <section className="px-4 sm:px-6 lg:px-8 relative z-20 mt-10 mb-8">
       <div
         className="max-w-7xl mx-auto rounded-3xl overflow-hidden border border-slate-100"
         style={{
