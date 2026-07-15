@@ -9,6 +9,11 @@ import LeadPopup from "@/components/LeadPopup";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import Link from "next/link";
 import Script from "next/script";
+import { Phone, Mail, Sparkles } from "lucide-react";
+
+// Set to true to show the "Launching Tomorrow" landing page.
+// Set to false to go live with the main website.
+const IS_UNDER_CONSTRUCTION = true;
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -186,19 +191,110 @@ export default async function RootLayout({
         )}
 
         {/* Dynamic Announcement Banner */}
-        {settings.bannerVisible && (
+        {settings.bannerVisible && !IS_UNDER_CONSTRUCTION && (
           <div className="bg-pe-orange text-white text-center py-2 px-4 text-xs font-bold transition-all relative z-50 animate-fade-in-up">
             <Link href={settings.bannerLink || "#"} className="hover:underline flex items-center justify-center gap-1.5">
               {settings.bannerMessage}
             </Link>
           </div>
         )}
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <FloatingSidebarCTA />
-        <LeadPopup />
-        <WhatsAppButton />
+
+        {IS_UNDER_CONSTRUCTION ? (
+          <>
+            {/* Background design */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-pe-navy-mid via-pe-navy to-pe-navy-dark opacity-90 z-0" />
+            <div 
+              className="absolute inset-0 z-0" 
+              style={{
+                backgroundImage: "radial-gradient(rgba(41, 171, 226, 0.15) 1px, transparent 1px)",
+                backgroundSize: "24px 24px"
+              }}
+            />
+
+            {/* Content card */}
+            <div className="flex-1 flex flex-col items-center justify-center p-6 relative z-10">
+              <div className="max-w-md w-full bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-10 shadow-2xl text-center flex flex-col items-center gap-8">
+                {/* Logo SVG */}
+                <div className="w-[280px] sm:w-[320px] bg-white rounded-2xl py-4 px-6 shadow-lg flex items-center justify-center">
+                  <svg viewBox="0 0 380 60" className="h-10 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <mask id="arrow-mask-maintenance">
+                        <rect width="360" height="60" fill="white" />
+                        <path d="M4 50 L20 34 L26 40 L44 22" stroke="black" strokeWidth="6" fill="none" strokeLinecap="square" strokeLinejoin="miter" />
+                        <polygon points="35,16 48,16 48,29" fill="black" />
+                      </mask>
+                    </defs>
+                    
+                    {/* Navy P with hole, cut by arrow */}
+                    <path d="M6 12 h18 c6.6 0 12 5.4 12 12 s-5.4 12 -12 12 H12 v12 H6 V12 Z M12 18 v12 h12 c3.3 0 6 -2.7 6 -6 s-2.7 -6 -6 -6 H12 Z" fill="#002B5C" fillRule="evenodd" mask="url(#arrow-mask-maintenance)" />
+                    
+                    {/* Cyan E horizontal bars, cut by arrow */}
+                    <path d="M12 32 h22 L28 38 H12 Z" fill="#29ABE2" mask="url(#arrow-mask-maintenance)" />
+                    <path d="M12 42 h30 L36 48 H12 Z" fill="#29ABE2" mask="url(#arrow-mask-maintenance)" />
+                    
+                    {/* Orange Arrow */}
+                    <path d="M4 50 L20 34 L26 40 L44 22" stroke="#FF7029" strokeWidth="3.5" fill="none" strokeLinecap="square" strokeLinejoin="miter" />
+                    <polygon points="37,18 46,18 46,27" fill="#FF7029" />
+                    
+                    {/* Sunburst */}
+                    <path d="M34 10 L30 6 M42 8 L42 2 M50 10 L54 6 M52 18 L58 18 M50 26 L54 30" stroke="#FF7029" strokeWidth="3.5" strokeLinecap="butt" />
+                    
+                    {/* Text: PYLON ENERGY */}
+                    <text x="68" y="42" fontSize="32" fontWeight="800" fontFamily="var(--font-sans), system-ui, sans-serif" letterSpacing="0.02em">
+                      <tspan fill="#002B5C">PYLON</tspan>
+                      <tspan fill="#29ABE2"> ENERGY</tspan>
+                    </text>
+                  </svg>
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <div className="inline-flex items-center gap-1.5 self-center bg-pe-orange/15 border border-pe-orange/30 text-pe-orange text-xs font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                    <Sparkles size={12} className="text-pe-orange animate-pulse" /> Launching Tomorrow
+                  </div>
+                  <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mt-2 leading-tight">
+                    Official Launch<br />
+                    <span className="text-[#29ABE2]">July 16, 2026</span>
+                  </h1>
+                  <p className="text-pe-gray-300 text-sm md:text-base mt-2 leading-relaxed">
+                    We are currently preparing the final setup for our brand new website. We will be officially live tomorrow morning!
+                  </p>
+                </div>
+
+                {/* Contact options */}
+                <div className="w-full pt-6 border-t border-white/10 flex flex-col gap-4">
+                  <p className="text-xs font-semibold text-pe-gray-400 uppercase tracking-widest">
+                    Need to reach us today?
+                  </p>
+                  <a 
+                    href="tel:1300000000" 
+                    className="w-full bg-[#FF7029] hover:bg-[#E5601E] text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all hover:-translate-y-0.5"
+                  >
+                    <Phone size={16} /> Call 1300 000 000
+                  </a>
+                  <a 
+                    href="mailto:info@pylonenergy.com.au" 
+                    className="text-sm font-semibold hover:text-[#29ABE2] text-white/80 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <Mail size={15} /> info@pylonenergy.com.au
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <footer className="py-8 text-center text-xs text-pe-gray-400 border-t border-white/5 relative z-10 w-full">
+              © 2026 Pylon Energy Pty Ltd. All rights reserved. CEC Approved Retailer.
+            </footer>
+          </>
+        ) : (
+          <>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <FloatingSidebarCTA />
+            <LeadPopup />
+            <WhatsAppButton />
+          </>
+        )}
       </body>
     </html>
   );
