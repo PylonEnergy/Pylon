@@ -7,9 +7,9 @@ export default function CustomCursor() {
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
-    // Don't render cursor on touch devices (mobiles/tablets)
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice) return;
+    // Only render cursor if the device has a mouse/trackpad (pointer: fine)
+    const hasMouse = window.matchMedia('(pointer: fine)').matches;
+    if (!hasMouse) return;
 
     setHidden(false);
 
