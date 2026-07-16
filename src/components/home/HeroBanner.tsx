@@ -6,39 +6,45 @@ import { ChevronLeft, ChevronRight, Zap, Award, Shield, Timer, ArrowRight } from
 
 const slides = [
   {
-    badge: "WELCOME TO PYLON ENERGY",
-    title: "Power Your Home with\nSmart Solar Solutions",
-    subtitle: "SMART ENERGY SOLUTIONS",
-    description: "Save money and energy with expertly designed solar systems. Trusted by Australians for reliable, green power solutions.",
-    highlights: ["Tier-1 Solar Panels", "25-Year Warranties", "Zero Down Finance"],
+    badge: "WELCOME TO PYLON ENERGY PTY LTD",
+    title: "Power Your Home with\nPremium Pylon Solar",
+    subtitle: "2026 SPECIAL LAUNCH PRICE",
+    description: "Save up to 80% on electricity bills with Pylon Energy's high-efficiency Tier-1 solar panel systems and smart battery storage configurations. Fully customized for Sydney and NSW homes.",
+    highlights: ["Sydney HQ & Support", "Licensed CEC Installers", "25-Year Product Warranty"],
     image: "/hero-battery.png",
     promoBadge: "2026 REBATES ACTIVE",
     ctaText: "Get Your Free Quote →",
     ctaLink: "/get-quote",
+    secondaryCtaText: "View Packages",
+    secondaryCtaLink: "#packages",
     gradient: "from-[#29ABE2] to-[#0D5DB5]",
   },
   {
     badge: "2026 GOVERNMENT SUB-SCHEME",
-    title: "SAVE UP TO $3,500\nON NSW SOLAR INSTALLS",
+    title: "Save Up To $3,500\nWith Pylon Rebates",
     subtitle: "NSW CLEAN ENERGY INCENTIVE",
-    description: "Secure premium Tier-1 solar panel packages with state government STC rebate incentives. Slash electricity bills by up to 90%.",
-    highlights: ["Licensed Installers", "25-Year Panel Warranty", "Zero Down Interest-Free Finance"],
+    description: "Lock in your Small-scale Technology Certificates (STCs) government rebates with Pylon Energy. We manage all eligibility approval and discount paperwork directly at point-of-sale.",
+    highlights: ["Point-of-Sale Discounts", "Rebate Approvals Handled", "Affordable Finance From $0 Down"],
     image: "/hero-panels.png",
     promoBadge: "NSW SUB-SCHEME ACTIVE",
     ctaText: "Check Rebate Eligibility →",
     ctaLink: "/get-quote?interest=residential",
+    secondaryCtaText: "Check Rebates",
+    secondaryCtaLink: "/rebate-checker",
     gradient: "from-[#29ABE2] to-[#1A8CBD]",
   },
   {
     badge: "COMMERCIAL SOLAR DEALS",
-    title: "SLASH YOUR BUSINESS\nPOWER BILLS BY 90%",
-    subtitle: "INSTANT TAX WRITE-OFFS ACTIVE",
-    description: "Custom solar grid layouts and high-performance commercial solar installations for offices, factories, and warehouses in NSW.",
-    highlights: ["Instant ROI Forecast", "Free Engineering Site Study", "No Cap Custom Commercial Rebates"],
+    title: "Slash Business Power Bills\nWith Pylon Commercial",
+    subtitle: "TAX WRITE-OFF & REBATES ACTIVE",
+    description: "Optimise your corporate overheads with Pylon Energy's high-yield commercial solar grids. Full engineering designs, solar feasibility studies, and flexible business finance options.",
+    highlights: ["Free Engineering Studies", "100% Tax Write-Off Eligible", "No-Cap Business Rebates"],
     image: "/hero-commercial.png",
     promoBadge: "FREE COMMERCIAL FEASIBILITY",
     ctaText: "Get Free Feasibility Study →",
     ctaLink: "/get-quote?interest=commercial",
+    secondaryCtaText: "Commercial Solar",
+    secondaryCtaLink: "/services/commercial-solar",
     gradient: "from-[#FF7029] to-[#E5601E]",
   },
 ];
@@ -176,18 +182,26 @@ export default function HeroBanner() {
                     ))}
                   </div>
 
-                  {/* Slide CTA Button */}
+                  {/* Slide CTA Buttons */}
                   <div className="pt-2 flex flex-wrap items-center gap-4">
                     <Link
                       href={slide.ctaLink}
-                      className="inline-flex items-center justify-center font-black tracking-wider text-xs uppercase py-3.5 px-7 rounded-full shadow-lg transition-transform hover:scale-[1.02] text-white"
+                      className="inline-flex items-center justify-center font-black tracking-wider text-xs uppercase py-3.5 px-7 rounded-full shadow-lg transition-all hover:scale-[1.02] text-white"
                       style={{
-                        background: "linear-gradient(135deg, #FF7029, #E5601E)",
-                        boxShadow: "0 8px 24px rgba(255, 112, 41, 0.35)",
+                        background: "gradient" in slide && slide.gradient.includes("FF7029") ? "linear-gradient(135deg, #002B5C, #001A3A)" : "linear-gradient(135deg, #FF7029, #E5601E)",
+                        boxShadow: "gradient" in slide && slide.gradient.includes("FF7029") ? "0 8px 24px rgba(0, 43, 92, 0.35)" : "0 8px 24px rgba(255, 112, 41, 0.35)",
                       }}
                     >
                       {slide.ctaText}
                     </Link>
+                    {slide.secondaryCtaText && (
+                      <Link
+                        href={slide.secondaryCtaLink || "#"}
+                        className="inline-flex items-center justify-center font-black tracking-wider text-xs uppercase py-3 px-7 rounded-full border-2 border-pe-navy text-pe-navy hover:bg-pe-navy hover:text-white transition-all hover:scale-[1.02] bg-white/20 backdrop-blur-sm"
+                      >
+                        {slide.secondaryCtaText}
+                      </Link>
+                    )}
                   </div>
 
                   {/* Slider Control pill inside info block */}
