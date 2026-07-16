@@ -27,9 +27,19 @@ export default function LeadPopup() {
   };
 
   useEffect(() => {
-    // Check if the user has already submitted the lead form successfully
+    // Check if the user has already submitted or dismissed the lead form recently
     const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
+    const dismissedAt = localStorage.getItem("pylon_dismissed_lead_popup");
+    
     if (hasSubmitted) return;
+    
+    if (dismissedAt) {
+      const oneDay = 24 * 60 * 60 * 1000; // 24 hours in ms
+      const parsedTime = parseInt(dismissedAt, 10);
+      if (!isNaN(parsedTime) && Date.now() - parsedTime < oneDay) {
+        return;
+      }
+    }
 
     // 1. Initial timer schedule
     startTimer();
@@ -50,11 +60,8 @@ export default function LeadPopup() {
 
   const closePopup = () => {
     setIsOpen(false);
-    // Restart timer to pop up again in 10-15 seconds if not successfully submitted yet
-    const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
-    if (status !== "sent" && !hasSubmitted) {
-      startTimer();
-    }
+    // Remember that the user closed the popup, don't show it again for 24 hours
+    localStorage.setItem("pylon_dismissed_lead_popup", Date.now().toString());
   };
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
