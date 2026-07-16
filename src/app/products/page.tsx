@@ -17,6 +17,65 @@ type Product = {
   installImages?: string[];
 };
 
+const MOCK_PRODUCTS: Product[] = [
+  {
+    _id: "mock-1",
+    name: "Tiger Neo N-type 440W",
+    brand: "Jinko Solar",
+    category: "panel",
+    description: "N-Type high efficiency monocrystalline solar panel featuring Tiger Neo technology for superior low-light performance.",
+    specs: {
+      "Max Power": "440W",
+      "Efficiency": "22.02%",
+      "Product Warranty": "25 Years",
+      "Type": "N-Type Monocrystalline",
+    },
+    image: "/hero-panels.png",
+  },
+  {
+    _id: "mock-2",
+    name: "Powerwall 3",
+    brand: "Tesla",
+    category: "battery",
+    description: "All-in-one home energy storage system with integrated solar inverter and full home backup capabilities.",
+    specs: {
+      "Usable Capacity": "13.5 kWh",
+      "Real Power": "11.5 kW",
+      "Warranty": "10 Years",
+      "System Type": "AC Coupled",
+    },
+    image: "/hero-battery.png",
+  },
+  {
+    _id: "mock-3",
+    name: "SG10RT Premium Hybrid",
+    brand: "Sungrow",
+    category: "inverter",
+    description: "Three-phase hybrid inverter with built-in backup power function and high efficiency solar conversion.",
+    specs: {
+      "Max PV Power": "15,000 W",
+      "Rated AC Power": "10,000 W",
+      "Max Efficiency": "98.2%",
+      "Phase": "3-Phase",
+    },
+    image: "/hero-commercial.png",
+  },
+  {
+    _id: "mock-4",
+    name: "Smile5 10.1kWh",
+    brand: "Alpha ESS",
+    category: "battery",
+    description: "Modular and expandable residential battery storage system using cobalt-free LFP chemistry.",
+    specs: {
+      "Capacity": "10.1 kWh",
+      "Max Output": "5,000 W",
+      "Warranty": "10 Years",
+      "Battery Type": "LFP (LiFePO4)",
+    },
+    image: "/hero-battery.png",
+  }
+];
+
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
@@ -34,10 +93,18 @@ export default function ProductsPage() {
         const res = await fetch(`${apiHost}/api/products`);
         if (res.ok) {
           const data = await res.json();
-          setProducts(data.products || []);
+          const list = data.products || [];
+          if (list.length > 0) {
+            setProducts(list);
+          } else {
+            setProducts(MOCK_PRODUCTS);
+          }
+        } else {
+          setProducts(MOCK_PRODUCTS);
         }
       } catch (err) {
         console.error("Failed to load products:", err);
+        setProducts(MOCK_PRODUCTS);
       } finally {
         setLoading(false);
       }
