@@ -63,7 +63,7 @@ function QuotePageContent() {
         <div className="p-5 rounded-2xl bg-pe-gray-50 border border-pe-gray-200">
           <p className="font-bold text-pe-navy text-sm mb-1">Looking for immediate assistance?</p>
           <p className="text-pe-gray-500 text-xs leading-relaxed mb-3">Call our support desk during business hours to speak to a specialist instantly.</p>
-          <a href="tel:1300000000" className="font-mono font-bold text-pe-cyan">1300 000 000</a>
+          <a href="tel:1300001598" className="font-mono font-bold text-pe-cyan">1300 001 598</a>
         </div>
       </div>
 

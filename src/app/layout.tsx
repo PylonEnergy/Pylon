@@ -265,10 +265,10 @@ export default async function RootLayout({
                     Need to reach us today?
                   </p>
                   <a 
-                    href="tel:1300000000" 
+                    href="tel:1300001598" 
                     className="w-full bg-[#FF7029] hover:bg-[#E5601E] text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg transition-all hover:-translate-y-0.5"
                   >
-                    <Phone size={16} /> Call 1300 000 000
+                    <Phone size={16} /> Call 1300 001 598
                   </a>
                   <a 
                     href="mailto:info@pylonenergy.com.au" 

@@ -47,14 +47,14 @@ export default function FloatingSidebarCTA() {
 
       {/* Tab 3: Call Hotline */}
       <a
-        href="tel:1300000000"
+        href="tel:1300001598"
         className="flex items-center bg-pe-green hover:bg-pe-green/90 text-white p-3 rounded-l-xl shadow-xl transition-all duration-300 group border border-r-0 border-white/10"
       >
         <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
           <PhoneCall size={18} className="text-white group-hover:scale-110 transition-transform" />
         </div>
         <span className="max-w-0 overflow-hidden opacity-0 group-hover:max-w-xs group-hover:opacity-100 group-hover:ml-3 transition-all duration-300 ease-out font-bold text-xs tracking-wider uppercase whitespace-nowrap">
-          Call 1300 000 000
+          Call 1300 001 598
         </span>
       </a>
     </div>

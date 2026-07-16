@@ -6,7 +6,7 @@ export default function SchemaMarkup() {
     description:
       "Premium solar panel installation, battery storage and EV charger solutions across NSW and Australia.",
     url: "https://pylonenergy.com.au",
-    telephone: "+611300000000",
+    telephone: "+611300001598",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
@@ -56,7 +56,7 @@ export default function SchemaMarkup() {
       "Australian-owned solar company offering residential, commercial and battery solar solutions.",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+611300000000",
+      telephone: "+611300001598",
       contactType: "customer service",
       areaServed: "AU",
       availableLanguage: "English",

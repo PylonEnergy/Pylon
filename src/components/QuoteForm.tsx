@@ -171,7 +171,7 @@ export default function QuoteForm({
 
       {status === "error" && (
         <p className="text-red-500 text-sm text-center bg-red-50 rounded-lg p-3">
-          {errorDetails ? `Validation error: ${errorDetails}` : "Something went wrong — please try again or call us on 1300 000 000."}
+          {errorDetails ? `Validation error: ${errorDetails}` : "Something went wrong — please try again or call us on 1300 001 598."}
         </p>
       )}
 

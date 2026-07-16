@@ -190,11 +190,11 @@ export default function Header() {
                 </span>
                 info@pylonenergy.com.au
               </a>
-              <a href="tel:1300000000" className="hover:underline flex xl:hidden items-center gap-2 font-black text-[16px] text-white">
+              <a href="tel:1300001598" className="hover:underline flex xl:hidden items-center gap-2 font-black text-[16px] text-white">
                 <span className="w-7 h-7 rounded-full bg-[#FFE8D6] glow-pulse flex items-center justify-center flex-shrink-0">
                   <Phone size={13} className="text-[#002B5C]" />
                 </span>
-                1300 000 000
+                1300 001 598
               </a>
             </div>
           </div>
@@ -383,10 +383,10 @@ export default function Header() {
               {/* CTA + MOBILE TOGGLE */}
               <div className="flex items-center gap-3">
                 <a 
-                  href="tel:1300000000" 
+                  href="tel:1300001598" 
                   className="hidden xl:flex items-center gap-1.5 border border-[#002B5C] text-[#002B5C] hover:bg-[#002B5C] hover:text-white font-bold py-2 px-3.5 rounded-lg transition-all text-sm whitespace-nowrap"
                 >
-                  <Phone size={13} /> Call 1300 000 000
+                  <Phone size={13} /> Call 1300 001 598
                 </a>
                 <Link 
                   href="/get-quote" 
@@ -527,8 +527,8 @@ export default function Header() {
               </Link>
             </div>
             <div className="p-4 border-t border-pe-gray-200 space-y-3">
-              <a href="tel:1300000000" className="flex items-center gap-2 text-pe-navy font-semibold">
-                <Phone size={24} /> 1300 000 000
+              <a href="tel:1300001598" className="flex items-center gap-2 text-pe-navy font-semibold">
+                <Phone size={24} /> 1300 001 598
               </a>
               <Link href="/get-quote" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center">
                 Get A Free Quote →

@@ -132,8 +132,8 @@ export default function CTASection() {
               </div>
               <div>
                 <p className="text-white/50 text-xs">Prefer to call? We&apos;re available Mon–Fri 8am–6pm</p>
-                <a href="tel:1300000000" className="text-white font-bold font-mono hover:text-[#29ABE2] transition-colors">
-                  1300 000 000
+                <a href="tel:1300001598" className="text-white font-bold font-mono hover:text-[#29ABE2] transition-colors">
+                  1300 001 598
                 </a>
               </div>
             </div>

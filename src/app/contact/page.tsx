@@ -28,8 +28,8 @@ export default function ContactPage() {
               </div>
               <h3 className="font-bold text-pe-navy mb-2">Phone</h3>
               <p className="text-pe-gray-500 text-sm mb-4">Call our local NSW support team</p>
-              <a href="tel:1300000000" className="font-mono font-bold text-pe-navy hover:text-pe-cyan transition-colors">
-                1300 000 000
+              <a href="tel:1300001598" className="font-mono font-bold text-pe-navy hover:text-pe-cyan transition-colors">
+                1300 001 598
               </a>
             </div>
 
