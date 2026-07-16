@@ -6,15 +6,15 @@ import { ChevronLeft, ChevronRight, Zap, Award, Shield, Timer, ArrowRight } from
 
 const slides = [
   {
-    badge: "NEW ENERGY SCHEME",
-    title: "ZERO % INTEREST\n$0 UPFRONT FEES",
-    subtitle: "HOME ENERGY SAVER LOAN",
-    description: "Funded by NSW Government. Install premium solar + battery systems with interest-free financing and start saving immediately.",
-    highlights: ["Limited-Time Offer", "Energy Security when you need it", "10-Year Warranty"],
+    badge: "WELCOME TO PYLON ENERGY",
+    title: "Power Your Home with\nSmart Solar Solutions",
+    subtitle: "SMART ENERGY SOLUTIONS",
+    description: "Save money and energy with expertly designed solar systems. Trusted by Australians for reliable, green power solutions.",
+    highlights: ["Tier-1 Solar Panels", "25-Year Warranties", "Zero Down Finance"],
     image: "/hero-battery.png",
-    promoBadge: "FREE UPGRADE 10kW INVERTER",
-    ctaText: "Apply For Zero % Interest →",
-    ctaLink: "/get-quote?interest=battery",
+    promoBadge: "2026 REBATES ACTIVE",
+    ctaText: "Get Your Free Quote →",
+    ctaLink: "/get-quote",
     gradient: "from-[#29ABE2] to-[#0D5DB5]",
   },
   {
