@@ -153,13 +153,13 @@ export default function Footer() {
             <h3 className="font-bold text-sm uppercase tracking-widest text-white/40 mb-5">Contact Us</h3>
             <ul className="space-y-4">
               <li>
-                <a href="tel:1300000000" className="flex items-start gap-3 text-white/60 hover:text-white transition-colors group">
+                <a href="tel:1300 001 598" className="flex items-start gap-3 text-white/60 hover:text-white transition-colors group">
                   <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#29ABE2] transition-colors mt-0.5">
                     <Phone size={14} />
                   </div>
                   <div>
                     <p className="text-[11px] uppercase tracking-wider text-white/40 mb-0.5">Phone</p>
-                    <p className="font-semibold font-mono text-white">1300 000 000</p>
+                    <p className="font-semibold font-mono text-white">1300 001 598</p>
                   </div>
                 </a>
               </li>
