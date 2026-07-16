@@ -131,7 +131,7 @@ export default function ProductsPage() {
             /* Products Grid */
             <div className="grid md:grid-cols-2 gap-8">
               {filteredProducts.map((p) => (
-                <div key={p._id} className="bg-white rounded-3xl border border-pe-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-card transition-all duration-300">
+                <div key={p._id} className="product-card bg-white rounded-3xl border border-pe-gray-200 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-card transition-all duration-300">
                   <div className="p-6 sm:p-8 space-y-6">
                     {/* Header: Brand & Category */}
                     <div className="flex items-center justify-between gap-4">
@@ -148,7 +148,7 @@ export default function ProductsPage() {
 
                     {/* Image & Title */}
                     <div className="grid sm:grid-cols-5 gap-6 items-start">
-                      <div className="sm:col-span-2 rounded-2xl overflow-hidden border border-pe-gray-100 bg-pe-gray-50 aspect-square flex items-center justify-center relative shadow-inner">
+                      <div className="product-image-container sm:col-span-2 rounded-2xl overflow-hidden border border-pe-gray-100 bg-pe-gray-50 aspect-square flex items-center justify-center relative shadow-inner">
                         {p.image ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
