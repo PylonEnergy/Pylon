@@ -28,24 +28,30 @@ export default function LeadPopup() {
 
   useEffect(() => {
     // Check if the user has already submitted or dismissed the lead form recently
-    const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
-    const dismissedAt = localStorage.getItem("pylon_dismissed_lead_popup");
-    
-    if (hasSubmitted) return;
-    
-    if (dismissedAt) {
-      const oneDay = 24 * 60 * 60 * 1000; // 24 hours in ms
-      const parsedTime = parseInt(dismissedAt, 10);
-      if (!isNaN(parsedTime) && Date.now() - parsedTime < oneDay) {
-        return;
+    const checkStatus = () => {
+      const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
+      const dismissedAt = localStorage.getItem("pylon_dismissed_lead_popup");
+      
+      if (hasSubmitted) return true;
+      
+      if (dismissedAt) {
+        const oneDay = 24 * 60 * 60 * 1000; // 24 hours in ms
+        const parsedTime = parseInt(dismissedAt, 10);
+        if (!isNaN(parsedTime) && Date.now() - parsedTime < oneDay) {
+          return true;
+        }
       }
-    }
+      return false;
+    };
+
+    if (checkStatus()) return;
 
     // 1. Initial timer schedule
     startTimer();
 
     // 2. Set Exit Intent Trigger (Mouse leaving window)
     const handleMouseLeave = (e: MouseEvent) => {
+      if (checkStatus()) return;
       if (e.clientY < 20) {
         setIsOpen(true);
       }
