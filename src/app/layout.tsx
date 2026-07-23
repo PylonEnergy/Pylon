@@ -7,7 +7,6 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import FloatingSidebarCTA from "@/components/FloatingSidebarCTA";
 import LeadPopup from "@/components/LeadPopup";
 import SchemaMarkup from "@/components/SchemaMarkup";
-import CustomCursor from "@/components/CustomCursor";
 import Link from "next/link";
 import Script from "next/script";
 import { Phone, Mail, Sparkles } from "lucide-react";
@@ -293,7 +292,6 @@ export default async function RootLayout({
             <FloatingSidebarCTA />
             <LeadPopup />
             <WhatsAppButton />
-            <CustomCursor />
           </>
         )}
       </body>
