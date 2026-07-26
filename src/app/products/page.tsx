@@ -182,11 +182,28 @@ export default function ProductsPage() {
             ))}
           </div>
 
-          {/* Loader */}
+          {/* Skeleton loader — shows while products are fetching */}
           {loading ? (
-            <div className="text-center py-20">
-              <div className="w-12 h-12 border-4 border-pe-navy border-t-pe-cyan rounded-full animate-spin mx-auto mb-4" />
-              <p className="text-pe-gray-500 font-semibold">Loading product catalog...</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-sm p-8 space-y-5">
+                  <div className="flex items-center justify-between">
+                    <div className="skeleton h-6 w-24 rounded-full" />
+                    <div className="skeleton h-5 w-20 rounded-full" />
+                  </div>
+                  <div className="skeleton h-7 w-3/4" />
+                  <div className="skeleton h-44 w-full rounded-2xl" />
+                  <div className="space-y-2">
+                    <div className="skeleton h-3 w-full" />
+                    <div className="skeleton h-3 w-5/6" />
+                    <div className="skeleton h-3 w-4/6" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="skeleton h-10 rounded-xl" />
+                    <div className="skeleton h-10 rounded-xl" />
+                  </div>
+                </div>
+              ))}
             </div>
           ) : filteredProducts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-3xl border border-pe-gray-200 max-w-2xl mx-auto p-8 shadow-sm">

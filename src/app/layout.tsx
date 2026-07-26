@@ -7,6 +7,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import FloatingSidebarCTA from "@/components/FloatingSidebarCTA";
 import LeadPopup from "@/components/LeadPopup";
 import SchemaMarkup from "@/components/SchemaMarkup";
+import MobileCallBar from "@/components/MobileCallBar";
+import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import Script from "next/script";
 import { Phone, Mail, Sparkles } from "lucide-react";
@@ -287,11 +289,14 @@ export default async function RootLayout({
         ) : (
           <>
             <Header />
-            <main className="flex-1">{children}</main>
+            <PageTransition>
+              <main className="flex-1">{children}</main>
+            </PageTransition>
             <Footer />
             <FloatingSidebarCTA />
             <LeadPopup />
             <WhatsAppButton />
+            <MobileCallBar />
           </>
         )}
       </body>
