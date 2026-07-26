@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { X, Gift, Zap, PhoneCall, Award, ShieldCheck, User, MapPin, ChevronDown, Sparkles, ArrowRight } from "lucide-react";
-
+import { X, PhoneCall, Sun, CheckCircle2 } from "lucide-react";
 
 export default function LeadPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,50 +10,37 @@ export default function LeadPopup() {
     phone: "",
     postcode: "",
     interest: "residential",
-    email: "popup-lead@pylonenergy.com.au", // placeholder to satisfy schema
-    message: "", // start empty for custom user enquiry
+    email: "popup-lead@pylonenergy.com.au",
+    message: "",
   });
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Starts a randomized 10 to 15 seconds timer to open the modal
   const startTimer = () => {
     if (timerRef.current) clearTimeout(timerRef.current);
-    const delay = Math.floor(10000 + Math.random() * 5000); // 10s - 15s
-    timerRef.current = setTimeout(() => {
-      setIsOpen(true);
-    }, delay);
+    const delay = Math.floor(12000 + Math.random() * 5000);
+    timerRef.current = setTimeout(() => setIsOpen(true), delay);
   };
 
   useEffect(() => {
-    // Check if the user has already submitted or dismissed the lead form recently
     const checkStatus = () => {
       const hasSubmitted = localStorage.getItem("pylon_submitted_lead_popup");
       const dismissedAt = localStorage.getItem("pylon_dismissed_lead_popup");
-      
       if (hasSubmitted) return true;
-      
       if (dismissedAt) {
-        const oneDay = 24 * 60 * 60 * 1000; // 24 hours in ms
+        const oneDay = 24 * 60 * 60 * 1000;
         const parsedTime = parseInt(dismissedAt, 10);
-        if (!isNaN(parsedTime) && Date.now() - parsedTime < oneDay) {
-          return true;
-        }
+        if (!isNaN(parsedTime) && Date.now() - parsedTime < oneDay) return true;
       }
       return false;
     };
 
     if (checkStatus()) return;
-
-    // 1. Initial timer schedule
     startTimer();
 
-    // 2. Set Exit Intent Trigger (Mouse leaving window)
     const handleMouseLeave = (e: MouseEvent) => {
       if (checkStatus()) return;
-      if (e.clientY < 20) {
-        setIsOpen(true);
-      }
+      if (e.clientY < 20) setIsOpen(true);
     };
     document.addEventListener("mouseleave", handleMouseLeave);
 
@@ -66,11 +52,10 @@ export default function LeadPopup() {
 
   const closePopup = () => {
     setIsOpen(false);
-    // Remember that the user closed the popup, don't show it again for 24 hours
     localStorage.setItem("pylon_dismissed_lead_popup", Date.now().toString());
   };
 
-  const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData((d) => ({ ...d, [field]: e.target.value }));
   };
 
@@ -79,13 +64,10 @@ export default function LeadPopup() {
     setStatus("sending");
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000";
-      
-      // Fallback to default tracker description if message is empty
       const submissionData = {
         ...formData,
-        message: formData.message.trim() || "Submitted via Exit Intent / Timer Promo Pop-up modal",
+        message: `Popup lead — Interest: ${formData.interest}`,
       };
-
       const res = await fetch(`${apiUrl}/api/leads`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -97,7 +79,7 @@ export default function LeadPopup() {
       } else {
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
     }
   };
@@ -105,182 +87,168 @@ export default function LeadPopup() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Backdrop with premium blur */}
-      <div 
-        className="absolute inset-0 bg-[#001229]/65 backdrop-blur-md transition-opacity duration-300"
+    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
+      {/* Backdrop */}
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
         onClick={closePopup}
       />
 
-      {/* Modal Container */}
-      <div 
-        className="relative z-10 w-full max-w-[480px] bg-white rounded-3xl overflow-hidden shadow-[0_25px_60px_rgba(0,18,41,0.18)] animate-fade-in-up border border-pe-gray-100"
-      >
-        {/* Close Button */}
-        <button 
+      {/* Modal */}
+      <div className="relative z-10 w-full sm:max-w-[440px] bg-white sm:rounded-2xl rounded-t-2xl overflow-hidden shadow-2xl">
+
+        {/* Close */}
+        <button
           onClick={closePopup}
-          className="absolute right-4 top-4 text-white/60 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors z-20 cursor-pointer"
-          aria-label="Close dialog"
+          className="absolute right-4 top-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 transition-colors"
+          aria-label="Close"
         >
-          <X size={18} />
+          <X size={15} className="text-white" />
         </button>
 
-        {/* Promo Header Banner */}
-        <div className="bg-gradient-to-br from-[#002B5C] via-[#001E42] to-[#001530] text-white px-6 py-8 sm:px-8 sm:py-9 relative overflow-hidden">
-          {/* Subtle design blobs for depth */}
-          <div className="absolute top-[-50px] right-[-50px] w-36 h-36 bg-[#29ABE2] opacity-15 rounded-full blur-2xl pointer-events-none" />
-          <div className="absolute bottom-[-40px] left-[-30px] w-28 h-28 bg-[#FF7029] opacity-10 rounded-full blur-xl pointer-events-none" />
-          
-          <div className="inline-flex items-center gap-1.5 bg-[#29ABE2]/10 border border-[#29ABE2]/20 px-3 py-1 rounded-full text-[10px] font-bold text-[#29ABE2] uppercase tracking-wider mb-3">
-            <Sparkles size={11} className="animate-pulse" /> Special Offer
+        {/* Header */}
+        <div className="relative bg-[#002B5C] px-6 pt-7 pb-6 overflow-hidden">
+          {/* Decorative sun */}
+          <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-[#FF7029]/20 blur-2xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#FF7029] via-[#FFB347] to-transparent opacity-60" />
+
+          <div className="flex items-start gap-3">
+            <div className="flex-shrink-0 w-10 h-10 bg-[#FF7029]/15 rounded-xl flex items-center justify-center mt-0.5">
+              <Sun size={20} className="text-[#FF7029]" />
+            </div>
+            <div>
+              <p className="text-[#FFB347] text-xs font-semibold uppercase tracking-widest mb-1">
+                Quick question before you go
+              </p>
+              <h2 className="text-white text-xl font-bold leading-snug">
+                Thinking about going solar?<br />
+                <span className="text-[#29ABE2]">We'll do the hard work for you.</span>
+              </h2>
+            </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight mt-1">
-            Wait! Lock In Your <span className="bg-gradient-to-r from-[#29ABE2] to-[#60c4f1] bg-clip-text text-transparent font-black">NSW Rebate</span> Today!
-          </h2>
-          <p className="text-white/70 text-xs sm:text-sm mt-2 leading-relaxed">
-            Claim up to <strong className="text-white font-bold">$3,500</strong> in government solar incentives. Lock in your discount and get a free custom solar design layout.
+
+          <p className="text-white/60 text-sm mt-3 leading-relaxed pl-[52px]">
+            Drop your number and one of our Sydney team will give you a straight-talking, no-pressure call — usually within the hour.
           </p>
         </div>
 
-        {/* Form area */}
-        <div className="p-6 sm:p-8">
+        {/* Form */}
+        <div className="px-6 py-5">
           {status === "sent" ? (
-            <div className="text-center py-6 space-y-5 animate-fade-in-up">
-              <div className="w-16 h-16 bg-pe-green/10 border border-pe-green/20 rounded-full flex items-center justify-center mx-auto shadow-inner">
-                <ShieldCheck size={32} className="text-pe-green" />
+            <div className="text-center py-8 space-y-4">
+              <div className="w-14 h-14 bg-green-50 rounded-full flex items-center justify-center mx-auto">
+                <CheckCircle2 size={28} className="text-green-500" />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-black text-pe-navy">Rebate Eligibility Reserved!</h3>
-                <p className="text-pe-gray-500 text-sm px-2 leading-relaxed">
-                  Excellent! We have reserved your rebate spot. A certified CEC Solar Expert will call you on <strong className="text-pe-navy font-semibold font-mono">{formData.phone}</strong> in under 15 minutes to configure your free custom proposal design.
+              <div>
+                <h3 className="text-lg font-bold text-[#002B5C]">You're all set!</h3>
+                <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">
+                  Thanks {formData.name.split(" ")[0]}! Someone from our team will call{" "}
+                  <span className="font-semibold text-[#002B5C]">{formData.phone}</span> shortly.
+                  <br />No spam, we promise.
                 </p>
               </div>
-              <button 
+              <button
                 onClick={closePopup}
-                className="w-full py-3.5 rounded-xl font-bold text-white text-sm bg-pe-navy hover:bg-pe-navy-dark transition-all duration-200 cursor-pointer shadow-md"
+                className="mt-2 text-sm text-gray-400 hover:text-gray-600 underline underline-offset-2 transition-colors"
               >
-                Close &amp; Keep Browsing
+                Close this window
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Your Name */}
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-bold text-pe-navy/60 uppercase tracking-wider">Your Name</label>
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-pe-gray-400 group-focus-within:text-[#29ABE2] transition-colors">
-                    <User size={16} />
-                  </div>
+            <form onSubmit={handleSubmit} className="space-y-3.5">
+
+              {/* Name */}
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-1.5">Your first name</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Sarah"
+                  value={formData.name}
+                  onChange={set("name")}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/10 focus:outline-none transition-all"
+                />
+              </div>
+
+              {/* Phone + Postcode */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1.5">Mobile number</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="04xx xxx xxx"
+                    value={formData.phone}
+                    onChange={set("phone")}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/10 focus:outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-medium text-gray-500 mb-1.5">Your postcode</label>
                   <input
                     type="text"
                     required
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={set("name")}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-pe-gray-200/80 bg-pe-gray-50/30 text-pe-gray-900 text-sm font-medium placeholder-pe-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/8 focus:outline-none transition-all duration-200"
+                    placeholder="e.g. 2000"
+                    maxLength={4}
+                    value={formData.postcode}
+                    onChange={set("postcode")}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 text-sm placeholder-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/10 focus:outline-none transition-all"
                   />
                 </div>
               </div>
 
-              {/* Mobile & Postcode grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="block text-[11px] font-bold text-pe-navy/60 uppercase tracking-wider">Mobile Number</label>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-pe-gray-400 group-focus-within:text-[#29ABE2] transition-colors">
-                      <PhoneCall size={15} />
-                    </div>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="0400 000 000"
-                      value={formData.phone}
-                      onChange={set("phone")}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-pe-gray-200/80 bg-pe-gray-50/30 text-pe-gray-900 text-sm font-medium placeholder-pe-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/8 focus:outline-none transition-all duration-200"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-1.5">
-                  <label className="block text-[11px] font-bold text-pe-navy/60 uppercase tracking-wider">NSW Postcode</label>
-                  <div className="relative group">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-pe-gray-400 group-focus-within:text-[#29ABE2] transition-colors">
-                      <MapPin size={16} />
-                    </div>
-                    <input
-                      type="text"
-                      required
-                      placeholder="2000"
-                      maxLength={4}
-                      value={formData.postcode}
-                      onChange={set("postcode")}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-pe-gray-200/80 bg-pe-gray-50/30 text-pe-gray-900 text-sm font-medium placeholder-pe-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/8 focus:outline-none transition-all duration-200"
-                    />
-                  </div>
+              {/* Interest — pill style */}
+              <div>
+                <label className="block text-xs font-medium text-gray-500 mb-2">What are you interested in?</label>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { val: "residential", label: "Home Solar" },
+                    { val: "battery", label: "Battery Storage" },
+                    { val: "commercial", label: "Commercial" },
+                    { val: "ev", label: "EV Charging" },
+                  ].map((opt) => (
+                    <label
+                      key={opt.val}
+                      className={`flex items-center justify-center py-2.5 px-3 rounded-xl border text-sm font-medium cursor-pointer transition-all ${
+                        formData.interest === opt.val
+                          ? "border-[#29ABE2] bg-[#29ABE2]/8 text-[#0D5DB5]"
+                          : "border-gray-200 bg-gray-50 text-gray-500 hover:border-gray-300"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="interest"
+                        value={opt.val}
+                        checked={formData.interest === opt.val}
+                        onChange={set("interest")}
+                        className="sr-only"
+                      />
+                      {opt.label}
+                    </label>
+                  ))}
                 </div>
               </div>
 
-              {/* Vertical Enquiry Message Field (below Zipcode Grid) */}
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-bold text-pe-navy/60 uppercase tracking-wider">Your Enquiry</label>
-                <div className="relative group">
-                  <textarea
-                    placeholder="Describe your enquiry (e.g. system size, roof details, special requests)..."
-                    value={formData.message}
-                    onChange={set("message")}
-                    rows={2}
-                    className="w-full px-4 py-2.5 rounded-xl border border-pe-gray-200/80 bg-pe-gray-50/30 text-pe-gray-900 text-sm font-medium placeholder-pe-gray-400 focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/8 focus:outline-none transition-all duration-200 resize-none"
-                  />
-                </div>
-              </div>
-
-              {/* System Interest Select */}
-              <div className="space-y-1.5">
-                <label className="block text-[11px] font-bold text-pe-navy/60 uppercase tracking-wider">System Interest</label>
-                <div className="relative group">
-                  <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#94a3b8] group-focus-within:text-[#29ABE2] transition-colors">
-                    <Zap size={16} />
-                  </div>
-                  <select
-                    value={formData.interest}
-                    onChange={set("interest")}
-                    className="w-full pl-10 pr-10 py-3 rounded-xl border border-pe-gray-200/80 bg-pe-gray-50/30 text-pe-gray-700 text-sm font-medium focus:bg-white focus:border-[#29ABE2] focus:ring-4 focus:ring-[#29ABE2]/8 focus:outline-none appearance-none transition-all duration-200 cursor-pointer"
-                  >
-                    <option value="residential">Residential Solar (5kW - 13kW)</option>
-                    <option value="battery">Solar battery storage only</option>
-                    <option value="commercial">Commercial Solar (15kW - 100kW+)</option>
-                    <option value="ev">EV Home &amp; Business Charging</option>
-                  </select>
-                  <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-[#94a3b8] group-focus-within:text-[#29ABE2] transition-colors">
-                    <ChevronDown size={16} />
-                  </div>
-                </div>
-              </div>
-
-              {/* Submit Button */}
+              {/* Submit */}
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="group relative w-full py-4 rounded-xl font-bold text-white text-sm overflow-hidden bg-gradient-to-r from-[#29ABE2] to-[#0D5DB5] shadow-lg shadow-[#29ABE2]/20 hover:shadow-xl hover:shadow-[#29ABE2]/30 hover:-translate-y-[1px] active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 mt-4 cursor-pointer"
+                className="w-full mt-1 py-3.5 rounded-xl font-bold text-white text-sm bg-[#FF7029] hover:bg-[#e55f1a] active:scale-[0.98] transition-all duration-150 shadow-md shadow-[#FF7029]/20 flex items-center justify-center gap-2"
               >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#32bcf7] to-[#005bc4] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 flex items-center gap-1.5">
-                  {status === "sending" ? "Locking in Rebate..." : "Lock In My Rebate Eligibility"}
-                  <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform duration-200" />
-                </span>
+                <PhoneCall size={15} />
+                {status === "sending" ? "Submitting..." : "Get a free callback"}
               </button>
 
               {status === "error" && (
-                <p className="text-red-500 text-xs text-center font-bold">
-                  Connection timed out. Please check your network and try again.
+                <p className="text-red-500 text-xs text-center">
+                  Something went wrong. Please try again or call us on 1300 001 598.
                 </p>
               )}
 
-              {/* Trust markers */}
-              <div className="flex items-center justify-center gap-6 text-[10px] text-pe-navy/40 font-bold uppercase tracking-wider pt-5 mt-2 border-t border-pe-gray-100">
-                <span className="flex items-center gap-1.5"><Award size={13} className="text-[#29ABE2]" /> CEC Retailer</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-pe-gray-200" />
-                <span className="flex items-center gap-1.5"><PhoneCall size={13} className="text-[#29ABE2]" /> Callback in 15m</span>
-              </div>
+              {/* Human trust line */}
+              <p className="text-center text-xs text-gray-400 pt-1">
+                🔒 No spam, no hard sell — just honest solar advice from our Sydney team.
+              </p>
             </form>
           )}
         </div>
