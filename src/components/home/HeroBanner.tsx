@@ -246,7 +246,9 @@ export default function HeroBanner() {
                       </button>
                     </div>
                   </div>
-                              {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
+                </div>
+
+                {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
                 <div className="lg:col-span-5 relative hidden lg:block overflow-hidden bg-slate-50/50 border-l border-slate-100/50">
                   <div className="absolute inset-0 flex items-center justify-center p-6">
                     {/* Backing glow */}
