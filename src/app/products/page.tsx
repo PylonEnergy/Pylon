@@ -30,7 +30,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Product Warranty": "25 Years",
       "Type": "N-Type Monocrystalline",
     },
-    image: "/jinko-tiger-neo.jpg",
+    image: "/jinko-tiger-neo.png",
   },
   {
     _id: "mock-2",
@@ -58,7 +58,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Max Efficiency": "98.2%",
       "Phase": "3-Phase",
     },
-    image: "/sungrow-inverter.jpg",
+    image: "/sungrow-inverter.png",
   },
   {
     _id: "mock-4",
@@ -268,9 +268,9 @@ export default function ProductsPage() {
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
                             src={
-                              p.brand.toLowerCase().includes("jinko") ? "/jinko-tiger-neo.jpg" :
+                              p.brand.toLowerCase().includes("jinko") ? "/jinko-tiger-neo.png" :
                               p.brand.toLowerCase().includes("tesla") ? "/tesla-powerwall-3.jpg" :
-                              p.brand.toLowerCase().includes("sungrow") ? "/sungrow-inverter.jpg" :
+                              p.brand.toLowerCase().includes("sungrow") ? "/sungrow-inverter.png" :
                               p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5-home.jpg" :
                               p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor-home.jpg" :
                               p.brand.toLowerCase().includes("esy") ? "/esy-battery-home.jpg" :
