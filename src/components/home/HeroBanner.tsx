@@ -245,9 +245,9 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side real site photo showcase stage - desktop (half size space) */}
-                <div className="lg:col-span-5 relative hidden lg:flex items-center justify-center p-6 lg:p-8 bg-white border-l border-slate-100">
-                  <div className="relative w-full max-w-[320px] lg:max-w-[340px] aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_15px_35px_rgba(0,43,92,0.1)] border border-slate-200/80 bg-slate-50 group">
+                {/* Right side real site photo showcase stage - desktop (full right space covered) */}
+                <div className="lg:col-span-5 relative hidden lg:flex items-center justify-center p-4 lg:p-6 bg-white border-l border-slate-100">
+                  <div className="relative w-full h-full min-h-[380px] lg:min-h-[440px] rounded-3xl overflow-hidden shadow-[0_20px_45px_rgba(0,43,92,0.12)] border border-slate-200/80 bg-slate-50 group flex items-center justify-center">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
@@ -255,7 +255,7 @@ export default function HeroBanner() {
                     />
 
                     {/* Visual Promo Badge */}
-                    <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md flex items-center gap-1 border border-white/20 animate-pulse z-10">
+                    <div className="absolute bottom-5 right-5 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md flex items-center gap-1 border border-white/20 animate-pulse z-10">
                       <Award size={12} />
                       {slide.promoBadge}
                     </div>
@@ -264,7 +264,7 @@ export default function HeroBanner() {
 
                 {/* Right side real site photo showcase stage - mobile / tablet */}
                 <div className="lg:hidden p-6 pt-0 flex justify-center">
-                  <div className="relative w-full max-w-[280px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
+                  <div className="relative w-full max-w-[440px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
