@@ -148,9 +148,6 @@ export default function HeroBanner() {
     <section
       id="hero"
       className="relative flex flex-col justify-center overflow-hidden bg-white"
-      style={{
-        background: "linear-gradient(135deg, #FFFFFF 0%, #F5F9FD 60%, #E8F4FC 100%)",
-      }}
     >
       {/* Grid overlay background */}
       <div
@@ -248,15 +245,12 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side product showcase stage - desktop (spans full height to both ends) */}
-                <div className="lg:col-span-5 relative hidden lg:flex flex-col items-center justify-center p-8 border-l border-slate-200/60 bg-gradient-to-b from-slate-50/80 via-white/50 to-slate-50/80 overflow-hidden h-full min-h-[440px]">
-                  {/* Subtle radial backdrop glow */}
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,171,226,0.12)_0%,transparent_70%)] pointer-events-none" />
-
+                {/* Right side product showcase stage - desktop (full white area box) */}
+                <div className="lg:col-span-5 relative hidden lg:flex flex-col items-center justify-center p-8 bg-white border-l border-slate-100 overflow-hidden h-full min-h-[440px]">
                   <img
                     src={slide.image}
                     alt={slide.promoBadge}
-                    className="max-w-full max-h-[420px] w-auto h-auto object-contain drop-shadow-xl select-none transition-transform duration-500 hover:scale-[1.03]"
+                    className="max-w-full max-h-[420px] w-auto h-auto object-contain select-none transition-transform duration-500 hover:scale-[1.03]"
                   />
 
                   {/* Visual Promo Badge */}
@@ -268,13 +262,11 @@ export default function HeroBanner() {
 
                 {/* Right side product showcase stage - mobile / tablet */}
                 <div className="lg:hidden p-6 pt-0 flex justify-center">
-                  <div className="relative w-full max-w-[420px] h-[300px] rounded-2xl bg-white shadow-sm border border-slate-200/80 p-4 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,171,226,0.08)_0%,transparent_70%)] pointer-events-none" />
-
+                  <div className="relative w-full max-w-[420px] h-[300px] rounded-2xl bg-white shadow-sm border border-slate-100 p-4 flex items-center justify-center overflow-hidden">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg drop-shadow select-none"
+                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg select-none"
                     />
 
                     {/* Visual Promo Badge */}
