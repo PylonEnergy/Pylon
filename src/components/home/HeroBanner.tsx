@@ -248,35 +248,37 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
-                <div className="lg:col-span-5 relative hidden lg:block overflow-hidden">
+                {/* Right side product showcase stage - desktop (spans full height to both ends) */}
+                <div className="lg:col-span-5 relative hidden lg:flex flex-col items-center justify-center p-8 border-l border-slate-200/60 bg-gradient-to-b from-slate-50/80 via-white/50 to-slate-50/80 overflow-hidden h-full min-h-[440px]">
+                  {/* Subtle radial backdrop glow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,171,226,0.12)_0%,transparent_70%)] pointer-events-none" />
+
                   <img
                     src={slide.image}
                     alt={slide.promoBadge}
-                    className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
-                    style={{ imageRendering: "auto" }}
+                    className="max-w-full max-h-[420px] w-auto h-auto object-contain drop-shadow-xl select-none transition-transform duration-500 hover:scale-[1.03]"
                   />
-                  
+
                   {/* Visual Promo Badge */}
-                  <div className="absolute bottom-6 right-6 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 animate-pulse z-10">
+                  <div className="absolute bottom-6 right-6 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md flex items-center gap-1 border border-white/20 animate-pulse z-10">
                     <Award size={12} />
                     {slide.promoBadge}
                   </div>
                 </div>
 
-                {/* Right side illustration - standard card style on mobile/tablet */}
-                <div className="lg:hidden p-6 pt-0">
-                  <div className="relative mx-auto rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-[#F8FAFC] w-full max-w-[420px] aspect-[4/3]">
+                {/* Right side product showcase stage - mobile / tablet */}
+                <div className="lg:hidden p-6 pt-0 flex justify-center">
+                  <div className="relative w-full max-w-[420px] h-[300px] rounded-2xl bg-white shadow-sm border border-slate-200/80 p-4 flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,171,226,0.08)_0%,transparent_70%)] pointer-events-none" />
+
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
-                      style={{ imageRendering: "auto" }}
+                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg drop-shadow select-none"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
- 
+
                     {/* Visual Promo Badge */}
-                    <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 z-10">
+                    <div className="absolute bottom-3 right-3 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3 rounded-full shadow-md flex items-center gap-1 border border-white/20 z-10">
                       <Award size={12} />
                       {slide.promoBadge}
                     </div>
