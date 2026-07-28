@@ -251,7 +251,19 @@ export default function ProductsPage() {
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={p.image} alt={p.name} className="w-full h-full object-cover" />
                         ) : (
-                          <ImageIcon size={32} className="text-pe-gray-300" />
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={
+                              p.brand.toLowerCase().includes("jinko") ? "/jinko-tiger-neo.jpg" :
+                              p.brand.toLowerCase().includes("tesla") ? "/tesla-powerwall-3.jpg" :
+                              p.brand.toLowerCase().includes("sungrow") ? "/sungrow-inverter.jpg" :
+                              p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5.jpg" :
+                              p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor.jpg" :
+                              "/hero-battery.png"
+                            }
+                            alt={p.name}
+                            className="w-full h-full object-cover"
+                          />
                         )}
                       </div>
                       <div className="sm:col-span-3 space-y-3">
