@@ -127,7 +127,7 @@ export default async function RootLayout({
           `
         }} />
       </head>
-      <body className="min-h-full flex flex-col font-sans antialiased bg-white text-pe-gray-900">
+      <body className="min-h-full flex flex-col font-sans antialiased bg-white text-pe-gray-900" suppressHydrationWarning>
         {/* Google Tag Manager (Script Injection) */}
         {settings.gtmId && (
           <Script
