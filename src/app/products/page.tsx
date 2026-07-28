@@ -30,7 +30,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Product Warranty": "25 Years",
       "Type": "N-Type Monocrystalline",
     },
-    image: "/hero-panels.png",
+    image: "/jinko-tiger-neo.jpg",
   },
   {
     _id: "mock-2",
@@ -44,7 +44,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "System Type": "AC Coupled",
     },
-    image: "/hero-battery.png",
+    image: "/tesla-powerwall-3.jpg",
   },
   {
     _id: "mock-3",
@@ -58,7 +58,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Max Efficiency": "98.2%",
       "Phase": "3-Phase",
     },
-    image: "/hero-commercial.png",
+    image: "/sungrow-inverter.jpg",
   },
   {
     _id: "mock-4",
@@ -72,7 +72,21 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Battery Type": "LFP (LiFePO4)",
     },
-    image: "/hero-battery.png",
+    image: "/alpha-ess-smile5.jpg",
+  },
+  {
+    _id: "mock-5",
+    name: "SigenStor",
+    brand: "Sigenergy",
+    category: "battery",
+    description: "5-in-1 energy storage system integrating PV inverter, battery storage, DC charger, and EMS.",
+    specs: {
+      "Capacity": "5.0 - 25.0 kWh",
+      "Max Charging Power": "25 kW",
+      "Warranty": "10 Years",
+      "Protection": "IP66 Rated",
+    },
+    image: "/sigenergy-sigenstor.jpg",
   }
 ];
 
