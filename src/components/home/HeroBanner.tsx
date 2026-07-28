@@ -11,7 +11,7 @@ const slides = [
     subtitle: "2026 SPECIAL LAUNCH PRICE",
     description: "Save up to 80% on electricity bills with Pylon Energy's high-efficiency Tier-1 solar panel systems and smart battery storage configurations. Fully customized for Sydney and NSW homes.",
     highlights: ["Sydney HQ & Support", "Licensed CEC Installers", "25-Year Product Warranty"],
-    image: "/sigenergy-sigenstor-home.jpg",
+    image: "/alpha-ess-smile5-home.jpg",
     promoBadge: "2026 REBATES ACTIVE",
     ctaText: "Get Your Free Quote →",
     ctaLink: "/get-quote",
@@ -25,7 +25,7 @@ const slides = [
     subtitle: "NSW CLEAN ENERGY INCENTIVE",
     description: "Lock in your Small-scale Technology Certificates (STCs) government rebates with Pylon Energy. We manage all eligibility approval and discount paperwork directly at point-of-sale.",
     highlights: ["Point-of-Sale Discounts", "Rebate Approvals Handled", "Affordable Finance From $0 Down"],
-    image: "/jinko-tiger-neo.png",
+    image: "/sigenergy-sigenstor-home.jpg",
     promoBadge: "NSW SUB-SCHEME ACTIVE",
     ctaText: "Check Rebate Eligibility →",
     ctaLink: "/get-quote?interest=residential",
@@ -39,7 +39,7 @@ const slides = [
     subtitle: "SMART ENERGY STORAGE",
     description: "Say goodbye to blackouts. Add a premium solar battery system to store excess daytime solar energy, enjoy 24/7 power independence, and participate in Virtual Power Plants.",
     highlights: ["Tesla & Sungrow Certified", "Seamless Blackout Backup", "VPP Ready for Extra Savings"],
-    image: "/tesla-powerwall-3.jpg",
+    image: "/hero-panels.png",
     promoBadge: "BATTERY REBATES ACTIVE",
     ctaText: "Get Battery Quote →",
     ctaLink: "/get-quote?interest=battery",
@@ -53,7 +53,7 @@ const slides = [
     subtitle: "TAX WRITE-OFF & REBATES ACTIVE",
     description: "Optimise your corporate overheads with Pylon Energy's high-yield commercial solar grids. Full engineering designs, solar feasibility studies, and flexible business finance options.",
     highlights: ["Free Engineering Studies", "100% Tax Write-Off Eligible", "No-Cap Business Rebates"],
-    image: "/sungrow-inverter.png",
+    image: "/hero-commercial.png",
     promoBadge: "FREE COMMERCIAL FEASIBILITY",
     ctaText: "Get Free Feasibility Study →",
     ctaLink: "/get-quote?interest=commercial",
@@ -67,7 +67,7 @@ const slides = [
     subtitle: "LEVEL 2 HOME CHARGERS",
     description: "Charge your electric vehicle up to 10x faster at home with a premium Level 2 smart EV charger powered directly by Pylon Energy's high-performance solar configurations.",
     highlights: ["All EV Models Supported", "Smart App Power Tracking", "Ocular & Tesla Certified"],
-    image: "/jinko-tiger-neo.png",
+    image: "/esy-battery-home.jpg",
     promoBadge: "EV CHARGER DEALS ACTIVE",
     ctaText: "Get EV Charger Quote →",
     ctaLink: "/get-quote?interest=ev-charger",
@@ -245,28 +245,30 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side product showcase stage - desktop (full white area box) */}
-                <div className="lg:col-span-5 relative hidden lg:flex flex-col items-center justify-center p-8 bg-white border-l border-slate-100 overflow-hidden h-full min-h-[440px]">
-                  <img
-                    src={slide.image}
-                    alt={slide.promoBadge}
-                    className="max-w-full max-h-[420px] w-auto h-auto object-contain select-none transition-transform duration-500 hover:scale-[1.03]"
-                  />
-
-                  {/* Visual Promo Badge */}
-                  <div className="absolute bottom-6 right-6 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md flex items-center gap-1 border border-white/20 animate-pulse z-10">
-                    <Award size={12} />
-                    {slide.promoBadge}
-                  </div>
-                </div>
-
-                {/* Right side product showcase stage - mobile / tablet */}
-                <div className="lg:hidden p-6 pt-0 flex justify-center">
-                  <div className="relative w-full max-w-[420px] h-[300px] rounded-2xl bg-white shadow-sm border border-slate-100 p-4 flex items-center justify-center overflow-hidden">
+                {/* Right side real site photo showcase stage - desktop */}
+                <div className="lg:col-span-5 relative hidden lg:flex items-center justify-center p-6 lg:p-8 bg-white border-l border-slate-100">
+                  <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_15px_35px_rgba(0,43,92,0.1)] border border-slate-200/80 bg-slate-50 group">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg select-none"
+                      className="w-full h-full object-cover rounded-3xl transition-transform duration-700 group-hover:scale-105 select-none"
+                    />
+
+                    {/* Visual Promo Badge */}
+                    <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-md flex items-center gap-1 border border-white/20 animate-pulse z-10">
+                      <Award size={12} />
+                      {slide.promoBadge}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right side real site photo showcase stage - mobile / tablet */}
+                <div className="lg:hidden p-6 pt-0 flex justify-center">
+                  <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
+                    <img
+                      src={slide.image}
+                      alt={slide.promoBadge}
+                      className="w-full h-full object-cover rounded-2xl select-none"
                     />
 
                     {/* Visual Promo Badge */}
