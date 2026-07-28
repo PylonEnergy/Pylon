@@ -72,7 +72,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Battery Type": "LFP (LiFePO4)",
     },
-    image: "/alpha-ess-smile5.png",
+    image: "/alpha-ess-smile5-home.jpg",
   },
   {
     _id: "mock-5",
@@ -86,7 +86,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Protection": "IP66 Rated",
     },
-    image: "/sigenergy-sigenstor.png",
+    image: "/sigenergy-sigenstor-home.jpg",
   },
   {
     _id: "mock-6",
@@ -100,7 +100,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Chemistry": "Lithium Iron Phosphate",
     },
-    image: "/esy-battery.png",
+    image: "/esy-battery-home.jpg",
   }
 ];
 
@@ -271,9 +271,9 @@ export default function ProductsPage() {
                               p.brand.toLowerCase().includes("jinko") ? "/jinko-tiger-neo.jpg" :
                               p.brand.toLowerCase().includes("tesla") ? "/tesla-powerwall-3.jpg" :
                               p.brand.toLowerCase().includes("sungrow") ? "/sungrow-inverter.jpg" :
-                              p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5.png" :
-                              p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor.png" :
-                              p.brand.toLowerCase().includes("esy") ? "/esy-battery.png" :
+                              p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5-home.jpg" :
+                              p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor-home.jpg" :
+                              p.brand.toLowerCase().includes("esy") ? "/esy-battery-home.jpg" :
                               "/hero-battery.png"
                             }
                             alt={p.name}

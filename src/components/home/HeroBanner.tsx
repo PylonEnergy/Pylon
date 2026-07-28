@@ -11,7 +11,7 @@ const slides = [
     subtitle: "2026 SPECIAL LAUNCH PRICE",
     description: "Save up to 80% on electricity bills with Pylon Energy's high-efficiency Tier-1 solar panel systems and smart battery storage configurations. Fully customized for Sydney and NSW homes.",
     highlights: ["Sydney HQ & Support", "Licensed CEC Installers", "25-Year Product Warranty"],
-    image: "/sigenergy-sigenstor.png",
+    image: "/sigenergy-sigenstor-home.jpg",
     promoBadge: "2026 REBATES ACTIVE",
     ctaText: "Get Your Free Quote →",
     ctaLink: "/get-quote",
