@@ -245,9 +245,9 @@ export default function HeroBanner() {
                   </div>
                 </div>
 
-                {/* Right side real site photo showcase stage - desktop */}
+                {/* Right side real site photo showcase stage - desktop (half size space) */}
                 <div className="lg:col-span-5 relative hidden lg:flex items-center justify-center p-6 lg:p-8 bg-white border-l border-slate-100">
-                  <div className="relative w-full max-w-[460px] aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_15px_35px_rgba(0,43,92,0.1)] border border-slate-200/80 bg-slate-50 group">
+                  <div className="relative w-full max-w-[320px] lg:max-w-[340px] aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_15px_35px_rgba(0,43,92,0.1)] border border-slate-200/80 bg-slate-50 group">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
@@ -264,7 +264,7 @@ export default function HeroBanner() {
 
                 {/* Right side real site photo showcase stage - mobile / tablet */}
                 <div className="lg:hidden p-6 pt-0 flex justify-center">
-                  <div className="relative w-full max-w-[420px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
+                  <div className="relative w-full max-w-[280px] aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-white">
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
