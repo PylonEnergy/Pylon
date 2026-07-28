@@ -250,14 +250,14 @@ export default function HeroBanner() {
 
                 {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
                 <div className="lg:col-span-5 relative hidden lg:block overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="absolute inset-0 flex items-center justify-center">
                     {/* Backing glow */}
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(41,171,226,0.18)_0%,_transparent_65%)] pointer-events-none" />
                     
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-contain opacity-95 animate-float select-none pointer-events-none"
+                      className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
                     />
                     
                     {/* Visual Promo Badge */}
@@ -277,7 +277,7 @@ export default function HeroBanner() {
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-contain p-6 opacity-95 animate-float select-none pointer-events-none"
+                      className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
 
