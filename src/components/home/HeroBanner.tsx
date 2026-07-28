@@ -67,7 +67,7 @@ const slides = [
     subtitle: "LEVEL 2 HOME CHARGERS",
     description: "Charge your electric vehicle up to 10x faster at home with a premium Level 2 smart EV charger powered directly by Pylon Energy's high-performance solar configurations.",
     highlights: ["All EV Models Supported", "Smart App Power Tracking", "Ocular & Tesla Certified"],
-    image: "/esy-battery-home.jpg",
+    image: "/ev-charger-home.jpg",
     promoBadge: "EV CHARGER DEALS ACTIVE",
     ctaText: "Get EV Charger Quote →",
     ctaLink: "/get-quote?interest=ev-charger",
