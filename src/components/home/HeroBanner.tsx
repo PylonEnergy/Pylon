@@ -246,18 +246,16 @@ export default function HeroBanner() {
                       </button>
                     </div>
                   </div>
-                </div>
-
-                {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
-                <div className="lg:col-span-5 relative hidden lg:block overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
+                              {/* Right side illustration - full bleed edge-to-edge inside the right column on desktop */}
+                <div className="lg:col-span-5 relative hidden lg:block overflow-hidden bg-slate-50/50 border-l border-slate-100/50">
+                  <div className="absolute inset-0 flex items-center justify-center p-6">
                     {/* Backing glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(41,171,226,0.18)_0%,_transparent_65%)] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(41,171,226,0.1)_0%,_transparent_70%)] pointer-events-none" />
                     
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
+                      className="max-w-full max-h-full object-contain rounded-2xl shadow-md border border-slate-100 bg-white"
                     />
                     
                     {/* Visual Promo Badge */}
@@ -270,17 +268,17 @@ export default function HeroBanner() {
 
                 {/* Right side illustration - standard card style on mobile/tablet */}
                 <div className="lg:hidden p-6 pt-0">
-                  <div className="relative mx-auto rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-[#F8FAFC] w-full max-w-[420px] aspect-[4/3] flex items-center justify-center">
+                  <div className="relative mx-auto rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-white w-full max-w-[420px] aspect-[4/3] flex items-center justify-center p-4">
                     {/* Backing glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(41,171,226,0.12)_0%,_transparent_60%)] pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(41,171,226,0.08)_0%,_transparent_60%)] pointer-events-none" />
                     
                     <img
                       src={slide.image}
                       alt={slide.promoBadge}
-                      className="w-full h-full object-cover opacity-95 select-none pointer-events-none"
+                      className="max-w-full max-h-full object-contain"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
-
+ 
                     {/* Visual Promo Badge */}
                     <div className="absolute bottom-4 right-4 bg-pe-orange text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-3.5 rounded-full shadow-lg flex items-center gap-1 border border-white/20 z-10">
                       <Award size={12} />
