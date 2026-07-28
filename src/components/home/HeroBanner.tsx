@@ -11,7 +11,7 @@ const slides = [
     subtitle: "2026 SPECIAL LAUNCH PRICE",
     description: "Save up to 80% on electricity bills with Pylon Energy's high-efficiency Tier-1 solar panel systems and smart battery storage configurations. Fully customized for Sydney and NSW homes.",
     highlights: ["Sydney HQ & Support", "Licensed CEC Installers", "25-Year Product Warranty"],
-    image: "/sigenergy-sigenstor.jpg",
+    image: "/sigenergy-sigenstor.png",
     promoBadge: "2026 REBATES ACTIVE",
     ctaText: "Get Your Free Quote →",
     ctaLink: "/get-quote",
@@ -90,19 +90,11 @@ export default function HeroBanner() {
     return () => clearInterval(timer);
   }, [currentSlide]); // Reset timer on manual slide changes
 
-  const handlePrev = (e?: React.MouseEvent) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  const handlePrev = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const handleNext = (e?: React.MouseEvent) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+  const handleNext = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
@@ -243,13 +235,13 @@ export default function HeroBanner() {
                   {/* Slider Control pill inside info block */}
                   <div className="pt-2 flex items-center gap-3">
                     <div className="inline-flex items-center gap-4 bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-xs font-bold text-pe-navy select-none">
-                      <button type="button" onClick={(e) => handlePrev(e)} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" aria-label="Previous slide">
+                      <button type="button" onClick={() => handlePrev()} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" style={{ cursor: "pointer" }} aria-label="Previous slide">
                         <ChevronLeft size={16} />
                       </button>
                       <span>
                         {currentSlide + 1} / {slides.length}
                       </span>
-                      <button type="button" onClick={(e) => handleNext(e)} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" aria-label="Next slide">
+                      <button type="button" onClick={() => handleNext()} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" style={{ cursor: "pointer" }} aria-label="Next slide">
                         <ChevronRight size={16} />
                       </button>
                     </div>

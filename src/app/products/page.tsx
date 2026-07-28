@@ -72,7 +72,7 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Battery Type": "LFP (LiFePO4)",
     },
-    image: "/alpha-ess-smile5.jpg",
+    image: "/alpha-ess-smile5.png",
   },
   {
     _id: "mock-5",
@@ -86,7 +86,21 @@ const MOCK_PRODUCTS: Product[] = [
       "Warranty": "10 Years",
       "Protection": "IP66 Rated",
     },
-    image: "/sigenergy-sigenstor.jpg",
+    image: "/sigenergy-sigenstor.png",
+  },
+  {
+    _id: "mock-6",
+    name: "HM12 Home Battery System",
+    brand: "ESY",
+    category: "battery",
+    description: "Premium all-in-one residential energy storage solution with modular design and high efficiency.",
+    specs: {
+      "Capacity": "12.0 kWh",
+      "System Output": "12.0 kW",
+      "Warranty": "10 Years",
+      "Chemistry": "Lithium Iron Phosphate",
+    },
+    image: "/esy-battery.png",
   }
 ];
 
@@ -257,8 +271,9 @@ export default function ProductsPage() {
                               p.brand.toLowerCase().includes("jinko") ? "/jinko-tiger-neo.jpg" :
                               p.brand.toLowerCase().includes("tesla") ? "/tesla-powerwall-3.jpg" :
                               p.brand.toLowerCase().includes("sungrow") ? "/sungrow-inverter.jpg" :
-                              p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5.jpg" :
-                              p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor.jpg" :
+                              p.brand.toLowerCase().includes("alpha") ? "/alpha-ess-smile5.png" :
+                              p.brand.toLowerCase().includes("sigenergy") ? "/sigenergy-sigenstor.png" :
+                              p.brand.toLowerCase().includes("esy") ? "/esy-battery.png" :
                               "/hero-battery.png"
                             }
                             alt={p.name}
