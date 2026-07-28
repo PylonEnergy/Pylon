@@ -88,13 +88,21 @@ export default function HeroBanner() {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentSlide]); // Reset timer on manual slide changes
 
-  const handlePrev = () => {
+  const handlePrev = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const handleNext = () => {
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
@@ -235,13 +243,13 @@ export default function HeroBanner() {
                   {/* Slider Control pill inside info block */}
                   <div className="pt-2 flex items-center gap-3">
                     <div className="inline-flex items-center gap-4 bg-slate-100 border border-slate-200 px-4 py-2 rounded-full text-xs font-bold text-pe-navy select-none">
-                      <button onClick={handlePrev} className="text-pe-navy/60 hover:text-pe-navy transition-colors" aria-label="Previous slide">
+                      <button type="button" onClick={(e) => handlePrev(e)} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" aria-label="Previous slide">
                         <ChevronLeft size={16} />
                       </button>
                       <span>
                         {currentSlide + 1} / {slides.length}
                       </span>
-                      <button onClick={handleNext} className="text-pe-navy/60 hover:text-pe-navy transition-colors" aria-label="Next slide">
+                      <button type="button" onClick={(e) => handleNext(e)} className="text-pe-navy/60 hover:text-pe-navy transition-colors cursor-pointer" aria-label="Next slide">
                         <ChevronRight size={16} />
                       </button>
                     </div>

@@ -60,25 +60,7 @@ const deals = [
     accent: "pe-green",
     featured: false,
   },
-  {
-    badge: "⚡ EV Offer",
-    badgeColor: "bg-blue-100 text-blue-700 border-blue-200",
-    title: "Free EV Charger with Any 10kW+ Solar System",
-    subtitle: "Limited availability — book now",
-    description:
-      "Purchase any 10kW or larger solar system and receive a complimentary EV charger installation (hardware & labour). Charge your car for free using your solar energy.",
-    highlights: [
-      "7kW Level 2 EV Charger included",
-      "Certified installation by licensed electricians",
-      "Compatible with all major EV brands",
-      "Solar-optimised smart charging",
-      "Valid for NSW metro bookings only",
-    ],
-    cta: "Book Before It Ends",
-    href: "/get-quote?interest=ev-charger",
-    accent: "pe-blue",
-    featured: false,
-  },
+
   {
     badge: "📦 Battery Only",
     badgeColor: "bg-purple-100 text-purple-700 border-purple-200",
