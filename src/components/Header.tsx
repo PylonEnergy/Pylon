@@ -219,7 +219,7 @@ export default function Header() {
                     Solar Packages <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
                     <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
-                  <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
+                  <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%" }}>
                     <div className="grid grid-cols-3 gap-12">
                       {/* Residential */}
                       <div>
@@ -315,7 +315,7 @@ export default function Header() {
                     Solar Batteries <ChevronDown size={17} className="transition-transform group-hover:rotate-180 duration-200" />
                     <span className="absolute bottom-0.5 left-2 xl:left-3 2xl:left-4 right-[28px] h-[2.5px] bg-[#29ABE2] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
                   </button>
-                  <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%", transform: "translateY(8px)" }}>
+                  <div className="mega-menu-panel" style={{ left: 0, right: 0, width: "100%" }}>
                     <div className="grid grid-cols-2 gap-12">
                       <div>
                         <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#29ABE2] mb-4.5 flex items-center gap-2">
