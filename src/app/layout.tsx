@@ -8,6 +8,7 @@ import FloatingSidebarCTA from "@/components/FloatingSidebarCTA";
 import LeadPopup from "@/components/LeadPopup";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import MobileCallBar from "@/components/MobileCallBar";
+import SocialProofToast from "@/components/SocialProofToast";
 import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import Script from "next/script";
@@ -295,6 +296,7 @@ export default async function RootLayout({
             <Footer />
             <FloatingSidebarCTA />
             <LeadPopup />
+            <SocialProofToast />
             <WhatsAppButton />
             <MobileCallBar />
           </>

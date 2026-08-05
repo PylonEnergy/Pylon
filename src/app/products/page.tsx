@@ -154,25 +154,69 @@ export default function ProductsPage() {
 
   // Helper to trigger datasheet download
   const handleDownloadDatasheet = (product: Product) => {
-    if (!product.datasheet) return;
-
-    if (product.datasheet.startsWith("data:")) {
-      // It's a base64 file data-URI
+    if (product.datasheet && product.datasheet.startsWith("data:")) {
       const link = document.createElement("a");
       link.href = product.datasheet;
-      
-      // Determine file extension
       let ext = "pdf";
       if (product.datasheet.includes("image/png")) ext = "png";
       else if (product.datasheet.includes("image/jpeg")) ext = "jpg";
-      
       link.download = `${product.brand.replace(/\s+/g, "_")}_${product.name.replace(/\s+/g, "_")}_datasheet.${ext}`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } else {
-      // It's a standard URL link
+    } else if (product.datasheet && (product.datasheet.startsWith("http") || product.datasheet.startsWith("/"))) {
       window.open(product.datasheet, "_blank");
+    } else {
+      // Generate official technical datasheet print window
+      const printWin = window.open("", "_blank");
+      if (printWin) {
+        printWin.document.write(`
+          <html>
+            <head>
+              <title>${product.brand} - ${product.name} Technical Datasheet | Pylon Energy</title>
+              <style>
+                body { font-family: 'Outfit', Arial, sans-serif; padding: 40px; color: #002B5C; line-height: 1.6; }
+                .header { border-bottom: 3px solid #29ABE2; padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; }
+                h1 { font-size: 28px; margin: 0; color: #002B5C; }
+                .badge { background: #E8F7FD; color: #29ABE2; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 12px; text-transform: uppercase; }
+                .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+                .spec-box { background: #F8FAFC; border: 1px solid #E2E8F0; padding: 15px 20px; border-radius: 12px; }
+                .spec-label { color: #64748B; font-size: 12px; font-weight: bold; text-transform: uppercase; }
+                .spec-val { color: #002B5C; font-size: 16px; font-weight: bold; margin-top: 4px; }
+                .footer { margin-top: 50px; border-top: 1px solid #E2E8F0; pt: 20px; font-size: 12px; color: #64748B; text-align: center; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div>
+                  <span class="badge">${product.brand}</span>
+                  <h1>${product.name}</h1>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="color: #FF7029; font-size: 18px;">PYLON ENERGY</strong><br/>
+                  <small>CEC Approved Solar Installer</small>
+                </div>
+              </div>
+              <p><strong>Product Category:</strong> ${product.category.toUpperCase()}</p>
+              <p>${product.description}</p>
+              <h2 style="margin-top: 30px; font-size: 18px; border-bottom: 2px solid #002B5C; padding-bottom: 8px;">Technical Specifications</h2>
+              <div class="grid">
+                ${Object.entries(product.specs || {}).map(([k, v]) => `
+                  <div class="spec-box">
+                    <div class="spec-label">${k}</div>
+                    <div class="spec-val">${v}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <div class="footer">
+                © 2026 Pylon Energy Pty Ltd · 1300 001 598 · info@pylonenergy.com.au · Sydney NSW Australia
+              </div>
+              <script>window.print();</script>
+            </body>
+          </html>
+        `);
+        printWin.document.close();
+      }
     }
   };
 
@@ -330,22 +374,12 @@ export default function ProductsPage() {
                     )}
 
                     {/* Datasheet download trigger */}
-                    {p.datasheet && (
-                      <button
-                        onClick={() => handleDownloadDatasheet(p)}
-                        className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-pe-navy text-pe-navy hover:bg-pe-navy hover:text-white font-bold text-xs sm:text-sm transition-all"
-                      >
-                        {p.datasheet.startsWith("data:") ? (
-                          <>
-                            <Download size={15} /> Download Technical Datasheet (PDF)
-                          </>
-                        ) : (
-                          <>
-                            <ExternalLink size={15} /> Open Manufacturer Datasheet <ExternalLink size={12} />
-                          </>
-                        )}
-                      </button>
-                    )}
+                    <button
+                      onClick={() => handleDownloadDatasheet(p)}
+                      className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border-2 border-pe-navy text-pe-navy hover:bg-pe-navy hover:text-white font-bold text-xs sm:text-sm transition-all"
+                    >
+                      <Download size={15} /> Download Technical Datasheet (PDF)
+                    </button>
                   </div>
                 </div>
               ))}

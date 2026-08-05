@@ -130,15 +130,18 @@ export default function HeroBanner() {
     }
   };
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [postcodeEntered, setPostcodeEntered] = useState("");
+  const [estimatedRebate, setEstimatedRebate] = useState(3450);
+
   const handleSubmitPostcode = () => {
     const postcode = inputsRef.current.map((el) => el?.value ?? "").join("");
     if (postcode.length === 4) {
+      setPostcodeEntered(postcode);
       const codeNum = parseInt(postcode, 10);
-      if (codeNum >= 2000 && codeNum <= 2999) {
-        router.push(`/services/residential-solar?state=NSW&postcode=${postcode}`);
-      } else {
-        router.push(`/get-quote?postcode=${postcode}`);
-      }
+      const calculatedRebate = codeNum >= 2000 && codeNum <= 2999 ? 3450 : 2950;
+      setEstimatedRebate(calculatedRebate);
+      setModalOpen(true);
     } else {
       inputsRef.current.find((el) => !el?.value)?.focus();
     }
@@ -349,6 +352,62 @@ export default function HeroBanner() {
           </div>
         </div>
       </div>
+
+      {/* INSTANT REBATE ESTIMATE MODAL */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-pe-navy/80 backdrop-blur-md animate-fade-in">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-slate-100 relative text-left">
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-4 right-4 text-pe-gray-400 hover:text-pe-navy text-xl font-bold p-2"
+            >
+              ✕
+            </button>
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider text-pe-green bg-pe-green-light mb-3">
+              ✓ Postcode {postcodeEntered} Approved
+            </div>
+            <h3 className="text-2xl font-black text-pe-navy leading-tight">
+              Rebate Discount Estimate
+            </h3>
+            <p className="text-sm text-pe-gray-500 mt-1">
+              NSW STC Clean Energy Incentive Active in Postcode <strong className="text-pe-navy">{postcodeEntered}</strong>.
+            </p>
+
+            <div className="mt-5 p-4 rounded-2xl bg-pe-gray-50 border border-pe-gray-200 space-y-3">
+              <div className="flex justify-between items-center border-b border-pe-gray-200/80 pb-2">
+                <span className="text-xs font-bold text-pe-gray-500">Government STC Rebate</span>
+                <span className="text-xl font-black text-pe-green">${estimatedRebate.toLocaleString()} Off</span>
+              </div>
+              <div className="flex justify-between items-center border-b border-pe-gray-200/80 pb-2">
+                <span className="text-xs font-bold text-pe-gray-500">Est. Bill Reduction</span>
+                <span className="text-sm font-black text-pe-navy">75% - 85% / Qtr</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-xs font-bold text-pe-gray-500">Recommended Setup</span>
+                <span className="text-xs font-black text-[#29ABE2]">6.6kW + Battery Bundle</span>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3">
+              <Link
+                href={`/get-quote?postcode=${postcodeEntered}&rebate=${estimatedRebate}`}
+                className="w-full btn-primary text-center py-4 text-sm uppercase tracking-wider"
+              >
+                Claim My ${estimatedRebate.toLocaleString()} Discount →
+              </Link>
+              <button
+                onClick={() => {
+                  setModalOpen(false);
+                  router.push(`/rebate-checker?postcode=${postcodeEntered}`);
+                }}
+                className="w-full text-xs font-bold text-pe-navy/70 hover:text-pe-navy py-2 text-center"
+              >
+                View Detailed Rebate Breakdown
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
